@@ -33,6 +33,8 @@
 
         public DbSet<TypeOfCloath> TypesOfCloath { get; set; }
 
+        public DbSet<Outfit> Outfits { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

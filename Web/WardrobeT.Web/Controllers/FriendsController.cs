@@ -15,16 +15,18 @@ namespace WardrobeT.Web.Controllers
         {
             //FriendsService = friendsService;
         }
-        [Authorize]
+
         public IActionResult FriendRequests()
         {
             //var FriendRequests = FriendsService.GetAllRequsetsForUser(User);
             return View();
         }
+
         public IActionResult MyFriends()
         {
             return View();
         }
+
         public IActionResult FindFrind()
         {
             return View();

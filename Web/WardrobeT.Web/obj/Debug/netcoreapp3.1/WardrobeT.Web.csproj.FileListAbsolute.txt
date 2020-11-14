@@ -443,7 +443,6 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\stat
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.dll
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.pdb
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.genruntimeconfig.cache
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Friends\FriendReqests.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Outfits.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs
@@ -458,3 +457,4 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Friends\FriendRequests.cshtml.g.cs
