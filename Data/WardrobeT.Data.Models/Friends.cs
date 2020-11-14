@@ -7,6 +7,11 @@ namespace WardrobeT.Data.Models
 {
     public class Friends : BaseModel<string>
     {
+        public Friends()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         public ApplicationUser FriendRequester { get; set; }
 
         public ApplicationUser RequstedPerson { get; set; }

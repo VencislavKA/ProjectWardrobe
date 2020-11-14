@@ -1,5 +1,6 @@
 ﻿namespace WardrobeT.Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNetCore.Identity;
@@ -9,6 +10,11 @@
 
     public class Cloath : BaseModel<string>
     {
+        public Cloath()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
+
         [Required]
         public string ImageUrl { get; set; }
 
