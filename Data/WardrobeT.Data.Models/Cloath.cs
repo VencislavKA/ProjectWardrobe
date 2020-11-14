@@ -22,6 +22,6 @@
         public Style Style { get; set; }
 
         [Required]
-        public IdentityUser Owner { get; set; }
+        public ApplicationUser Owner { get; set; }
     }
 }
