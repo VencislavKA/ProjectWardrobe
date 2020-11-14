@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Y3JNZCYmbdTeSVM68DW55beWyc+KGg7LuYynV0DuQcQ5cSqs1ayGozh4UJ5ShXJLSMi9lKi3SqEsf06r3FdFsQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Common\\WardrobeT.Data.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ventcy\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Ventcy\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",
+    "C:\\Users\\Ventcy\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,12 @@
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.csprojAssemblyReference.cache
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.AssemblyInfoInputs.cache
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.AssemblyInfo.cs
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.csproj.CoreCompileInputs.cache
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\bin\Debug\netstandard2.1\WardrobeT.Data.Models.deps.json
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\bin\Debug\netstandard2.1\WardrobeT.Data.Models.dll
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\bin\Debug\netstandard2.1\WardrobeT.Data.Models.pdb
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\bin\Debug\netstandard2.1\WardrobeT.Data.Common.dll
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\bin\Debug\netstandard2.1\WardrobeT.Data.Common.pdb
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.csproj.CopyComplete
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.dll
+C:\Users\Ventcy\Documents\Project\Data\WardrobeT.Data.Models\obj\Debug\netstandard2.1\WardrobeT.Data.Models.pdb

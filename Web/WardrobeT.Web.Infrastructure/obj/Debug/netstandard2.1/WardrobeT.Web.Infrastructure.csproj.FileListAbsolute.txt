@@ -1,0 +1,9 @@
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.deps.json
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.dll
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.pdb
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.AssemblyInfo.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.dll
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.pdb
