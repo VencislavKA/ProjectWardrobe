@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Profile";
 }
+
 <style>
     .profile-head {
         transform: translateY(5rem)
@@ -22,7 +23,8 @@
                     <h5 class="mb-0">@ViewData["Title"]</h5>
                 </div>
                 <div class="media align-items-end profile-head">
-                    <div class="profile mr-3"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="..." width="130" class="rounded mb-2 img-thumbnail">
+                    <div class="profile mr-3"><img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" 
+                                                   alt="..." width="130" class="rounded mb-2 img-thumbnail">
                     <a class="btn btn-outline-dark btn-sm btn-block" asp-area="Identity" asp-page="/Account/Manage/Index">Edit profile</a></div>
                     <div class="media-body mb-5 text-white">
                         <h4 class="mt-0 mb-0">Mark Williams</h4>
@@ -43,23 +45,87 @@
                     </li>
                 </ul>
             </div>
-            <div class="px-4 py-3">
-                <h5 class="mb-0">Informatation</h5>
-                <div class="p-4 rounded shadow-sm bg-light">
-                    <p class="font-italic mb-0">Email: kjdflshgkljdsfhglk</p>
-                    <p class="font-italic mb-0">Username: shadkgfjgags</p>
-                    <p class="font-italic mb-0">Created on: 12.12.2020</p>
-                </div>
-            </div>
             <div class="py-4 px-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5 class="mb-0">Recent photos</h5>
+                    <h5 class="mb-0">Cloaths</h5>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 mb-2 pr-lg-1"><img src="https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                    <div class="col-lg-6 mb-2 pl-lg-1"><img src="https://images.unsplash.com/photo-1493571716545-b559a19edd14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                    <div class="col-lg-6 pr-lg-1 mb-2"><img src="https://images.unsplash.com/photo-1453791052107-5c843da62d97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
-                    <div class="col-lg-6 pl-lg-1"><img src="https://images.unsplash.com/photo-1475724017904-b712052c192a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid rounded shadow-sm"></div>
+                <div class="row text-center text-lg-left">
+
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/top.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/UMA201M806-01_1_800_800px.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/мъжко-светлосиво-долнище-пролет-лято-lux_2431.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/top.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/UMA201M806-01_1_800_800px.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/мъжко-светлосиво-долнище-пролет-лято-lux_2431.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/top.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/UMA201M806-01_1_800_800px.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/мъжко-светлосиво-долнище-пролет-лято-lux_2431.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/top.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/UMA201M806-01_1_800_800px.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/мъжко-светлосиво-долнище-пролет-лято-lux_2431.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/top.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/UMA201M806-01_1_800_800px.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <a class="d-block mb-4 h-100">
+                            <img class="img-fluid img-thumbnail" src="/images/мъжко-светлосиво-долнище-пролет-лято-lux_2431.jpg" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
