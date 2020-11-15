@@ -29,7 +29,7 @@
 
         public DbSet<Cloath> Cloaths { get; set; }
 
-        public DbSet<Friends> Friends { get; set; }
+        public DbSet<Followers> Followers { get; set; }
 
         public DbSet<TypeOfCloath> TypesOfCloath { get; set; }
 
