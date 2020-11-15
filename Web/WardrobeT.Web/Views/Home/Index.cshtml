@@ -2,9 +2,8 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!--if (User.Identity.IsAuthenticated)
-{-->
-<!--}-->
+@if (User.Identity.IsAuthenticated)
+{
     <div class="row">
         <div class="col text-center">
             <button class="btn btn-primary btn-lg w-100 h-100">BACK</button>
@@ -18,8 +17,11 @@
             <button class="btn btn-primary btn-lg w-100 h-100">NEXT</button>
         </div>
     </div>
-
-<!--<h1 class="text-center">Edit profile</h1><div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>tekt koito 6e posre6ta user-a </a>.</p>
-</div>-->
+}
+else
+{
+        <h1 class="display-4 text-center">Welcome to Wardrobe</h1>
+        <p class="text-center">
+            tekst koito 6e posre6ta user-a
+        </p>
+}
