@@ -451,8 +451,6 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Micr
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
@@ -463,3 +461,5 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Login.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
