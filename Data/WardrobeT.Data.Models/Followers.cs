@@ -18,6 +18,6 @@
         public ApplicationUser User { get; set; }
 
         [Required]
-        public ApplicationUser Followerd { get; set; }
+        public ApplicationUser Followed { get; set; }
     }
 }

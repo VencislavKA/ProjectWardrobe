@@ -27,7 +27,7 @@
 
         public DbSet<Setting> Settings { get; set; }
 
-        public DbSet<Cloath> Cloaths { get; set; }
+        public DbSet<Wear> Wears { get; set; }
 
         public DbSet<Followers> Followers { get; set; }
 

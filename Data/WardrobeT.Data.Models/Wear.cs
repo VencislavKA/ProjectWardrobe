@@ -8,9 +8,9 @@
     using WardrobeT.Data.Common.Models;
     using WardrobeT.Data.Models.Enums;
 
-    public class Cloath : BaseModel<string>
+    public class Wear : BaseModel<string>
     {
-        public Cloath()
+        public Wear()
         {
             this.Id = Guid.NewGuid().ToString();
         }
@@ -25,9 +25,9 @@
         public Season Season { get; set; }
 
         [Required]
-        public Style Style { get; set; }
-
-        [Required]
         public ApplicationUser Owner { get; set; }
+
+        //[Required]
+        //public Style Style { get; set; }
     }
 }

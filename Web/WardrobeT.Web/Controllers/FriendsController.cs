@@ -9,27 +9,24 @@ namespace WardrobeT.Web.Controllers
 {
     public class FriendsController : Controller
     {
-        //public FriendsService FriendsService { get; }
-
-        public FriendsController()
+        public IActionResult Followers()
         {
-            //FriendsService = friendsService;
+            return this.View();
         }
 
-        public IActionResult FriendRequests()
+        public IActionResult Following()
         {
-            //var FriendRequests = FriendsService.GetAllRequsetsForUser(User);
-            return View();
+            return this.View();
         }
 
         public IActionResult MyFriends()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult FindFrind()
         {
-            return View();
+            return this.View();
         }
     }
 }
