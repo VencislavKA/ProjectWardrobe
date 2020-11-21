@@ -10,11 +10,11 @@ using WardrobeT.Web.ViewModels.Users;
 
 namespace WardrobeT.Web.Controllers
 {
-    public class Wardrobe : Controller
+    public class WardrobeController : Controller
     {
         public ApplicationDbContext Db { get; }
 
-        public Wardrobe(ApplicationDbContext db)
+        public WardrobeController(ApplicationDbContext db)
         {
             Db = db;
         }

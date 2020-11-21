@@ -4,9 +4,9 @@
     using System.ComponentModel.DataAnnotations;
     using WardrobeT.Data.Common.Models;
 
-    public class TypeOfCloath : BaseModel<string>
+    public class TypeOfWear : BaseModel<string>
     {
-        public TypeOfCloath()
+        public TypeOfWear()
         {
             this.Id = Guid.NewGuid().ToString();
         }

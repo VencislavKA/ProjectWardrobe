@@ -19,7 +19,7 @@
         public string ImageUrl { get; set; }
 
         [Required]
-        public TypeOfCloath Type { get; set; }
+        public TypeOfWear Type { get; set; }
 
         [Required]
         public Season Season { get; set; }

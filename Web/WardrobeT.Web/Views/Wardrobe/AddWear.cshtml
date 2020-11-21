@@ -3,14 +3,38 @@
     ViewData["Title"] = "AddWear";
 }
 
-<h1>AddWear</h1>
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlFile1">Example file input</label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-  </div>
-  <div class="">
-
-  </div>
-</form>
-
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <form class="justify-content-center">
+                <div class="form-group text-center">
+                    <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+                    <p><label for="file" style="cursor: pointer;">Click here to upload image of the wear</label></p>
+                    <p><img id="output" width="200" /></p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">What is the tipe of the wear?</label>
+                    <select class="form-control" id="selectWearType">
+                        <option>Default select</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">For which season is this wear?</label>
+                    <select class="form-control" id="selectSeason">
+                        <option>Default select</option>
+                    </select>
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-block">Submit</button>
+            </form>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+<script>
+    var loadFile = function (event) {
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>

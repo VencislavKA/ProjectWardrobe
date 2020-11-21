@@ -31,7 +31,7 @@
 
         public DbSet<Followers> Followers { get; set; }
 
-        public DbSet<TypeOfCloath> TypesOfCloath { get; set; }
+        public DbSet<TypeOfWear> TypesOfWears { get; set; }
 
         public DbSet<Outfit> Outfits { get; set; }
 
@@ -59,44 +59,44 @@
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 
-            builder.Entity<TypeOfCloath>().HasData(
-                new TypeOfCloath { Type = "Dress", Official = true, CanBeUsedAlone = true },
-                new TypeOfCloath { Type = "Dress", Official = false, CanBeUsedAlone = true },
-                new TypeOfCloath { Type = "Jacket", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Jacket", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Knit Shirt", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Knit Shirt", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Shirt", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Shirt", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Suit", Official = true, CanBeUsedAlone = true },
-                new TypeOfCloath { Type = "Blouse", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Blouse", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Sport Shirt", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Sport Shirt", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Skirt", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Skirt", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Blazer", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Blazer", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Jeans", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Jeans", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Tie", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Tie", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Tunic", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Tunic", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Vest", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Vest", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Short", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Short", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Bowtie", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Bowtie", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Coat", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Slacks", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Slacks", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Leggins", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Turtle Neck", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "Turtle Neck", Official = false, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "T-Shirt", Official = true, CanBeUsedAlone = false },
-                new TypeOfCloath { Type = "T-Shirt", Official = false, CanBeUsedAlone = false }
+            builder.Entity<TypeOfWear>().HasData(
+                new TypeOfWear { Type = "Dress", Official = true, CanBeUsedAlone = true },
+                new TypeOfWear { Type = "Dress", Official = false, CanBeUsedAlone = true },
+                new TypeOfWear { Type = "Jacket", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Jacket", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Knit Shirt", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Knit Shirt", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Shirt", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Shirt", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Suit", Official = true, CanBeUsedAlone = true },
+                new TypeOfWear { Type = "Blouse", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Blouse", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Sport Shirt", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Sport Shirt", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Skirt", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Skirt", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Blazer", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Blazer", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Jeans", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Jeans", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Tie", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Tie", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Tunic", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Tunic", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Vest", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Vest", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Short", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Short", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Bowtie", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Bowtie", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Coat", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Slacks", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Slacks", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Leggins", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Turtle Neck", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "Turtle Neck", Official = false, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "T-Shirt", Official = true, CanBeUsedAlone = false },
+                new TypeOfWear { Type = "T-Shirt", Official = false, CanBeUsedAlone = false }
                 );
 
             this.ConfigureUserIdentityRelations(builder);
