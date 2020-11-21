@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Wardrobe.Data;
 using WardrobeT.Data;
 using WardrobeT.Data.Models;
 using WardrobeT.Data.Models.Enums;
 using WardrobeT.Web.ViewModels.Users;
+using WardrobeT.Web.ViewModels.Wardrobe;
 
 namespace WardrobeT.Web.Controllers
 {
@@ -40,22 +43,17 @@ namespace WardrobeT.Web.Controllers
         [HttpGet]
         public IActionResult AddWear()
         {
-            //this.Db.Wears.Add(new Wear
-            //{
-            //    ImageUrl = "/images/top.webp",
-            //    Type = this.Db.TypesOfCloath.FirstOrDefault(),
-            //    Season = Season.Autumn,
-            //    Owner = user,
-            //});
-            //this.Db.SaveChanges();
-            return this.View();
+            var addWear = new AddWearModel
+            {
+                Seasons = new List<Season>() { Season.Autumn, Season.Spring, Season.Summer, Season.Winter },
+            };
+            return this.View(addWear);
         }
 
-        //[HttpPost]
-        //public IActionResult AddWear(Add)
-        //{
-        //    return this.View();
-        //}
-
+        [HttpPost]
+        public IActionResult AddWear(AddWearModel model)
+        {
+            return this.View(model);
+        }
     }
 }
