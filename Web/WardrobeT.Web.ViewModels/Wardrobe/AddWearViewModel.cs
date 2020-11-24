@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,21 +9,23 @@ using WardrobeT.Data.Models.Enums;
 
 namespace WardrobeT.Web.ViewModels.Wardrobe
 {
-    public class AddWearModel
+    public class AddWearViewModel
     {
-        public AddWearModel()
+        public AddWearViewModel()
         {
-            this.WearsType = new HashSet<SelectListItem>();
+            this.WearsType = new HashSet<TypeOfWear>();
             this.Seasons = new HashSet<Season>();
         }
 
-        public int[] WearsId { get; set; }
+        [Required]
+        [Display(Name = "Select image of the wear")]
+        public IFormFile WearImage { get; set; }
 
+        [Required]
         [Display(Name = "What is the tipe of the wear?")]
-        public ICollection<SelectListItem> WearsType { get; set; }
+        public ICollection<TypeOfWear> WearsType { get; set; }
 
-        public int[] SeasonsId { get; set; }
-
+        [Required]
         [Display(Name = "For which season is this wear?")]
         public ICollection<Season> Seasons { get; set; }
     }

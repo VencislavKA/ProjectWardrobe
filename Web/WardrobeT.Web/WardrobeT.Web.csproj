@@ -54,4 +54,8 @@
     <ProjectReference Include="..\WardrobeT.Web.Infrastructure\WardrobeT.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\WardrobeT.Web.ViewModels\WardrobeT.Web.ViewModels.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Wardrobe\" />
+  </ItemGroup>
 </Project>

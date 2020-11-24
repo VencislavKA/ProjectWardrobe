@@ -22,12 +22,13 @@
         }
 
         [HttpGet]
-        public IActionResult Profile()
+        public async Task<IActionResult> Profile()
         {
             ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
             List<Wear> wears = this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToList();
             List<Followers> followers = this.Db.Followers.Select(x => x).Where(x => x.Followed == user).ToList();
             List<Followers> following = this.Db.Followers.Select(x => x).Where(x => x.User == user).ToList();
+
 
             var profileViewModel = new ProfileViewModel
             {
@@ -40,7 +41,7 @@
             return this.View(profileViewModel);
         }
 
-        public IActionResult Notifications()
+        public async Task<IActionResult> Notifications()
         {
             return this.View();
         }

@@ -9,22 +9,22 @@ namespace WardrobeT.Web.Controllers
 {
     public class FriendsController : Controller
     {
-        public IActionResult Followers()
+        public async Task<IActionResult> Followers()
         {
             return this.View();
         }
 
-        public IActionResult Following()
+        public async Task<IActionResult> Following()
         {
             return this.View();
         }
 
-        public IActionResult MyFriends()
+        public async Task<IActionResult> MyFriends()
         {
             return this.View();
         }
 
-        public IActionResult FindFrind()
+        public async Task<IActionResult> FindFrind()
         {
             return this.View();
         }

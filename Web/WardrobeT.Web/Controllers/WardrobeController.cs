@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Wardrobe.Data;
 using WardrobeT.Data;
@@ -16,18 +20,20 @@ namespace WardrobeT.Web.Controllers
     public class WardrobeController : Controller
     {
         public ApplicationDbContext Db { get; }
+        public IHostingEnvironment Environment { get; }
 
-        public WardrobeController(ApplicationDbContext db)
+        public WardrobeController(ApplicationDbContext db, IHostingEnvironment environment)
         {
             Db = db;
+            Environment = environment;
         }
 
-        public IActionResult Outfits()
+        public async Task<IActionResult> Outfits()
         {
             return this.View();
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
             List<Wear> wears = this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToList();
@@ -41,19 +47,70 @@ namespace WardrobeT.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddWear()
+        public async Task<IActionResult> AddWear()
         {
-            var addWear = new AddWearModel
+            var addWear = new AddWearViewModel
             {
+                WearsType = this.Db.TypesOfWears.Select(x => x).ToList(),
                 Seasons = new List<Season>() { Season.Autumn, Season.Spring, Season.Summer, Season.Winter },
             };
             return this.View(addWear);
         }
 
         [HttpPost]
-        public IActionResult AddWear(AddWearModel model)
+        public async Task<IActionResult> AddWear(AddWearInputModel model)
         {
-            return this.View(model);
+            //proveri dali v snimkata nqma zlonameren kod
+            string imagePath = StoreFileAsync(model.WearImage).Result;
+            if (imagePath == null)
+            {
+                return this.Redirect("AddWear");
+            }
+            var type = this.Db.TypesOfWears.FirstOrDefault(x => x.Id == model.WearType);
+            Season Season;
+            Enum.TryParse(model.Season,true,out Season);
+            ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
+            var wear = new Wear {
+                ImageUrl = imagePath,
+                Type = type,
+                Season = Season,
+                Owner = user,
+            };
+            this.Db.Wears.AddAsync(wear);
+            this.Db.SaveChanges();
+            return this.Redirect("Index");
+        }
+
+        private async Task<string> StoreFileAsync(IFormFile file)
+        {
+            if (file != null && file.Length > 0)
+            {
+                var imagePath = @"\Wardrobe\Images\";
+                var uploadPath = Environment.WebRootPath + imagePath;
+                
+                if (!Directory.Exists(uploadPath))
+                {
+                    Directory.CreateDirectory(uploadPath);
+                }
+
+                var uniqFileName = Guid.NewGuid().ToString();
+                var filename = Path.GetFileName(uniqFileName + "." + file.FileName.Split(".")[1].ToLower());
+                string fullPath = uploadPath + filename;
+
+                imagePath = imagePath + @"\";
+                var filePath = @".." + Path.Combine(imagePath, filename);
+
+                using (var fileStream = new FileStream(fullPath, FileMode.Create))
+                {
+                    await file.CopyToAsync(fileStream);
+                }
+
+                return filePath;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

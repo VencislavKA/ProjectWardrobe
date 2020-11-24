@@ -7,6 +7,7 @@ namespace WardrobeT.Data.Models
     using WardrobeT.Data.Common.Models;
 
     using Microsoft.AspNetCore.Identity;
+    using System.Runtime.CompilerServices;
 
     public class ApplicationUser : IdentityUser<string>, IAuditInfo, IDeletableEntity
     {

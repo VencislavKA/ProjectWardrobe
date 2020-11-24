@@ -9,25 +9,16 @@
     <hr class="mt-2 mb-5">
 
     <div class="row text-center text-lg-left">
-        @if (Model.Wears.Count == 0)
+
+        @foreach (var item in Model.Wears)
         {
-            <div class="w-100">
-                <p class="text-center text-muted mt-5">
-                    No clothes added yet
-                </p>
+            <div class="col-lg-3 col-md-4 col-6">
+                <a class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
+                </a>
             </div>
         }
-        else
-        {
-            @foreach (var item in Model.Wears)
-            {
-                <div class="col-lg-3 col-md-4 col-6">
-                    <a class="d-block mb-4 h-100">
-                        <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
-                    </a>
-                </div>
-            }
-        }
+
         <div class="col-lg-3 col-md-4 col-6">
             <a class="d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddWear">
                 <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.6">
