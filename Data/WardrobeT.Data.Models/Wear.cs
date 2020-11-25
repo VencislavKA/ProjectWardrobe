@@ -25,9 +25,9 @@
         public Season Season { get; set; }
 
         [Required]
-        public ApplicationUser Owner { get; set; }
+        public Color Color { get; set; }
 
-        //[Required]
-        //public Style Style { get; set; }
+        [Required]
+        public ApplicationUser Owner { get; set; }
     }
 }

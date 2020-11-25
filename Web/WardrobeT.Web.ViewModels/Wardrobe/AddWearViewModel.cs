@@ -26,6 +26,10 @@ namespace WardrobeT.Web.ViewModels.Wardrobe
         public ICollection<TypeOfWear> WearsType { get; set; }
 
         [Required]
+        [Display(Name = "What is the color of the wear?")]
+        public ICollection<Color> Colors { get; set; }
+
+        [Required]
         [Display(Name = "For which season is this wear?")]
         public ICollection<Season> Seasons { get; set; }
     }

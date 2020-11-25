@@ -468,3 +468,4 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Ward
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs

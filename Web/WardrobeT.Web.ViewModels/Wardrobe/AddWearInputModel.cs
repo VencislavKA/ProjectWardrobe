@@ -15,6 +15,9 @@ namespace WardrobeT.Web.ViewModels.Wardrobe
         public string WearType { get; set; }
 
         [Required]
+        public string Color { get; set; }
+
+        [Required]
         public string Season { get; set; }
     }
 }

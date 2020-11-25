@@ -51,7 +51,11 @@ namespace WardrobeT.Web.Controllers
         {
             var addWear = new AddWearViewModel
             {
-                WearsType = this.Db.TypesOfWears.Select(x => x).ToList(),
+                WearsType = this.Db.TypesOfWears.Select(x => x).OrderBy(x => x.Type).ToList(),
+                Colors = new List<Color> { Color.Amber, Color.Aqua, Color.Black, Color.Blue, Color.Blue_gray, Color.Brown,
+                    Color.Coral, Color.Dark_green, Color.Eed, Color.Green, Color.Grey, Color.Indigo, Color.Lime, Color.Maroon, Color.Mustard,
+                    Color.Navy, Color.Orange, Color.Peach, Color.Pea_green, Color.Pink, Color.Purple, Color.Teal, Color.Violet, Color.White,
+                    Color.Yellow },
                 Seasons = new List<Season>() { Season.Autumn, Season.Spring, Season.Summer, Season.Winter },
             };
             return this.View(addWear);
@@ -68,12 +72,15 @@ namespace WardrobeT.Web.Controllers
             }
             var type = this.Db.TypesOfWears.FirstOrDefault(x => x.Id == model.WearType);
             Season Season;
+            Data.Models.Enums.Color Color;
             Enum.TryParse(model.Season,true,out Season);
+            Enum.TryParse(model.Color,true,out Color);
             ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
             var wear = new Wear {
                 ImageUrl = imagePath,
                 Type = type,
                 Season = Season,
+                Color = Color,
                 Owner = user,
             };
             this.Db.Wears.AddAsync(wear);
@@ -87,7 +94,7 @@ namespace WardrobeT.Web.Controllers
             {
                 var imagePath = @"\Wardrobe\Images\";
                 var uploadPath = Environment.WebRootPath + imagePath;
-                
+
                 if (!Directory.Exists(uploadPath))
                 {
                     Directory.CreateDirectory(uploadPath);
