@@ -78,7 +78,7 @@
                 else if (user.NormalizedUserName.Contains(search.ToUpper()))
                 {
                     //if the user followes the searced user
-                    if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName) == null)
+                    if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
                     {
                         searchResult.Users.Add(new SearchProfile
                         {
