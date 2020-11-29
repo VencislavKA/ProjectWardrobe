@@ -2,9 +2,36 @@
 @{
     ViewData["Title"] = "Search";
 }
+<div class="row">
 
-@foreach (var item in collection)
-{
+    @if (Model.Users.Count == 0)
+    {
+        <h5 class="mt-4 text-muted">No search result</h5>
+    }
+    @foreach (var item in Model.Users)
+    {
+        <div class="col">
+            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                <img src="/images/top.webp" class="card-img-top" alt="This image can't be loaded">
+                <div class="card-body text-center">
+                    <h5>@item.Profile</h5>
+                    <div class="text-center">
+                        @if (item.IsFollowed == false)
+                        {
+                            <a class="btn btn-danger" href="/Home/Follow?FollowId=@item.ProfileId&&s=@Model.Search">Follow</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-dark">Following</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+     }
+    </div>
+<script>
+    function follow() {
 
-}
-
+    }
+</script>

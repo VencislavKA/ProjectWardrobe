@@ -21,7 +21,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+            <div class="container w-100">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Wardrobe</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -42,13 +42,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Notifications">Notifications<span class="badge badge-light">4</span></a>
                         </li>
+                        <form class="form-inline my-2 my-lg-0" method="get" action="@Url.Action("Search","Home")">
+                            <button class="btn btn-outline-primary my-2 my-sm-0 w-auto" type="submit">Search</button>
+                            <input class="form-control mr-sm-2 ml-1 w-auto" type="search" placeholder="Search" aria-label="Search" name="search">
+                        </form>
                     </ul>
                 </div>
             </div>
-            <form class="form-inline my-2 my-lg-0 position-absolute" method="get" action="@Url.Action("Search","Home")">
-                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                <input class="form-control mr-sm-2 ml-1" type="search" placeholder="Search" aria-label="Search" name="search">
-            </form>
         </nav>
     </header>
     <div class="container">
