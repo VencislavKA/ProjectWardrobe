@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using WardrobeT.Data.Models;
+using Microsoft.AspNetCore.Server.IIS.Core;
 
 namespace WardrobeT.Web.Areas.Identity.Pages.Account
 {
@@ -53,7 +54,7 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account
             [Display(Name = "Remember me?")]
             public bool RememberMe { get; set; }
         }
-
+        
         public async Task OnGetAsync(string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(ErrorMessage))

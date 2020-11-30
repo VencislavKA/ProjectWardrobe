@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
     using WardrobeT.Data;
     using WardrobeT.Data.Models;
@@ -39,6 +39,17 @@
                 Following = following,
             };
             return this.View(profileViewModel);
+        }
+        public async Task<IActionResult> SetProfilePicture()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SetProfilePicture(IFormFile profilePic)
+        {
+
+            return this.View();
         }
 
         public async Task<IActionResult> Notifications()

@@ -67,7 +67,7 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
         }
-
+        
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
@@ -104,7 +104,7 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account
                     else
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        return this.LocalRedirect(returnUrl);
                     }
                 }
                 foreach (var error in result.Errors)

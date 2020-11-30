@@ -73,7 +73,6 @@
             {
                 if (user.UserName == this.User.Identity.Name)
                 {
-
                 }
                 else if (user.NormalizedUserName.Contains(search.ToUpper()))
                 {
