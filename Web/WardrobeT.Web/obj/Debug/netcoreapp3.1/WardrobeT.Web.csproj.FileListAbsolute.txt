@@ -444,7 +444,6 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Ward
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.pdb
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.genruntimeconfig.cache
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
@@ -470,3 +469,5 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Micr
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\SetProfilePicture.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\MyProfile.cshtml.g.cs

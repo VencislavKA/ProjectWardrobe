@@ -38,7 +38,7 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> Follow(string FollowId, string s)
+        public async Task<IActionResult> Follow(string FollowId, string url)
         {
             var user = this.Db.Users.Select(x => x).Where(x => x.UserName == this.User.Identity.Name).FirstOrDefault();
             if (this.Db.Users.Find(FollowId) == null)
@@ -55,7 +55,10 @@
                 };
                 this.Db.Followers.AddAsync(followers);
                 this.Db.SaveChanges();
-                return this.Redirect($"/Home/Search?search=" + s);
+                //
+                return this.Redirect(""+url);
+                //return this.Redirect($"/Home/Search?search=" + s);
+                //
             }
             return this.RedirectToAction("Error");
         }
@@ -64,7 +67,7 @@
         {
             List<ApplicationUser> users = this.Db.Users.Select(x => x).ToList();
             var searchResult = new SearchResultViewModel();
-            searchResult.Search = search;
+            searchResult.Search = "/Home/Search?search=" + search;
             if (string.IsNullOrWhiteSpace(search))
             {
                 return this.View(searchResult);
@@ -79,8 +82,9 @@
                     //if the user followes the searced user
                     if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
                     {
-                        searchResult.Users.Add(new SearchProfile
+                        searchResult.Users.Add(new User
                         {
+                            ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
                             IsFollowed = false,
@@ -88,8 +92,9 @@
                     }
                     else
                     {
-                        searchResult.Users.Add(new SearchProfile
+                        searchResult.Users.Add(new User
                         {
+                            ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
                             IsFollowed = true,

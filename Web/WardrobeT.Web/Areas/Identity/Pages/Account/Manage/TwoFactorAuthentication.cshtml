@@ -1,0 +1,46 @@
+﻿@page
+@model TwoFactorAuthenticationModel
+@{
+    ViewData["Title"] = "Change profile picture";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h1 class="text-center">@ViewData["Title"]</h1>
+<div class="row mt-5">
+    <div class="col">
+    </div>
+    <div class="col-6">
+        @foreach (var modelState in ViewData.ModelState.Values)
+        {
+            foreach (var error in modelState.Errors)
+            {
+                <div class="alert alert-danger">@error.ErrorMessage</div>
+            }
+        }
+        <form class="justify-content-center" method="post" enctype="multipart/form-data">
+            <div class="form-group text-center">
+                <div class="custom-file">
+                    <input name="profilePic" type="file" onchange="loadFile(event)" class="custom-file-input">
+                    <label class="custom-file-label" for="WearImage">Choose your profile picture</label>
+                </div>
+                <img class="mt-3 img-fluid img-thumbnail w-100 mt-3" id="output" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </form>
+    </div>
+    <div class="col">
+    </div>
+</div>
+<script>
+    var image = document.getElementById('output').style.display = "none";
+    var loadFile = function (event) {
+        document.getElementById('output').style.display = "initial"
+        var image = document.getElementById('output');
+        image.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -14,6 +14,7 @@ namespace WardrobeT.Web.ViewModels.Users
             this.Followers = new HashSet<Followers>();
             this.Following = new HashSet<Followers>();
         }
+        public string ProfilePicUrl { get; set; }
 
         public string Username { get; set; }
 

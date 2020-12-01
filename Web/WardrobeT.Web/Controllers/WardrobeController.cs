@@ -65,7 +65,7 @@ namespace WardrobeT.Web.Controllers
         public async Task<IActionResult> AddWear(AddWearInputModel model)
         {
             //proveri dali v snimkata nqma zlonameren kod
-            string imagePath = StoreFileAsync(model.WearImage).Result;
+            string imagePath = this.StoreFileAsync(model.WearImage).Result;
             if (imagePath == null)
             {
                 return this.Redirect("AddWear");
@@ -93,7 +93,7 @@ namespace WardrobeT.Web.Controllers
             if (file != null && file.Length > 0)
             {
                 var imagePath = @"\Wardrobe\Images\";
-                var uploadPath = Environment.WebRootPath + imagePath;
+                var uploadPath = this.Environment.WebRootPath + imagePath;
 
                 if (!Directory.Exists(uploadPath))
                 {

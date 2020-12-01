@@ -22,13 +22,12 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> Profile()
+        public async Task<IActionResult> MyProfile()
         {
             ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
             List<Wear> wears = this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToList();
             List<Followers> followers = this.Db.Followers.Select(x => x).Where(x => x.Followed == user).ToList();
             List<Followers> following = this.Db.Followers.Select(x => x).Where(x => x.User == user).ToList();
-
 
             var profileViewModel = new ProfileViewModel
             {
@@ -37,6 +36,7 @@
                 Wears = wears,
                 Followers = followers,
                 Following = following,
+                ProfilePicUrl = user.ProfilePicture,
             };
             return this.View(profileViewModel);
         }
@@ -48,7 +48,6 @@
         [HttpPost]
         public async Task<IActionResult> SetProfilePicture(IFormFile profilePic)
         {
-
             return this.View();
         }
 

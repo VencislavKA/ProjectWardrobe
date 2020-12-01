@@ -12,13 +12,20 @@
     {
         <div class="col">
             <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="/images/top.webp" class="card-img-top" alt="This image can't be loaded">
+                @if (item.ProfilePictureUrl != null)
+                {
+                    <img src="@item.ProfilePictureUrl" class="img-fluid">
+                }
+                else
+                {
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="img-fluid">
+                }
                 <div class="card-body text-center">
                     <h5>@item.Profile</h5>
                     <div class="text-center">
                         @if (item.IsFollowed == false)
                         {
-                            <a class="btn btn-danger" href="/Home/Follow?FollowId=@item.ProfileId&&s=@Model.Search">Follow</a>
+                            <a class="btn btn-danger" href="/Home/Follow?FollowId=@item.ProfileId&&url=@Model.Search">Follow</a>
                         }
                         else
                         {

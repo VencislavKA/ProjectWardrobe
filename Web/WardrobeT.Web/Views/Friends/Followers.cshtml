@@ -1,47 +1,53 @@
-﻿
+﻿@model FollowViewModel
 @{
     ViewData["Title"] = "Followers";
 }
 
-<h1>Followers</h1>
+<h1>@ViewData["Title"]</h1>
 
 <div class="container">
     <p class="text-right text-muted">
-        Count: (somenumber)
+        count: @Model.Profiles.Count
     </p>
     <div class="row ">
-        <div class="col">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="/images/top.webp" class="card-img-top" alt="This image can't be loaded">
-                <div class="card-body text-center">
-                    <h5>John Doe</h5>
-                    <div class="text-center">
-                        <button class="btn btn-danger">Follow</button>
+        @if (Model.Profiles.Count == 0)
+        {
+            <div class="w-100">
+                <p class="text-center text-muted mt-5">
+                    No clothes added yet
+                </p>
+            </div>
+        }
+        else
+        {
+            @foreach (var item in Model.Profiles)
+            {
+                <div class="col">
+                    <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                        @if (item.ProfilePictureUrl != null)
+                        {
+                            <img src="@item.ProfilePictureUrl"class="img-fluid">
+                        }
+                        else
+                        {
+                            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" class="img-fluid">
+                        }
+                        <div class="card-body text-center">
+                            <h5>@item.Profile</h5>
+                            <div class="text-center">
+                                @if (item.IsFollowed == false)
+                                {
+                                    <a class="btn btn-danger" href="/Home/Follow?FollowId=@item.ProfileId&&url=/Friends/Followers">Follow</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-dark">Following</a>
+                                }
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="/images/top.webp" class="card-img-top" alt="This image can't be loaded">
-                <div class="card-body text-center">
-                    <h5>John Doe</h5>
-                    <div class="text-center">
-                        <button class="btn btn-danger">Follow</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
-                <img src="/images/top.webp" class="card-img-top" alt="This image can't be loaded">
-                <div class="card-body text-center">
-                    <h5>John Doe</h5>
-                    <div class="text-center">
-                        <button class="btn btn-danger">Follow</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+        }
     </div>
 </div>
