@@ -40,20 +40,5 @@
             };
             return this.View(profileViewModel);
         }
-        public async Task<IActionResult> SetProfilePicture()
-        {
-            return this.View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> SetProfilePicture(IFormFile profilePic)
-        {
-            return this.View();
-        }
-
-        public async Task<IActionResult> Notifications()
-        {
-            return this.View();
-        }
     }
 }

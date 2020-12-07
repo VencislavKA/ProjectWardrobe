@@ -1,5 +1,6 @@
 ﻿namespace WardrobeT.Web.Controllers
 {
+    using System;
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
@@ -8,7 +9,9 @@
     using Microsoft.AspNetCore.Mvc;
     using WardrobeT.Data;
     using WardrobeT.Data.Models;
+    using WardrobeT.Data.Models.Enums;
     using WardrobeT.Web.ViewModels;
+    using WardrobeT.Web.ViewModels.Home;
     using WardrobeT.Web.ViewModels.Search;
 
     public class HomeController : BaseController
@@ -22,7 +25,29 @@
 
         public async Task<IActionResult> Index()
         {
-            return this.View();
+            //var MyWears = this.Db.Wears.Select(x => x).Where(x => ).ToList();
+            List<Wear> tops = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.top).ToList();
+            List<Wear> middles = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.middle).ToList();
+            List<Wear> bottoms = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.bottom).ToList();
+            var indexHomeViewModel = new IndexHomeViewModel();
+            if (tops.Count() == 0 || middles.Count() == 0 || bottoms.Count() == 0)
+            {
+                return this.View();
+            }
+            var randum1 = new Random();
+            var randum2 = new Random();
+            var randum3 = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                indexHomeViewModel.Outfits.Add(new Outfit()
+                {
+                    Top = tops[randum1.Next(0, tops.Count)],
+                    Middle = middles[randum2.Next(0, middles.Count)],
+                    Battom = bottoms[randum3.Next(0, bottoms.Count)],
+                });
+            }
+
+            return this.View(indexHomeViewModel);
         }
 
         public async Task<IActionResult> Privacy()

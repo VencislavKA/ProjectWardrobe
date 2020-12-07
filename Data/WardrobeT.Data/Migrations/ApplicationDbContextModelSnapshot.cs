@@ -131,6 +131,9 @@ namespace WardrobeT.Data.Migrations
                     b.Property<bool>("CanBeUsedAlone")
                         .HasColumnType("bit");
 
+                    b.Property<int>("Cover")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -151,304 +154,306 @@ namespace WardrobeT.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ce0d5f3a-6c6d-4753-8560-7daef4cd755f",
+                            Id = "4b77bb69-a28f-486b-aa84-bbc3cef28779",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Tracksuit top"
                         },
                         new
                         {
-                            Id = "b5bff2a6-9d36-45a2-bec5-4b04bec54404",
+                            Id = "31adf14e-8142-493b-94b6-a9e2167ec5cc",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Tracksuit bottoms"
                         },
                         new
                         {
-                            Id = "fa8e34a6-8ca3-4811-9f60-a786886e7d01",
+                            Id = "6edfa3bd-3a5f-4e21-9d06-1cf06cae44af",
                             CanBeUsedAlone = true,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official dress"
                         },
                         new
                         {
-                            Id = "21284a34-6aec-4765-a2f9-03e86cf24325",
+                            Id = "a4b78b6b-af71-4f92-9b58-aa97c31dbaa2",
                             CanBeUsedAlone = true,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Dress"
                         },
                         new
                         {
-                            Id = "8e524ee3-2b23-4c1f-a83a-6c2515106ef8",
+                            Id = "b11637a0-6d2e-4f3b-9bb8-c5a982705683",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official jacket"
                         },
                         new
                         {
-                            Id = "f0f7ff7f-f99d-4e68-ad27-1214281c8a20",
+                            Id = "beeee5f7-0318-4cdb-b192-c681ac88123c",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Jacket"
                         },
                         new
                         {
-                            Id = "e12d8999-a10c-4a42-ac2e-c2f80b3acbe7",
+                            Id = "a4885622-a1d5-4ac6-99f8-522304e5eb5f",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official knit Shirt"
                         },
                         new
                         {
-                            Id = "479ee933-f34b-4bde-9b16-e8d4e65d1b1a",
+                            Id = "77ea886d-6c0d-45af-8742-d7ad36fa677e",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Knit Shirt"
                         },
                         new
                         {
-                            Id = "c8a4bac7-1fc0-404d-b01d-e8f7bbb24d76",
+                            Id = "9200553b-1bb2-4fa1-8bad-42997ad9be89",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official sirt"
                         },
                         new
                         {
-                            Id = "4a262b95-b96e-40ea-b3f7-da0d121fc993",
+                            Id = "6d3e0b7e-c909-4d4b-8dbc-e8cbb445595a",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Shirt"
                         },
                         new
                         {
-                            Id = "c1cb75b9-0ab2-417b-a8c4-613a63767651",
+                            Id = "f7670065-c2d3-4ad9-b03d-b1af3d9b0931",
                             CanBeUsedAlone = true,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Suit"
                         },
                         new
                         {
-                            Id = "99cdbfd9-8d9d-4b66-a454-45251390395b",
+                            Id = "0a3ec80a-eba1-4e85-b289-1ce00e12e605",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official blouse"
                         },
                         new
                         {
-                            Id = "ef22ab4a-0445-438d-8e39-c17fc7440cbd",
+                            Id = "092dd9ab-d590-4611-b3fc-c6793b93e5eb",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Blouse"
                         },
                         new
                         {
-                            Id = "caaa9716-e5be-4d46-be45-733a5e5a7045",
+                            Id = "9fcc1081-c5e9-41e3-894e-6f6833413f91",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Sport Shirt"
                         },
                         new
                         {
-                            Id = "73bb20da-8290-4065-9b63-e4969648db9b",
+                            Id = "bb683cbc-67cb-4741-aec0-19946a55406f",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official skirt"
                         },
                         new
                         {
-                            Id = "8dc5420a-ec04-43c6-b855-9766f4034a96",
+                            Id = "ce191a51-b5a6-4b3e-b42d-31b0e5b9517b",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Skirt"
                         },
                         new
                         {
-                            Id = "bd6bae70-d499-4106-b418-32abfefd4d03",
+                            Id = "b5b8857a-d20a-4217-8d83-71a28ee6ce36",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official blazer"
                         },
                         new
                         {
-                            Id = "399800bd-bcfa-4b00-af16-74d67e248fb9",
+                            Id = "e93f123e-b180-42b3-843d-9ea22484fe83",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Blazer"
                         },
                         new
                         {
-                            Id = "0aa6336b-c1d1-4d84-9960-a1f5428ec606",
+                            Id = "3e9c0f71-c3c3-4fdd-b156-1cfe28df3603",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official jeans"
                         },
                         new
                         {
-                            Id = "1be64e12-2e27-4288-9ffe-224fc8720a11",
+                            Id = "e27f24b3-f6fe-4811-a61b-7a78dc976aa1",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Jeans"
                         },
                         new
                         {
-                            Id = "b6cdadcf-4fcf-408a-a80e-e5a55840f182",
+                            Id = "93519ef4-6899-49b5-a43e-459847ae2f5f",
                             CanBeUsedAlone = false,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Official = true,
-                            Type = "Official tie"
-                        },
-                        new
-                        {
-                            Id = "be10b577-5998-4ac5-bd81-3518ac11996e",
-                            CanBeUsedAlone = false,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Official = false,
-                            Type = "Tie"
-                        },
-                        new
-                        {
-                            Id = "5b9aab08-2b6d-4120-825e-4afb2437ab79",
-                            CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official tunic"
                         },
                         new
                         {
-                            Id = "0177dedd-c38a-4715-9307-fdf051c76e41",
+                            Id = "a750e2a5-423d-4ab7-8bf4-e79490930278",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Tunic"
                         },
                         new
                         {
-                            Id = "515ea751-685c-407c-8ada-38afdf5f53c2",
+                            Id = "686e1614-2b9e-4451-a04d-7fab9e5dda7c",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official vest"
                         },
                         new
                         {
-                            Id = "8392950f-57ad-417a-ab44-b78a20e610b3",
+                            Id = "e7a43907-3816-4fa5-8c36-0d3906617daa",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Vest"
                         },
                         new
                         {
-                            Id = "7faf5502-aeae-4c72-9f5d-5d4d50f02051",
+                            Id = "19cfa1af-2c7e-40fc-9500-bc1fd9089b8d",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official short"
                         },
                         new
                         {
-                            Id = "3ed9522d-26eb-433f-8400-15996bbd5157",
+                            Id = "d40d2a39-4fba-44a2-9ba8-9b8a52c6c57d",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Short"
                         },
                         new
                         {
-                            Id = "3f5716d5-30f1-40db-a680-0059a1398fd1",
+                            Id = "b7310d27-a5d0-4182-96b1-e58dcc572852",
                             CanBeUsedAlone = false,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Official = true,
-                            Type = "Official bowtie"
-                        },
-                        new
-                        {
-                            Id = "4b38667b-bd9f-4d11-aab6-186bd5f0f056",
-                            CanBeUsedAlone = false,
-                            CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Official = false,
-                            Type = "Bowtie"
-                        },
-                        new
-                        {
-                            Id = "09d021db-0d72-41ea-99a9-4cbe0149b8ac",
-                            CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Coat"
                         },
                         new
                         {
-                            Id = "54ddd7f4-10fb-4632-81af-d38c4cdfa468",
+                            Id = "fa4698d1-3054-4131-b289-0c9155062eee",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official slacks"
                         },
                         new
                         {
-                            Id = "7a5701e4-95b0-46c7-af20-a3f554310c74",
+                            Id = "e3479847-3363-4e74-8fba-c14015d899aa",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Slacks"
                         },
                         new
                         {
-                            Id = "7d59ef92-728a-41a4-bfc7-1a8bfa4c421f",
+                            Id = "2ca5dc38-511d-47a0-b367-893e030ba629",
                             CanBeUsedAlone = false,
+                            Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "Leggins"
                         },
                         new
                         {
-                            Id = "16616f79-c151-4c6a-b251-572344ea096b",
+                            Id = "21e1ff81-81e8-49a4-823b-a75fb8ffbaef",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
-                            Type = "Official turtle Neck"
+                            Type = "Official turtleneck"
                         },
                         new
                         {
-                            Id = "864132cc-fbf1-4e0e-be8b-8ea769d0221e",
+                            Id = "44408133-a177-44e1-95ec-17eb4998c7ce",
                             CanBeUsedAlone = false,
+                            Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
-                            Type = "Turtle Neck"
+                            Type = "Turtleneck"
                         },
                         new
                         {
-                            Id = "f3bfdfbd-35e7-472f-9596-4f7c023cb871",
+                            Id = "26a87b20-f5de-44a9-b0d8-18f7ade3b0aa",
                             CanBeUsedAlone = false,
+                            Cover = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = true,
                             Type = "Official T-Shirt"
                         },
                         new
                         {
-                            Id = "d01bd7b4-a362-4c59-aaa2-e9c1c4fa3112",
+                            Id = "60bf2c31-1b39-4b10-a027-82da72f321bc",
                             CanBeUsedAlone = false,
+                            Cover = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Official = false,
                             Type = "T-Shirt"
@@ -611,25 +616,31 @@ namespace WardrobeT.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("BatomImage")
+                    b.Property<string>("BattomId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MiddleImage")
+                    b.Property<string>("MiddleId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TopImage")
+                    b.Property<string>("TopId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BattomId");
+
+                    b.HasIndex("MiddleId");
+
+                    b.HasIndex("TopId");
 
                     b.ToTable("Outfits");
                 });
@@ -766,6 +777,27 @@ namespace WardrobeT.Data.Migrations
                     b.HasOne("WardrobeT.Data.Models.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("WardrobeT.Data.Models.Outfit", b =>
+                {
+                    b.HasOne("WardrobeT.Data.Models.Wear", "Battom")
+                        .WithMany()
+                        .HasForeignKey("BattomId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WardrobeT.Data.Models.Wear", "Middle")
+                        .WithMany()
+                        .HasForeignKey("MiddleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WardrobeT.Data.Models.Wear", "Top")
+                        .WithMany()
+                        .HasForeignKey("TopId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

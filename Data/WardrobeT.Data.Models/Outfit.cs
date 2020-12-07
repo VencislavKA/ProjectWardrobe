@@ -13,12 +13,12 @@
         }
 
         [Required]
-        public string TopImage { get; set; }
+        public Wear Top { get; set; }
 
         [Required]
-        public string MiddleImage { get; set; }
+        public Wear Middle { get; set; }
 
         [Required]
-        public string BatomImage { get; set; }
+        public Wear Battom { get; set; }
     }
 }
