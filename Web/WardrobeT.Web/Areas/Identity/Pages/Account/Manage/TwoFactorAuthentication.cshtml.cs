@@ -73,6 +73,7 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account.Manage
             string imagePath = this.StoreFileAsync(profilePic).Result;
             if (imagePath == null)
             {
+                StatusMessage = "error:Plese select a file!";
                 return RedirectToPage();
             }
             var user = this.context.Users.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();

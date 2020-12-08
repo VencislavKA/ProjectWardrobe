@@ -5,7 +5,18 @@
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
-<partial name="_StatusMessage" for="StatusMessage" />
+@if (Model.StatusMessage != null)
+{
+    string[] status = Model.StatusMessage.Split(':').ToArray();
+    if (status[0].ToLower() == "error")
+    {
+        <div class="alert alert-danger">@status[1]</div>
+    }
+    else
+    {
+        <partial name="_StatusMessage" model="Model.StatusMessage" />
+    }
+}
 <h1 class="text-center">@ViewData["Title"]</h1>
 <div class="row mt-5">
     <div class="col">
@@ -19,7 +30,7 @@
             }
         }
         <form class="justify-content-center" method="post" enctype="multipart/form-data">
-            <div class="form-group text-center">
+            <div class="form-group">
                 <div class="custom-file">
                     <input name="profilePic" type="file" onchange="loadFile(event)" class="custom-file-input">
                     <label class="custom-file-label" for="WearImage">Choose your profile picture</label>

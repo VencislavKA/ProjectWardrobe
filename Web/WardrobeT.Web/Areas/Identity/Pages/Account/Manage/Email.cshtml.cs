@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using WardrobeT.Data.Models;
+using WardrobeT.Data;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WardrobeT.Web.Areas.Identity.Pages.Account.Manage
 {
@@ -19,15 +21,18 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
+        private readonly ApplicationDbContext db;
 
         public EmailModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            ApplicationDbContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            this.db = db;
         }
 
         public string Username { get; set; }
@@ -78,19 +83,28 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account.Manage
         public async Task<IActionResult> OnPostChangeEmailAsync()
         {
             var user = await _userManager.GetUserAsync(User);
+            var email = await _userManager.GetEmailAsync(user);
+
             if (user == null)
             {
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-
-            if (!ModelState.IsValid)
+            else if (!ModelState.IsValid)
             {
                 await LoadAsync(user);
                 return Page();
             }
-
-            var email = await _userManager.GetEmailAsync(user);
-            if (Input.NewEmail != email)
+            else if (Input.NewEmail == email)
+            {
+                StatusMessage = "Your email is unchanged.";
+                return RedirectToPage();
+            }
+            else if (this.db.Users.Select(x => x.Email).ToList().Contains(Input.NewEmail))
+            {
+                StatusMessage = "error:This email is alredy taken";
+                return RedirectToPage();
+            }
+            else
             {
                 var userId = await _userManager.GetUserIdAsync(user);
                 var code = await _userManager.GenerateChangeEmailTokenAsync(user, Input.NewEmail);
@@ -99,17 +113,11 @@ namespace WardrobeT.Web.Areas.Identity.Pages.Account.Manage
                     pageHandler: null,
                     values: new { userId = userId, email = Input.NewEmail, code = code },
                     protocol: Request.Scheme);
-                await _emailSender.SendEmailAsync(
-                    Input.NewEmail,
-                    "Confirm your email",
-                    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-
-                StatusMessage = "Confirmation link to change email sent. Please check your email.";
+                this.db.Users.Find(user.Id).Email = Input.NewEmail;
+                await this.db.SaveChangesAsync();
+                StatusMessage = "Your email has been changed.";
                 return RedirectToPage();
             }
-
-            StatusMessage = "Your email is unchanged.";
-            return RedirectToPage();
         }
 
         public async Task<IActionResult> OnPostSendVerificationEmailAsync()

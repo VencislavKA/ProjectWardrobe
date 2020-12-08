@@ -32,7 +32,7 @@
             var indexHomeViewModel = new IndexHomeViewModel();
             if (tops.Count() == 0 || middles.Count() == 0 || bottoms.Count() == 0)
             {
-                return this.View();
+                return this.View(indexHomeViewModel);
             }
             var randum1 = new Random();
             var randum2 = new Random();
@@ -43,7 +43,7 @@
                 {
                     Top = tops[randum1.Next(0, tops.Count)],
                     Middle = middles[randum2.Next(0, middles.Count)],
-                    Battom = bottoms[randum3.Next(0, bottoms.Count)],
+                    Bottom = bottoms[randum3.Next(0, bottoms.Count)],
                 });
             }
 
@@ -80,11 +80,9 @@
                 };
                 this.Db.Followers.AddAsync(followers);
                 this.Db.SaveChanges();
-                //
                 return this.Redirect(""+url);
-                //return this.Redirect($"/Home/Search?search=" + s);
-                //
             }
+
             return this.RedirectToAction("Error");
         }
 
@@ -99,12 +97,9 @@
             }
             foreach (var user in users)
             {
-                if (user.UserName == this.User.Identity.Name)
+                if (user.NormalizedUserName.Contains(search.ToUpper()) && user.UserName != this.User.Identity.Name)
                 {
-                }
-                else if (user.NormalizedUserName.Contains(search.ToUpper()))
-                {
-                    //if the user followes the searced user
+                    // if the user followes the searced user
                     if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
                     {
                         searchResult.Users.Add(new User

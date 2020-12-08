@@ -19,6 +19,8 @@
         public Wear Middle { get; set; }
 
         [Required]
-        public Wear Battom { get; set; }
+        public Wear Bottom { get; set; }
+
+
     }
 }

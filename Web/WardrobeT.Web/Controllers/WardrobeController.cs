@@ -12,6 +12,7 @@ using Wardrobe.Data;
 using WardrobeT.Data;
 using WardrobeT.Data.Models;
 using WardrobeT.Data.Models.Enums;
+using WardrobeT.Services.Mapping;
 using WardrobeT.Web.ViewModels.Users;
 using WardrobeT.Web.ViewModels.Wardrobe;
 
@@ -34,6 +35,27 @@ namespace WardrobeT.Web.Controllers
         public async Task<IActionResult> Outfits()
         {
             return this.View();
+        }
+
+        public async Task<IActionResult> AddOutfit(string topId, string middleId, string bottomId)
+        {
+            var topWear = this.Db.Wears.Find(topId);
+            var middleWear = this.Db.Wears.Find(middleId);
+            var bottumWear = this.Db.Wears.Find(bottomId);
+            if (topWear != null && middleWear != null && bottumWear != null)
+            {
+                var user = this.Db.Users.Where(x => x.UserName == this.User.Identity.Name);
+                if (topWear.Owner == user)
+                {
+                    this.Db.Outfits.Add(new Outfit()
+                    {
+                        Top = topWear,
+                        Middle = middleWear,
+                        Bottom = bottumWear,
+                    });
+                }
+            }
+            return this.RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Index()
