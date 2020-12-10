@@ -1,8 +1,40 @@
-﻿
+﻿@model WardrobeT.Web.ViewModels.Wardrobe.OutfitsViewModel
 @{
     ViewData["Title"] = "Outfits";
 }
 
-<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">@ViewData["Title"]</h1>
+<div class="container">
 
-<hr class="mt-2 mb-5">
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">@ViewData["Title"]</h1>
+
+    <hr class="mt-2 mb-5">
+
+    <div class="row text-center text-lg-left">
+        @foreach (var item in Model.Outfits)
+        {
+            <div class="col-lg-3 col-md-4 col-6">
+                <div class="dropdown mt-3">
+                    <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="row ml-1 mr-1">
+                            <img class="img-fluid" src="@item.Top.ImageUrl" alt="Can't load this image" />
+                        </div>
+                        <div class="row ml-1 mr-1">
+                            <img class="img-fluid " src="@item.Middle.ImageUrl" alt="Can't load this image" />
+                        </div>
+                        <div class="row ml-1 mr-1">
+                            <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
+                        </div>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-danger" href="/Wardrobe/DeleteOutfit?id=@item.Id">Delete</a>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="col-lg-3 col-md-4 col-6 mt-3">
+            <button class="btn btn-light d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddOutfit">
+                <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.15">
+            </button>
+        </div>
+    </div>
+</div>

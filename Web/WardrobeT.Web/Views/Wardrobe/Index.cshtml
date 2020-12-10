@@ -14,16 +14,15 @@
         {
             <div class="col-lg-3 col-md-4 col-6">
                 <div class="dropdown">
-                    <button class="d-block mb-4 h-100" id="@item.Id">
+                    <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="@item.Id">
-                        <a class="dropdown-item">Delete</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-danger" href="/Wardrobe/DeleteWear?id=@item.Id">Delete</a>
                     </div>
                 </div>
             </div>
         }
-
         <div class="col-lg-3 col-md-4 col-6">
             <a class="d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddWear">
                 <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.2">

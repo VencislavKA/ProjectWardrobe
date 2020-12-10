@@ -21,6 +21,5 @@
         [Required]
         public Wear Bottom { get; set; }
 
-
     }
 }

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Wardrobe.Data;
 using WardrobeT.Data;
 using WardrobeT.Data.Models;
@@ -32,42 +33,51 @@ namespace WardrobeT.Web.Controllers
             this.Environment = environment;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Outfits()
         {
-            return this.View();
+            List<Outfit> outfits = await this.Db.Outfits.Where(x => x.Top.Owner.UserName == this.User.Identity.Name)
+                .Select(x => x)
+                .Include(x => x.Top)
+                .Include(x => x.Middle)
+                .Include(x => x.Bottom)
+                .ToListAsync();
+            var modelView = new OutfitsViewModel
+            {
+                Outfits = outfits,
+            };
+            return this.View(modelView);
         }
 
-        public async Task<IActionResult> AddOutfit(string topId, string middleId, string bottomId)
+        public async Task<IActionResult> AddOutfit(AddOutfitInputModel model)
         {
-            var topWear = this.Db.Wears.Find(topId);
-            var middleWear = this.Db.Wears.Find(middleId);
-            var bottumWear = this.Db.Wears.Find(bottomId);
+            Wear topWear = await this.Db.Wears.Where(x => x.Id == model.topId).Select(x => x).FirstOrDefaultAsync();
+            Wear middleWear = await this.Db.Wears.Where(x => x.Id == model.middleId).Select(x => x).FirstOrDefaultAsync();
+            Wear bottumWear = await this.Db.Wears.Where(x => x.Id == model.bottomId).Select(x => x).FirstOrDefaultAsync();
             if (topWear != null && middleWear != null && bottumWear != null)
             {
-                var user = this.Db.Users.Where(x => x.UserName == this.User.Identity.Name);
+                var user = this.Db.Users.Where(x => x.UserName == this.User.Identity.Name).Select(x => x).FirstOrDefault();
                 if (topWear.Owner == user)
                 {
-                    this.Db.Outfits.Add(new Outfit()
+                    await this.Db.Outfits.AddAsync(new Outfit()
                     {
                         Top = topWear,
                         Middle = middleWear,
                         Bottom = bottumWear,
                     });
+                    await this.Db.SaveChangesAsync();
                 }
             }
-            return this.RedirectToAction("Index", "Home");
+            return this.Redirect(model.url);
         }
 
         public async Task<IActionResult> Index()
         {
-            ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
-            List<Wear> wears = this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToList();
-
+            List<Wear> wears = await this.Db.Wears.Select(x => x).Where(x => x.Owner.UserName == this.User.Identity.Name).ToListAsync();
             var wardrobeViewModel = new WardrobeViewModel
             {
                 Wears = wears,
             };
-
             return this.View(wardrobeViewModel);
         }
 
@@ -114,17 +124,18 @@ namespace WardrobeT.Web.Controllers
                 Color = color,
                 Owner = user,
             };
-            _ = this.Db.Wears.AddAsync(wear);
-            this.Db.SaveChanges();
+            await this.Db.Wears.AddAsync(wear);
+            await this.Db.SaveChangesAsync();
             return this.Redirect("Index");
         }
-
-        [HttpPost]
+        
         public async Task<IActionResult> DeleteWear(string id)
         {
-            if (this.Db.Wears.Find(id) != null)
+            if (this.Db.Wears.Find(id) != null &&
+                this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Id == id).FirstOrDefault() != null)
             {
                 this.Db.Wears.Remove(this.Db.Wears.Find(id));
+                this.Db.SaveChanges();
             }
             return this.RedirectToAction("Index", "Wardrobe");
         }
