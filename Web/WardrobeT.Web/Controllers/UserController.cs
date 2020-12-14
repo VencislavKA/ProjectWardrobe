@@ -6,6 +6,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using WardrobeT.Data;
     using WardrobeT.Data.Models;
     using WardrobeT.Data.Models.Enums;
@@ -24,10 +25,14 @@
         [HttpGet]
         public async Task<IActionResult> MyProfile()
         {
-            ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
-            List<Wear> wears = this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToList();
-            List<Followers> followers = this.Db.Followers.Select(x => x).Where(x => x.Followed == user).ToList();
-            List<Followers> following = this.Db.Followers.Select(x => x).Where(x => x.User == user).ToList();
+            //vsqko da mine kato metod ot profile servic-a
+                ApplicationUser user = await this.Db.Users.FirstOrDefaultAsync(x => x.UserName == this.User.Identity.Name);
+                List<Wear> wears = await this.Db.Wears.Select(x => x).Where(x => x.Owner == user).ToListAsync();
+                //nenujen transfer move samo counta da slagam vmesto celiq list ot obekt
+                    List<Followers> followers = await this.Db.Followers.Select(x => x).Where(x => x.Followed == user).ToListAsync();
+                    List<Followers> following = await this.Db.Followers.Select(x => x).Where(x => x.User == user).ToListAsync();
+                //
+            //
 
             var profileViewModel = new ProfileViewModel
             {

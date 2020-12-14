@@ -36,7 +36,9 @@
 
         public async Task<IActionResult> Index()
         {
-            List<Wear> wears = await this.Db.Wears.Select(x => x).Where(x => x.Owner.UserName == this.User.Identity.Name).ToListAsync();
+            // as get mywears
+                List<Wear> wears = await this.Db.Wears.Select(x => x).Where(x => x.Owner.UserName == this.User.Identity.Name).ToListAsync();
+            //
             var wardrobeViewModel = new WardrobeViewModel
             {
                 Wears = wears,
@@ -49,7 +51,7 @@
         {
             var addWear = new AddWearViewModel
             {
-                WearsType = this.Db.TypesOfWears.Select(x => x).OrderBy(x => x.Type).ToList(),
+                WearsType = await this.Db.TypesOfWears.Select(x => x).OrderBy(x => x.Type).ToListAsync(),
                 Colors = new List<Color>
                 {
                     Color.Amber, Color.Aqua, Color.Black, Color.Blue, Color.Blue_gray, Color.Brown,
@@ -72,7 +74,7 @@
             {
                 return this.Redirect("AddWear");
             }
-
+            //as createWear
             var type = this.Db.TypesOfWears.FirstOrDefault(x => x.Id == model.WearType);
             Season season;
             Color color;
@@ -89,6 +91,7 @@
             };
             await this.Db.Wears.AddAsync(wear);
             await this.Db.SaveChangesAsync();
+            //
             return this.Redirect("Index");
         }
 
@@ -97,12 +100,15 @@
             if (await this.Db.Wears.FindAsync(id) != null &&
                 await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Id == id).FirstOrDefaultAsync() != null)
             {
+                //as removeWear
                 this.Db.Wears.Remove(await this.Db.Wears.FindAsync(id));
                 await this.Db.SaveChangesAsync();
+                //
             }
-            return this.RedirectToAction("Index", "Wardrobe");
+            return this.RedirectToAction("Index");
         }
-
+        
+        // da se premesti v servic-a
         [Obsolete]
         private async Task<string> StoreFileAsync(IFormFile file)
         {

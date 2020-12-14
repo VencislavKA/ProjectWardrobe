@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using WardrobeT.Data;
     using WardrobeT.Data.Models;
     using WardrobeT.Data.Models.Enums;
@@ -25,10 +26,10 @@
 
         public async Task<IActionResult> Index()
         {
-            //var MyWears = this.Db.Wears.Select(x => x).Where(x => ).ToList();
-            List<Wear> tops = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.top).ToList();
-            List<Wear> middles = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.middle).ToList();
-            List<Wear> bottoms = this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.bottom).ToList();
+            // getMyOutfits in outfits controller 
+            List<Wear> tops = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.top).ToListAsync();
+            List<Wear> middles = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.middle).ToListAsync();
+            List<Wear> bottoms = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.bottom).ToListAsync();
             var indexHomeViewModel = new IndexHomeViewModel();
             if (tops.Count() == 0 || middles.Count() == 0 || bottoms.Count() == 0)
             {
@@ -46,13 +47,8 @@
                     Bottom = bottoms[randum3.Next(0, bottoms.Count)],
                 });
             }
-
+            //
             return this.View(indexHomeViewModel);
-        }
-
-        public async Task<IActionResult> Privacy()
-        {
-            return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -65,21 +61,23 @@
         [Authorize]
         public async Task<IActionResult> Follow(string FollowId, string url)
         {
-            var user = this.Db.Users.Select(x => x).Where(x => x.UserName == this.User.Identity.Name).FirstOrDefault();
+            var user = await this.Db.Users.Select(x => x).Where(x => x.UserName == this.User.Identity.Name).FirstOrDefaultAsync();
             if (this.Db.Users.Find(FollowId) == null)
             {
                 return this.RedirectToAction("Error");
             }
-            var follow = this.Db.Users.Select(x => x).Where(x => x.Id == FollowId).FirstOrDefault();
+            var follow = await this.Db.Users.Select(x => x).Where(x => x.Id == FollowId).FirstOrDefaultAsync();
             if (FollowId != user.Id && !this.Db.Followers.Any(x => x.User.Id == user.Id && x.Followed.Id == follow.Id))
             {
+                //as creteFollower in followers service
                 Followers followers = new Followers
                 {
                     User = user,
                     Followed = follow,
                 };
-                this.Db.Followers.AddAsync(followers);
-                this.Db.SaveChanges();
+                await this.Db.Followers.AddAsync(followers);
+                await this.Db.SaveChangesAsync();
+                //
                 return this.Redirect(""+url);
             }
 
@@ -88,7 +86,7 @@
 
         public async Task<IActionResult> Search(string search)
         {
-            List<ApplicationUser> users = this.Db.Users.Select(x => x).ToList();
+            List<ApplicationUser> users = await this.Db.Users.Select(x => x).ToListAsync();
             var searchResult = new SearchResultViewModel();
             searchResult.Search = "/Home/Search?search=" + search;
             if (string.IsNullOrWhiteSpace(search))
@@ -99,8 +97,8 @@
             {
                 if (user.NormalizedUserName.Contains(search.ToUpper()) && user.UserName != this.User.Identity.Name)
                 {
-                    // if the user followes the searced user
-                    if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
+                    //as searchUser and returns list of users
+                    if (await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
                     {
                         searchResult.Users.Add(new User
                         {
@@ -120,6 +118,7 @@
                             IsFollowed = true,
                         });
                     }
+                    //
                 }
             }
             return this.View(searchResult);

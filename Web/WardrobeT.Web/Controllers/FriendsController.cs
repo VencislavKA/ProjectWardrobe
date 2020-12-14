@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,12 @@ namespace WardrobeT.Web.Controllers
 
         public async Task<IActionResult> Followers()
         {
-            List<ApplicationUser> profiles = this.Db.Followers.Where(x => x.Followed.UserName == this.User.Identity.Name).Select(x => x.User).ToList();
+            // as get followers in followers service and returns the model
+            List<ApplicationUser> profiles = await this.Db.Followers.Where(x => x.Followed.UserName == this.User.Identity.Name).Select(x => x.User).ToListAsync();
             var searchResult = new FollowViewModel();
             foreach (var user in profiles)
             {
-                if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
+                if (await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
                 {
                     searchResult.Profiles.Add(new User
                     {
@@ -47,16 +49,18 @@ namespace WardrobeT.Web.Controllers
                     });
                 }
             }
+            //
             return this.View(searchResult);
         }
 
         public async Task<IActionResult> Following()
         {
-            List<ApplicationUser> profiles = this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name).Select(x => x.Followed).ToList();
+            // as get following in followers service and returns list of users
+            List<ApplicationUser> profiles = await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name).Select(x => x.Followed).ToListAsync();
             var searchResult = new FollowViewModel();
             foreach (var user in profiles)
             {
-                if (this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefault() == null)
+                if (await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
                 {
                     searchResult.Profiles.Add(new User
                     {
@@ -77,6 +81,7 @@ namespace WardrobeT.Web.Controllers
                     });
                 }
             }
+            //
             return this.View(searchResult);
         }
     }

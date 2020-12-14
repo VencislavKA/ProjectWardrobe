@@ -24,6 +24,7 @@ namespace WardrobeT.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> AddOutfitManual()
         {
+            // in wardrobe service add metoths getMytops,getMymiddles and getMyBottom
             var tops = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name
                                                     && x.Type.Cover == Cover.top)
                                                 .Select(x => x).ToListAsync();
@@ -49,6 +50,7 @@ namespace WardrobeT.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> AddOutfitManual(AddManualInputModel model)
         {
+            // as createOutfit in outfits controller
             var top = await this.Db.Wears.FindAsync(model.Top);
             var middle = await this.Db.Wears.FindAsync(model.Middle);
             var bottom = await this.Db.Wears.FindAsync(model.Bottom);
@@ -59,18 +61,21 @@ namespace WardrobeT.Web.Controllers
                 Bottom = bottom,
             });
             await this.Db.SaveChangesAsync();
+            //
             return this.RedirectToAction("Index");
         }
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            //get myOutfits
             List<Outfit> outfits = await this.Db.Outfits.Where(x => x.Top.Owner.UserName == this.User.Identity.Name)
                 .Select(x => x)
                 .Include(x => x.Top)
                 .Include(x => x.Middle)
                 .Include(x => x.Bottom)
                 .ToListAsync();
+            //
             var modelView = new OutfitsViewModel
             {
                 Outfits = outfits,
