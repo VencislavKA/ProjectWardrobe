@@ -426,8 +426,6 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Index.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -458,7 +456,6 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Register.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Friends\Following.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Friends\Followers.cshtml.g.cs
-C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Wardrobe\Outfits.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Wardrobe\Index.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Wardrobe\AddWear.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\WardrobeT.Web.csproj.CoreCompileInputs.cache
@@ -471,3 +468,5 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\MyProfile.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outfits\AddOutfitManual.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outfits\Index.cshtml.g.cs

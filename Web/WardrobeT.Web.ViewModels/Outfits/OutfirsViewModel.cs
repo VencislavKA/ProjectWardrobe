@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using WardrobeT.Data.Models;
 
-namespace WardrobeT.Web.ViewModels.Wardrobe
+namespace WardrobeT.Web.ViewModels.Outfits
 {
     public class OutfitsViewModel
     {

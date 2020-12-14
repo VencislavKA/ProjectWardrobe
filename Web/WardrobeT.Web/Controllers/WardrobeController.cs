@@ -1,24 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Wardrobe.Data;
-using WardrobeT.Data;
-using WardrobeT.Data.Models;
-using WardrobeT.Data.Models.Enums;
-using WardrobeT.Services.Mapping;
-using WardrobeT.Web.ViewModels.Users;
-using WardrobeT.Web.ViewModels.Wardrobe;
-
-namespace WardrobeT.Web.Controllers
+﻿namespace WardrobeT.Web.Controllers
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    using System.Threading.Tasks;
+    
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using Wardrobe.Data;
+    using WardrobeT.Data;
+    using WardrobeT.Data.Models;
+    using WardrobeT.Data.Models.Enums;
+    using WardrobeT.Services.Mapping;
+    using WardrobeT.Web.ViewModels.Users;
+    using WardrobeT.Web.ViewModels.Wardrobe;
+
     public class WardrobeController : Controller
     {
         public ApplicationDbContext Db { get; }
@@ -31,44 +32,6 @@ namespace WardrobeT.Web.Controllers
         {
             this.Db = db;
             this.Environment = environment;
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Outfits()
-        {
-            List<Outfit> outfits = await this.Db.Outfits.Where(x => x.Top.Owner.UserName == this.User.Identity.Name)
-                .Select(x => x)
-                .Include(x => x.Top)
-                .Include(x => x.Middle)
-                .Include(x => x.Bottom)
-                .ToListAsync();
-            var modelView = new OutfitsViewModel
-            {
-                Outfits = outfits,
-            };
-            return this.View(modelView);
-        }
-
-        public async Task<IActionResult> AddOutfit(AddOutfitInputModel model)
-        {
-            Wear topWear = await this.Db.Wears.Where(x => x.Id == model.topId).Select(x => x).FirstOrDefaultAsync();
-            Wear middleWear = await this.Db.Wears.Where(x => x.Id == model.middleId).Select(x => x).FirstOrDefaultAsync();
-            Wear bottumWear = await this.Db.Wears.Where(x => x.Id == model.bottomId).Select(x => x).FirstOrDefaultAsync();
-            if (topWear != null && middleWear != null && bottumWear != null)
-            {
-                var user = this.Db.Users.Where(x => x.UserName == this.User.Identity.Name).Select(x => x).FirstOrDefault();
-                if (topWear.Owner == user)
-                {
-                    await this.Db.Outfits.AddAsync(new Outfit()
-                    {
-                        Top = topWear,
-                        Middle = middleWear,
-                        Bottom = bottumWear,
-                    });
-                    await this.Db.SaveChangesAsync();
-                }
-            }
-            return this.Redirect(model.url);
         }
 
         public async Task<IActionResult> Index()
@@ -128,14 +91,14 @@ namespace WardrobeT.Web.Controllers
             await this.Db.SaveChangesAsync();
             return this.Redirect("Index");
         }
-        
+
         public async Task<IActionResult> DeleteWear(string id)
         {
-            if (this.Db.Wears.Find(id) != null &&
-                this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Id == id).FirstOrDefault() != null)
+            if (await this.Db.Wears.FindAsync(id) != null &&
+                await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Id == id).FirstOrDefaultAsync() != null)
             {
-                this.Db.Wears.Remove(this.Db.Wears.Find(id));
-                this.Db.SaveChanges();
+                this.Db.Wears.Remove(await this.Db.Wears.FindAsync(id));
+                await this.Db.SaveChangesAsync();
             }
             return this.RedirectToAction("Index", "Wardrobe");
         }

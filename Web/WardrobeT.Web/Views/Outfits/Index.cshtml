@@ -1,4 +1,4 @@
-﻿@model WardrobeT.Web.ViewModels.Wardrobe.OutfitsViewModel
+﻿@model OutfitsViewModel
 @{
     ViewData["Title"] = "Outfits";
 }
@@ -25,16 +25,20 @@
                             <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
                         </div>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item text-danger" href="/Wardrobe/DeleteOutfit?id=@item.Id">Delete</a>
+                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
                     </div>
                 </div>
             </div>
         }
         <div class="col-lg-3 col-md-4 col-6 mt-3">
-            <button class="btn btn-light d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddOutfit">
-                <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.15">
-            </button>
+            <a class="btn btn-light d-block mb-4 h-100" href="/Outfits/AddOutfitManual">
+                <div class="row h-100">
+                    <div class="col-sm-12 my-auto">
+                        <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.15" />
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>
