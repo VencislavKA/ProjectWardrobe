@@ -182,6 +182,9 @@
               },
               "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services.Mapping\\WardrobeT.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services.Mapping\\WardrobeT.Services.Mapping.csproj"
+              },
+              "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\WardrobeT.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\WardrobeT.Web.ViewModels.csproj"
               }
             }
           }
@@ -263,6 +266,82 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[10.1.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.205, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\WardrobeT.Web.ViewModels.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\WardrobeT.Web.ViewModels.csproj",
+        "projectName": "WardrobeT.Web.ViewModels",
+        "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\WardrobeT.Web.ViewModels.csproj",
+        "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ventcy\\Documents\\Project\\Web\\WardrobeT.Web.ViewModels\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj"
+              },
+              "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services.Mapping\\WardrobeT.Services.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services.Mapping\\WardrobeT.Services.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",

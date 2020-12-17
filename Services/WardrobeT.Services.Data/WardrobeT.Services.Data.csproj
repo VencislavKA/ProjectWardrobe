@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\WardrobeT.Data.Common\WardrobeT.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\WardrobeT.Data.Models\WardrobeT.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\WardrobeT.Web.ViewModels\WardrobeT.Web.ViewModels.csproj" />
     <ProjectReference Include="..\WardrobeT.Services.Mapping\WardrobeT.Services.Mapping.csproj" />
   </ItemGroup>
 

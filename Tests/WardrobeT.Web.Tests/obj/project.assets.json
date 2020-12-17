@@ -3944,7 +3944,8 @@
         "dependencies": {
           "WardrobeT.Data.Common": "1.0.0",
           "WardrobeT.Data.Models": "1.0.0",
-          "WardrobeT.Services.Mapping": "1.0.0"
+          "WardrobeT.Services.Mapping": "1.0.0",
+          "WardrobeT.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WardrobeT.Services.Data.dll": {}
