@@ -65,6 +65,9 @@
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
             services.AddTransient<IFollowersService, FollowersService>();
+            services.AddTransient<IOutfitsService, OutfitsService>();
+            services.AddTransient<IUsersService, UserService>();
+            services.AddTransient<IWearsService, WearsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

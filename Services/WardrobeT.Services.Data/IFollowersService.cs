@@ -10,5 +10,7 @@
         public Task<ICollection<User>> GetFollowersAsync(string Username);
 
         public Task<ICollection<User>> GetFollowingAsync(string Username);
+
+        public Task<string> FollowAsync(string username, string followId);
     }
 }

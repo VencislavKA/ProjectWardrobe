@@ -16,29 +16,32 @@
     using WardrobeT.Data;
     using WardrobeT.Data.Models;
     using WardrobeT.Data.Models.Enums;
+    using WardrobeT.Services.Data;
     using WardrobeT.Services.Mapping;
     using WardrobeT.Web.ViewModels.Users;
     using WardrobeT.Web.ViewModels.Wardrobe;
 
     public class WardrobeController : Controller
     {
+        [Obsolete]
+        public WardrobeController(ApplicationDbContext db, IHostingEnvironment environment, IWearsService wearsService)
+        {
+            this.Db = db;
+            this.Environment = environment;
+            this.WearsService = wearsService;
+        }
+
+
         public ApplicationDbContext Db { get; }
 
         [Obsolete]
         public IHostingEnvironment Environment { get; }
 
-        [Obsolete]
-        public WardrobeController(ApplicationDbContext db, IHostingEnvironment environment)
-        {
-            this.Db = db;
-            this.Environment = environment;
-        }
+        public IWearsService WearsService { get; }
 
         public async Task<IActionResult> Index()
         {
-            // as get mywears
-                List<Wear> wears = await this.Db.Wears.Select(x => x).Where(x => x.Owner.UserName == this.User.Identity.Name).ToListAsync();
-            //
+            var wears = await this.WearsService.GetWearsAsync(this.User.Identity.Name);
             var wardrobeViewModel = new WardrobeViewModel
             {
                 Wears = wears,
@@ -51,7 +54,7 @@
         {
             var addWear = new AddWearViewModel
             {
-                WearsType = await this.Db.TypesOfWears.Select(x => x).OrderBy(x => x.Type).ToListAsync(),
+                WearsType = await this.WearsService.GetTypeOfWearsAsync(),
                 Colors = new List<Color>
                 {
                     Color.Amber, Color.Aqua, Color.Black, Color.Blue, Color.Blue_gray, Color.Brown,
@@ -74,41 +77,18 @@
             {
                 return this.Redirect("AddWear");
             }
-            //as createWear
-            var type = this.Db.TypesOfWears.FirstOrDefault(x => x.Id == model.WearType);
-            Season season;
-            Color color;
-            _ = Enum.TryParse(model.Season, true, out season);
-            _ = Enum.TryParse(model.Color, true, out color);
-            ApplicationUser user = this.Db.Users.FirstOrDefault(x => x.UserName == this.User.Identity.Name);
-            var wear = new Wear
-            {
-                ImageUrl = imagePath,
-                Type = type,
-                Season = season,
-                Color = color,
-                Owner = user,
-            };
-            await this.Db.Wears.AddAsync(wear);
-            await this.Db.SaveChangesAsync();
-            //
+
+            await this.WearsService.CreateWearAsync(model.WearType, model.Season, model.Color, imagePath, this.User.Identity.Name);
+
             return this.Redirect("Index");
         }
 
         public async Task<IActionResult> DeleteWear(string id)
         {
-            if (await this.Db.Wears.FindAsync(id) != null &&
-                await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Id == id).FirstOrDefaultAsync() != null)
-            {
-                //as removeWear
-                this.Db.Wears.Remove(await this.Db.Wears.FindAsync(id));
-                await this.Db.SaveChangesAsync();
-                //
-            }
+            await this.WearsService.DeleteWearAsync(id, this.User.Identity.Name);
             return this.RedirectToAction("Index");
         }
-        
-        // da se premesti v servic-a
+    
         [Obsolete]
         private async Task<string> StoreFileAsync(IFormFile file)
         {

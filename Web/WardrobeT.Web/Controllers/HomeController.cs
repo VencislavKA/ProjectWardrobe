@@ -9,45 +9,43 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using WardrobeT.Data;
+    using WardrobeT.Data.Common.Repositories;
     using WardrobeT.Data.Models;
     using WardrobeT.Data.Models.Enums;
+    using WardrobeT.Services.Data;
     using WardrobeT.Web.ViewModels;
     using WardrobeT.Web.ViewModels.Home;
     using WardrobeT.Web.ViewModels.Search;
 
     public class HomeController : BaseController
     {
-        public ApplicationDbContext Db { get; }
-
-        public HomeController(ApplicationDbContext db)
+        public HomeController(
+            IFollowersService followersService,
+            IOutfitsService outfitsService,
+            IUsersService usersService)
         {
-            Db = db;
+            this.FollowersService = followersService;
+            this.OutfitsService = outfitsService;
+            this.UsersService = usersService;
         }
+
+        public IFollowersService FollowersService { get; }
+
+        public IOutfitsService OutfitsService { get; }
+
+        public IUsersService UsersService { get; }
 
         public async Task<IActionResult> Index()
         {
-            // getMyOutfits in outfits controller 
-            List<Wear> tops = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.top).ToListAsync();
-            List<Wear> middles = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.middle).ToListAsync();
-            List<Wear> bottoms = await this.Db.Wears.Where(x => x.Owner.UserName == this.User.Identity.Name && x.Type.Cover == Cover.bottom).ToListAsync();
             var indexHomeViewModel = new IndexHomeViewModel();
-            if (tops.Count() == 0 || middles.Count() == 0 || bottoms.Count() == 0)
+            var outfits = await this.OutfitsService.GetMyOutfitsAsync(this.User.Identity.Name);
+
+            if (outfits == null)
             {
                 return this.View(indexHomeViewModel);
             }
-            var randum1 = new Random();
-            var randum2 = new Random();
-            var randum3 = new Random();
-            for (int i = 0; i < 10; i++)
-            {
-                indexHomeViewModel.Outfits.Add(new Outfit()
-                {
-                    Top = tops[randum1.Next(0, tops.Count)],
-                    Middle = middles[randum2.Next(0, middles.Count)],
-                    Bottom = bottoms[randum3.Next(0, bottoms.Count)],
-                });
-            }
-            //
+
+            indexHomeViewModel.Outfits = outfits;
             return this.View(indexHomeViewModel);
         }
 
@@ -59,68 +57,23 @@
         }
 
         [Authorize]
-        public async Task<IActionResult> Follow(string FollowId, string url)
+        public async Task<IActionResult> Follow(string followId, string url)
         {
-            var user = await this.Db.Users.Select(x => x).Where(x => x.UserName == this.User.Identity.Name).FirstOrDefaultAsync();
-            if (this.Db.Users.Find(FollowId) == null)
-            {
-                return this.RedirectToAction("Error");
-            }
-            var follow = await this.Db.Users.Select(x => x).Where(x => x.Id == FollowId).FirstOrDefaultAsync();
-            if (FollowId != user.Id && !this.Db.Followers.Any(x => x.User.Id == user.Id && x.Followed.Id == follow.Id))
-            {
-                //as creteFollower in followers service
-                Followers followers = new Followers
-                {
-                    User = user,
-                    Followed = follow,
-                };
-                await this.Db.Followers.AddAsync(followers);
-                await this.Db.SaveChangesAsync();
-                //
-                return this.Redirect(""+url);
-            }
-
-            return this.RedirectToAction("Error");
+            await this.FollowersService.FollowAsync(this.User.Identity.Name, followId);
+            return this.Redirect(string.Empty + url);
         }
 
         public async Task<IActionResult> Search(string search)
         {
-            List<ApplicationUser> users = await this.Db.Users.Select(x => x).ToListAsync();
             var searchResult = new SearchResultViewModel();
             searchResult.Search = "/Home/Search?search=" + search;
+
             if (string.IsNullOrWhiteSpace(search))
             {
                 return this.View(searchResult);
             }
-            foreach (var user in users)
-            {
-                if (user.NormalizedUserName.Contains(search.ToUpper()) && user.UserName != this.User.Identity.Name)
-                {
-                    //as searchUser and returns list of users
-                    if (await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
-                    {
-                        searchResult.Users.Add(new User
-                        {
-                            ProfilePictureUrl = user.ProfilePicture,
-                            ProfileId = user.Id,
-                            Profile = user.UserName,
-                            IsFollowed = false,
-                        });
-                    }
-                    else
-                    {
-                        searchResult.Users.Add(new User
-                        {
-                            ProfilePictureUrl = user.ProfilePicture,
-                            ProfileId = user.Id,
-                            Profile = user.UserName,
-                            IsFollowed = true,
-                        });
-                    }
-                    //
-                }
-            }
+
+            searchResult.Users = await this.UsersService.SearchUsersAsync(this.User.Identity.Name, search);
             return this.View(searchResult);
         }
     }

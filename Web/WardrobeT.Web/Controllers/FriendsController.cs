@@ -15,12 +15,10 @@ namespace WardrobeT.Web.Controllers
 {
     public class FriendsController : Controller
     {
-        private readonly ApplicationDbContext Db;
         private readonly IFollowersService followersService;
 
-        public FriendsController(ApplicationDbContext db, IFollowersService service)
+        public FriendsController(IFollowersService service)
         {
-            this.Db = db;
             this.followersService = service;
         }
 
@@ -33,33 +31,8 @@ namespace WardrobeT.Web.Controllers
 
         public async Task<IActionResult> Following()
         {
-            // as get following in followers service and returns list of users
-            List<ApplicationUser> profiles = await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name).Select(x => x.Followed).ToListAsync();
             var searchResult = new FollowViewModel();
-            foreach (var user in profiles)
-            {
-                if (await this.Db.Followers.Where(x => x.User.UserName == this.User.Identity.Name && x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
-                {
-                    searchResult.Profiles.Add(new User
-                    {
-                        ProfilePictureUrl = user.ProfilePicture,
-                        ProfileId = user.Id,
-                        Profile = user.UserName,
-                        IsFollowed = false,
-                    });
-                }
-                else
-                {
-                    searchResult.Profiles.Add(new User
-                    {
-                        ProfilePictureUrl = user.ProfilePicture,
-                        ProfileId = user.Id,
-                        Profile = user.UserName,
-                        IsFollowed = true,
-                    });
-                }
-            }
-            //
+            searchResult.Profiles = await this.followersService.GetFollowingAsync(this.User.Identity.Name);
             return this.View(searchResult);
         }
     }
