@@ -3,11 +3,10 @@ namespace WardrobeT.Data.Models
 {
     using System;
     using System.Collections.Generic;
-
-    using WardrobeT.Data.Common.Models;
+    using System.Runtime.CompilerServices;
 
     using Microsoft.AspNetCore.Identity;
-    using System.Runtime.CompilerServices;
+    using WardrobeT.Data.Common.Models;
 
     public class ApplicationUser : IdentityUser<string>, IAuditInfo, IDeletableEntity
     {

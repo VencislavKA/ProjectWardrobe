@@ -1,19 +1,20 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WardrobeT.Data;
-using WardrobeT.Data.Models;
-using WardrobeT.Services.Data;
-using WardrobeT.Web.ViewModels.Friends;
-using WardrobeT.Web.ViewModels.Search;
-
-namespace WardrobeT.Web.Controllers
+﻿namespace WardrobeT.Web.Controllers
 {
-    public class FriendsController : Controller
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using WardrobeT.Data;
+    using WardrobeT.Data.Models;
+    using WardrobeT.Services.Data;
+    using WardrobeT.Web.ViewModels.Friends;
+    using WardrobeT.Web.ViewModels.Search;
+
+    public class FriendsController : BaseController
     {
         private readonly IFollowersService followersService;
 

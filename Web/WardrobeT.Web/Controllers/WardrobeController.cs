@@ -7,7 +7,7 @@
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
-    
+
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -21,7 +21,7 @@
     using WardrobeT.Web.ViewModels.Users;
     using WardrobeT.Web.ViewModels.Wardrobe;
 
-    public class WardrobeController : Controller
+    public class WardrobeController : BaseController
     {
         [Obsolete]
         public WardrobeController(ApplicationDbContext db, IHostingEnvironment environment, IWearsService wearsService)
@@ -30,7 +30,6 @@
             this.Environment = environment;
             this.WearsService = wearsService;
         }
-
 
         public ApplicationDbContext Db { get; }
 
@@ -88,7 +87,7 @@
             await this.WearsService.DeleteWearAsync(id, this.User.Identity.Name);
             return this.RedirectToAction("Index");
         }
-    
+
         [Obsolete]
         private async Task<string> StoreFileAsync(IFormFile file)
         {

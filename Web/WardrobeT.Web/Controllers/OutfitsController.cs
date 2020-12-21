@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Principal;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WardrobeT.Data;
-using WardrobeT.Data.Models;
-using WardrobeT.Data.Models.Enums;
-using WardrobeT.Services.Data;
-using WardrobeT.Web.ViewModels.Outfits;
-
-namespace WardrobeT.Web.Controllers
+﻿namespace WardrobeT.Web.Controllers
 {
-    public class OutfitsController : Controller
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Principal;
+    using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using WardrobeT.Data;
+    using WardrobeT.Data.Models;
+    using WardrobeT.Data.Models.Enums;
+    using WardrobeT.Services.Data;
+    using WardrobeT.Web.ViewModels.Outfits;
+
+    public class OutfitsController : BaseController
     {
         public OutfitsController(IOutfitsService outfitsService, IWearsService wearsService)
         {

@@ -15,7 +15,7 @@
     using WardrobeT.Services.Data;
     using WardrobeT.Web.ViewModels.Users;
 
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         public UserController(
             IUsersService usersService,

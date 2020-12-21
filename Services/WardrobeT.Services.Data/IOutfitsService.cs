@@ -1,11 +1,11 @@
 ﻿namespace WardrobeT.Services.Data
 {
-    using Microsoft.AspNetCore.Http;
     using System;
     using System.Collections.Generic;
     using System.Text;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Http;
     using WardrobeT.Data.Models;
 
     public interface IOutfitsService

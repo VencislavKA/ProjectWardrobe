@@ -31,6 +31,7 @@
         public IRepository<TypeOfWear> TOFrepository { get; }
 
         public IUsersService UsersService { get; }
+
         public IRepository<Outfit> OutfitsRepository { get; }
 
         public async Task<ICollection<Wear>> GetTopsAsync(string username)
