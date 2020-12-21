@@ -37,6 +37,7 @@
                 {
                     result.Add(new User
                     {
+                        Id = user.Id,
                         ProfilePictureUrl = user.ProfilePicture,
                         ProfileId = user.Id,
                         Profile = user.UserName,
@@ -47,6 +48,7 @@
                 {
                     result.Add(new User
                     {
+                        Id = user.Id,
                         ProfilePictureUrl = user.ProfilePicture,
                         ProfileId = user.Id,
                         Profile = user.UserName,
@@ -71,6 +73,7 @@
                 {
                     result.Add(new User
                     {
+                        Id = user.Id,
                         ProfilePictureUrl = user.ProfilePicture,
                         ProfileId = user.Id,
                         Profile = user.UserName,
@@ -81,6 +84,7 @@
                 {
                     result.Add(new User
                     {
+                        Id = user.Id,
                         ProfilePictureUrl = user.ProfilePicture,
                         ProfileId = user.Id,
                         Profile = user.UserName,

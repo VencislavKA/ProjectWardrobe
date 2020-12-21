@@ -11,7 +11,7 @@
     <p class="text-right text-muted">
         count: @Model.Profiles.Count
     </p>
-    <div class="row ">
+    <div class="row">
         @if (Model.Profiles.Count == 0)
         {
             <div class="w-100">
@@ -28,11 +28,15 @@
                     <div class="card text-white bg-dark mb-3" style="width: 18rem;">
                         @if (item.ProfilePictureUrl != null)
                         {
-                            <img src="@item.ProfilePictureUrl" class="img-fluid">
+                            <a href="/User/Profile?id=@item.Id">
+                                <img src="@item.ProfilePictureUrl" class="img-fluid">
+                            </a>
                         }
                         else
                         {
-                            <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" class="img-fluid">
+                            <a href="/User/Profile?id=@item.Id">
+                                <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" class="img-fluid">
+                            </a>
                         }
                         <div class="card-body text-center">
                             <h5>@item.Profile</h5>

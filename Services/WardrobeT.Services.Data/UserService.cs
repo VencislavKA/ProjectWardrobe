@@ -38,6 +38,7 @@
                     {
                         result.Add(new User
                         {
+                            Id = user.Id,
                             ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
@@ -48,6 +49,7 @@
                     {
                         result.Add(new User
                         {
+                            Id = user.Id,
                             ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
@@ -62,5 +64,8 @@
 
         public async Task<ApplicationUser> GetUserAsync(string username)
             => await this.UserRepository.All().FirstOrDefaultAsync(x => x.UserName == username);
+
+        public async Task<ApplicationUser> GetUserByIdAsync(string id)
+            => await this.UserRepository.All().FirstOrDefaultAsync(x => x.Id == id);
     }
 }

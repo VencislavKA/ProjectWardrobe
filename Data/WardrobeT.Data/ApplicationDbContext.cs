@@ -13,6 +13,7 @@
     using Microsoft.EntityFrameworkCore;
     using Wardrobe.Data;
     using WardrobeT.Data.Models.Enums;
+    using WardrobeT.Services.Data;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -35,6 +36,8 @@
         public DbSet<TypeOfWear> TypesOfWears { get; set; }
 
         public DbSet<Outfit> Outfits { get; set; }
+
+        public DbSet<Post> Posts { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 

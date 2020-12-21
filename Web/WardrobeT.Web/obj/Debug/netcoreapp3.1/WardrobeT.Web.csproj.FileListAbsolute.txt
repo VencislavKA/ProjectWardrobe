@@ -470,3 +470,5 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outfits\AddOutfitManual.cshtml.g.cs
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Outfits\Index.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\Feed\Index.cshtml.g.cs
+C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\obj\Debug\netcoreapp3.1\Razor\Views\User\Profile.cshtml.g.cs

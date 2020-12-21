@@ -13,5 +13,7 @@
         public Task<ICollection<User>> SearchUsersAsync(string username, string search);
 
         public Task<ApplicationUser> GetUserAsync(string username);
+
+        public Task<ApplicationUser> GetUserByIdAsync(string id);
     }
 }
