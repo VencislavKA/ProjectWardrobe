@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-using WardrobeT.Data.Common.Models;
-using WardrobeT.Data.Models;
-
-namespace WardrobeT.Services.Data
+﻿namespace WardrobeT.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    using WardrobeT.Data.Common.Models;
+    using WardrobeT.Data.Models;
+
     public class Post : BaseModel<string>
     {
         public Post()
@@ -17,6 +18,11 @@ namespace WardrobeT.Services.Data
         [Required]
         public ApplicationUser Owner { get; set; }
 
+        [Required]
         public string PostImage { get; set; }
+
+        [Required]
+        [Range(0, int.MaxValue)]
+        public int Likes { get; set; }
     }
 }
