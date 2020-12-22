@@ -25,7 +25,9 @@
                             <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
                         </div>
                     </button>
-                    <div class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/Feed/MakePublicOutfit?id=@item.Id">Make public</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
                     </div>
                 </div>

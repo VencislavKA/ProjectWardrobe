@@ -67,6 +67,7 @@
             services.AddTransient<IOutfitsService, OutfitsService>();
             services.AddTransient<IUsersService, UserService>();
             services.AddTransient<IWearsService, WearsService>();
+            services.AddTransient<IFeedService, FeedService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

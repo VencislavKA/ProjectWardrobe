@@ -64,7 +64,7 @@
             ApplicationUser user = await this.UsersService.GetUserByIdAsync(id);
             if (user == null)
             {
-                return this.RedirectToAction("Unknown");
+                return this.NotFound();
             }
 
             var wears = await this.WearsService.GetWearsAsync(user.UserName);

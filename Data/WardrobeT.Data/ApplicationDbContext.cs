@@ -6,12 +6,11 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using WardrobeT.Data.Common.Models;
-    using WardrobeT.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using Wardrobe.Data;
+    using WardrobeT.Data.Common.Models;
+    using WardrobeT.Data.Models;
     using WardrobeT.Data.Models.Enums;
     using WardrobeT.Services.Data;
 
@@ -37,7 +36,9 @@
 
         public DbSet<Outfit> Outfits { get; set; }
 
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<WearPost> WearPosts { get; set; }
+
+        public DbSet<OutfitPost> OutfitPosts { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -97,8 +98,7 @@
                 new TypeOfWear { Type = "Official turtleneck", Official = true, CanBeUsedAlone = false, Cover = Cover.top },
                 new TypeOfWear { Type = "Turtleneck", Official = false, CanBeUsedAlone = false, Cover = Cover.top },
                 new TypeOfWear { Type = "Official T-Shirt", Official = true, CanBeUsedAlone = false, Cover = Cover.middle },
-                new TypeOfWear { Type = "T-Shirt", Official = false, CanBeUsedAlone = false, Cover = Cover.middle }
-                );
+                new TypeOfWear { Type = "T-Shirt", Official = false, CanBeUsedAlone = false, Cover = Cover.middle });
 
             this.ConfigureUserIdentityRelations(builder);
 

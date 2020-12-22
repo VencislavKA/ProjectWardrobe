@@ -60,7 +60,12 @@
         [Authorize]
         public async Task<IActionResult> Follow(string followId, string url)
         {
-            await this.FollowersService.FollowAsync(this.User.Identity.Name, followId);
+            var result = await this.FollowersService.FollowAsync(this.User.Identity.Name, followId);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
             return this.Redirect(string.Empty + url);
         }
 

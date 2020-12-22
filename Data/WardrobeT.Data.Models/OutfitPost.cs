@@ -1,4 +1,4 @@
-﻿namespace WardrobeT.Services.Data
+﻿namespace WardrobeT.Data.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,20 +6,16 @@
     using System.Text;
 
     using WardrobeT.Data.Common.Models;
-    using WardrobeT.Data.Models;
 
-    public class Post : BaseModel<string>
+    public class OutfitPost : BaseModel<string>
     {
-        public Post()
+        public OutfitPost()
         {
             this.Id = Guid.NewGuid().ToString();
         }
 
         [Required]
-        public ApplicationUser Owner { get; set; }
-
-        [Required]
-        public string PostImage { get; set; }
+        public Outfit Outfit { get; set; }
 
         [Required]
         [Range(0, int.MaxValue)]
