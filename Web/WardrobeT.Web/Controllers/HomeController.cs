@@ -40,7 +40,6 @@
         {
             var indexHomeViewModel = new IndexHomeViewModel();
             var outfits = await this.OutfitsService.GetMyOutfitsAsync(this.User.Identity.Name);
-
             if (outfits == null)
             {
                 return this.View(indexHomeViewModel);

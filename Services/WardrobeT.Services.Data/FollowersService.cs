@@ -114,6 +114,7 @@
                 };
                 await this.FollowersReporsitory.AddAsync(followers);
                 await this.FollowersReporsitory.SaveChangesAsync();
+                return string.Empty;
             }
 
             return null;

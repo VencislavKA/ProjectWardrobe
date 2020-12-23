@@ -46,6 +46,11 @@
         [HttpPost]
         public async Task<IActionResult> AddOutfitManual(AddManualInputModel model)
         {
+            if (model.Top == null || model.Middle == null || model.Bottom == null)
+            {
+                return this.RedirectToAction("Error", "Home");
+            }
+
             await this.OutfitsService.CreateOutfitAsync(model.Top, model.Middle, model.Bottom);
             return this.RedirectToAction("Index");
         }
