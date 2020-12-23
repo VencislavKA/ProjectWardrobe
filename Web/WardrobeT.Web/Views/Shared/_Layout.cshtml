@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Wardrobe</title>
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/site.css" />
-    <link rel="icon" type="image/x-icon" href="/icon.png">
+    <link rel="icon" type="image/x-icon" href="/images/WIcon.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -19,11 +19,11 @@
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
           crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-light">
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 bg-dark">
             <div class="container w-100">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Wardrobe<img src="/images/logo_transparent.png" alt="Can't load this" height="36px" /></a>
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index"><img class="mb-1" src="/images/WIcon.png" alt="Can't load this" height="35"/>ardrobe</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -34,19 +34,19 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Outfits" asp-action="Index">Outfits</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Outfits" asp-action="Index">Outfits</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Wardrobe" asp-action="Index">Wardrobe</a>
+                                <a class="nav-link text-light" asp-area="" asp-controller="Wardrobe" asp-action="Index">Wardrobe</a>
                             </li>
-                            <form class="form-inline my-2 my-lg-0" method="get" action="@Url.Action("Search","Home")">
-                                <button class="btn btn-outline-primary my-2 my-sm-0 w-auto" type="submit">Search</button>
+                            <form class="form-inline my-2 my-lg-0 ml-2 " method="get" action="@Url.Action("Search","Home")">
+                                <button class="btn btn-danger my-2 my-sm-0 w-auto" type="submit">Search</button>
                                 <input class="form-control mr-sm-2 ml-1 w-auto" type="search" placeholder="Search" aria-label="Search" name="search">
                             </form>
                         }

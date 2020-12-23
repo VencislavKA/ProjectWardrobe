@@ -2,26 +2,25 @@
 @using WardrobeT.Data.Models
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-
 <ul class="navbar-nav">
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="MyProfile">Profile</a>
+            <a class="nav-link text-light" asp-area="" asp-controller="User" asp-action="MyProfile">Profile</a>
         </li>
         <li class="nav-item">
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                <button type="submit" class="nav-link btn btn-link text-light" style="background-color: #f42f42">Logout</button>
             </form>
         </li>
     }
     else
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+        <li class="nav-item border border-dark rounded mr-1 ">
+            <a class="nav-link text-danger rounded" asp-area="Identity" asp-page="/Account/Register">Register</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <li class="nav-item border border-dark rounded " style="background-color: #f42f42">
+            <a class="nav-link btn text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
         </li>
     }
 </ul>

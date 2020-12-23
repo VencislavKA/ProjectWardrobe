@@ -9,7 +9,7 @@
     <div class="col-sm"></div>
     <div class="col-sm">
         <section>
-            <h1 class="text-center">@ViewData["Title"]</h1>
+            <h1 class="text-center mt-3">@ViewData["Title"]</h1>
             <form id="account" method="post">
                 <hr />
                 @foreach (var modelState in ViewData.ModelState.Values)
@@ -38,13 +38,11 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Log in</button>
+                    <button type="submit" class="btn btn-outline-danger btn-lg btn-block">Log in</button>
                 </div>
-                <div class="form-group justify-content-center">
-                    <p> 
-                    </p>
+                <div class="form-group justify-content-center text-center">
                     <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        <a class="text-danger" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                     </p>
                 </div>
             </form>
