@@ -4,13 +4,13 @@
 }
 <style>
     .leftBtn {
-        border-radius: 25px 0px 0px 25px;
+        border-radius: 5px 0px 0px 5px;
         background: rgb(0,0,0);
         background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 34%, rgba(91,91,91,1) 58%, rgba(146,146,146,1) 71%, rgba(255,255,255,1) 100%);
     }
 
     .rightBtn {
-        border-radius: 0px 25px 25px 0px;
+        border-radius: 0px 5px 5px 0px;
         background: rgb(255,255,255);
         background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(146,146,146,1) 25%, rgba(91,91,91,1) 45%, rgba(34,34,34,1) 70%, rgba(0,0,0,1) 100%);
     }
@@ -30,7 +30,7 @@
                             Outfit item = Model.Outfits.ElementAt(i);
                             if (i == 0)
                             {
-                                <div class="carousel-item active">
+                                <div class="carousel-item active bg-light rounded-lg">
                                     <div class="container">
                                         <div class="row">
                                             <a class="btn mx-auto mb-3" href="/Outfits/AddOutfit?topId=@item.Top.Id&&middleId=@item.Middle.Id&&bottomId=@item.Bottom.Id&&url=/">
@@ -54,7 +54,7 @@
                                 continue;
                             }
 
-                            <div class="carousel-item">
+                            <div class="carousel-item bg-light rounded-lg">
                                 <div class="container">
                                     <div class="row">
                                         <a class="btn mx-auto mb-3" href="/Outfits/AddOutfit?topId=@item.Top.Id&&middleId=@item.Middle.Id&&bottomId=@item.Bottom.Id&&url=/">
@@ -102,12 +102,12 @@
 }
 else
 {
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <h1 class="display-4">Hello, user!</h1>
         <p class="lead">This is a simple platform in which you can upload all of your wears and we will offer you outfits.</p>
         <hr class="my-4">
         <p>You want to register just click it is so easy!</p>
-        <a class="btn btn-primary btn-lg" asp-area="Identity" asp-page="/Account/Register" role="button">Register</a>
+        <a class="btn btn-danger btn-lg" asp-area="Identity" asp-page="/Account/Register" role="button">Register</a>
     </div>
 }
 <script>

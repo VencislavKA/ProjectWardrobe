@@ -5,16 +5,16 @@
 
 <div class="container">
 
-    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">@ViewData["Title"]</h1>
+    <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0  text-light">@ViewData["Title"]</h1>
 
-    <hr class="mt-2 mb-5">
+    <hr class="mt-2 mb-5 bg-light">
 
     <div class="row text-center text-lg-left">
         @foreach (var item in Model.Outfits)
         {
             <div class="col-lg-3 col-md-4 col-6">
                 <div class="dropdown mt-3">
-                    <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="row ml-1 mr-1">
                             <img class="img-fluid" src="@item.Top.ImageUrl" alt="Can't load this image" />
                         </div>

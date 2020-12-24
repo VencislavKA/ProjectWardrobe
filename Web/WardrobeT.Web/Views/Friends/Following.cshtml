@@ -3,9 +3,9 @@
     ViewData["Title"] = "Following";
 }
 
-<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">@ViewData["Title"]</h1>
+<h1 class="font-weight-light text-center text-lg-left mt-4 mb-0 text-light">@ViewData["Title"]</h1>
 
-<hr class="mt-2 mb-5">
+<hr class="mt-2 mb-5 bg-light">
 
 <div class="container">
     <p class="text-right text-muted">
@@ -15,7 +15,7 @@
         @if (Model.Profiles.Count == 0)
         {
             <div class="w-100">
-                <p class="text-center text-muted mt-5">
+                <p class="text-center mt-5 text-light">
                     No following profiles yet.
                 </p>
             </div>
@@ -25,7 +25,7 @@
             @foreach (var item in Model.Profiles)
             {
                 <div class="col">
-                    <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+                    <div class="card text-white bg-light mb-3" style="width: 18rem;">
                         @if (item.ProfilePictureUrl != null)
                         {
                             <a href="/User/Profile?id=@item.Id">
@@ -39,7 +39,7 @@
                             </a>
                         }
                         <div class="card-body text-center">
-                            <h5>@item.Profile</h5>
+                            <h5 class="text-dark">@item.Profile</h5>
                             <div class="text-center">
                                 @if (item.IsFollowed == false)
                                 {

@@ -19,9 +19,9 @@
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
           crossorigin="anonymous">
 </head>
-<body class="bg-light">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 bg-dark">
+<body class="bg-dark">
+    <header class="">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm shadow-lg mb-3 bg-dark">
             <div class="container w-100">
                 <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index"><img class="mb-1" src="/images/WIcon.png" alt="Can't load this" height="35"/>ardrobe</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -33,18 +33,63 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (this.User.Identity.IsAuthenticated)
                         {
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Outfits" asp-action="Index">Outfits</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Wardrobe" asp-action="Index">Wardrobe</a>
-                            </li>
+                            if (@ViewData["Title"] == "Feed")
+                            {
+                                <li class="nav-item border-danger border-bottom">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Feed" asp-action="Index">Feed</a>
+                                </li>
+                            }
+
+
+
+                            if (@ViewData["Title"] == "Home Page")
+                            {
+                                <li class="nav-item border-danger border-bottom">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                            }
+
+
+
+                            if (@ViewData["Title"] == "Outfits")
+                            {
+                                <li class="nav-item border-danger border-bottom">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Outfits" asp-action="Index">Outfits</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Outfits" asp-action="Index">Outfits</a>
+                                </li>
+                            }
+
+
+
+                            if (@ViewData["Title"] == "Wardrobe")
+                            {
+                                <li class="nav-item border-danger border-bottom">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Wardrobe" asp-action="Index">Wardrobe</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-light" asp-area="" asp-controller="Wardrobe" asp-action="Index">Wardrobe</a>
+                                </li>
+                            }
                             <form class="form-inline my-2 my-lg-0 ml-2 " method="get" action="@Url.Action("Search","Home")">
                                 <button class="btn btn-danger my-2 my-sm-0 w-auto" type="submit">Search</button>
                                 <input class="form-control mr-sm-2 ml-1 w-auto" type="search" placeholder="Search" aria-label="Search" name="search">

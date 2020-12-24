@@ -9,9 +9,9 @@
     <div class="col-sm"></div>
     <div class="col-sm">
         <section>
-            <h1 class="text-center mt-3">@ViewData["Title"]</h1>
+            <h1 class="text-center text-light mt-3">@ViewData["Title"]</h1>
             <form id="account" method="post">
-                <hr />
+                <hr class="bg-light" />
                 @foreach (var modelState in ViewData.ModelState.Values)
                 {
                     foreach (var error in modelState.Errors)
@@ -20,25 +20,25 @@
                     }
                 }
                 <div class="form-group">
-                    <label asp-for="Input.Username"></label>
+                    <label class="text-light" asp-for="Input.Username"></label>
                     <input asp-for="Input.Username" class="form-control" />
                     <span asp-validation-for="Input.Username" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Password"></label>
+                    <label class="text-light" asp-for="Input.Password"></label>
                     <input asp-for="Input.Password" class="form-control" />
                     <span asp-validation-for="Input.Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
-                        <label asp-for="Input.RememberMe">
+                        <label class="text-light" asp-for="Input.RememberMe">
                             <input asp-for="Input.RememberMe" />
                             @Html.DisplayNameFor(m => m.Input.RememberMe)
                         </label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-outline-danger btn-lg btn-block">Log in</button>
+                    <button type="submit" class="btn btn-danger btn-lg btn-block">Log in</button>
                 </div>
                 <div class="form-group justify-content-center text-center">
                     <p>

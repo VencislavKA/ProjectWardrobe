@@ -6,12 +6,12 @@
 
     @if (Model.Users.Count == 0)
     {
-        <h5 class="mt-4 text-muted">No search result</h5>
+        <h5 class="mt-4 text-light">No search result</h5>
     }
     @foreach (var item in Model.Users)
     {
         <div class="col">
-            <div class="card text-white bg-dark mb-3" style="width: 18rem;">
+            <div class="card text-white bg-light mb-3" style="width: 18rem;">
                 @if (item.ProfilePictureUrl != null)
                 {
                     <a href="/User/Profile?Id=@item.Id">
@@ -25,7 +25,7 @@
                     </a>
                 }
                 <div class="card-body text-center">
-                    <h5>@item.Profile</h5>
+                    <h5 class="text-dark">@item.Profile</h5>
                     <div class="text-center">
                         @if (item.IsFollowed == false)
                         {
