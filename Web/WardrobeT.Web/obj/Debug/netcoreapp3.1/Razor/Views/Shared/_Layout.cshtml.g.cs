@@ -75,8 +75,15 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\Views\_ViewImports.cshtml"
+using WardrobeT.Web.ViewModels.Feed;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef", @"/Views/Shared/_Layout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0abb65d846b7fe1da830c176fb4437c02c5ff2f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f75d3b452022324344dbe8605236ef2d4303c934", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Layout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("navbar-brand text-light"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -126,7 +133,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef10387", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef10584", async() => {
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>");
 #nullable restore
 #line 6 "C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\Views\Shared\_Layout.cshtml"
@@ -164,12 +171,12 @@ using WardrobeT.Web.ViewModels.Wardrobe;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef13105", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef13302", async() => {
                 WriteLiteral("\r\n    <header");
                 BeginWriteAttribute("class", " class=\"", 1533, "\"", 1541, 0);
                 EndWriteAttribute();
                 WriteLiteral(">\r\n        <nav class=\"navbar navbar-expand-sm navbar-toggleable-sm shadow-lg mb-3 bg-dark\">\r\n            <div class=\"container w-100\">\r\n                ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef13692", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef13889", async() => {
                     WriteLiteral("<img class=\"mb-1\" src=\"/images/WIcon.png\" alt=\"Can\'t load this\" height=\"35\"/>ardrobe");
                 }
                 );
@@ -196,7 +203,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
                 </button>
                 <div class=""navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"">
                     ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef15962", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef16159", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -222,7 +229,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item border-danger border-bottom\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef17706", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef17903", async() => {
                     WriteLiteral("Feed");
                 }
                 );
@@ -253,7 +260,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef19861", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef20058", async() => {
                     WriteLiteral("Feed");
                 }
                 );
@@ -287,7 +294,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item border-danger border-bottom\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef22084", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef22281", async() => {
                     WriteLiteral("Home");
                 }
                 );
@@ -318,7 +325,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef24239", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef24436", async() => {
                     WriteLiteral("Home");
                 }
                 );
@@ -352,7 +359,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item border-danger border-bottom\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef26460", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef26657", async() => {
                     WriteLiteral("Outfits");
                 }
                 );
@@ -383,7 +390,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef28618", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef28815", async() => {
                     WriteLiteral("Outfits");
                 }
                 );
@@ -417,7 +424,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item border-danger border-bottom\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef30843", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef31040", async() => {
                     WriteLiteral("Wardrobe");
                 }
                 );
@@ -448,7 +455,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                                <li class=\"nav-item\">\r\n                                    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef33002", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef33199", async() => {
                     WriteLiteral("Wardrobe");
                 }
                 );
@@ -477,7 +484,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
                 WriteLiteral("                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef35029", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef35226", async() => {
                     WriteLiteral(@"
                                 <button class=""btn btn-danger my-2 my-sm-0 w-auto"" type=""submit"">Search</button>
                                 <input class=""form-control mr-sm-2 ml-1 w-auto"" type=""search"" placeholder=""Search"" aria-label=""Search"" name=""search"">
@@ -524,7 +531,7 @@ AddHtmlAttributeValue("", 5434, Url.Action("Search","Home"), 5434, 28, false);
 #line hidden
 #nullable disable
                 WriteLiteral("\r\n        </main>\r\n    </div>\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef38115", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef38312", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -538,7 +545,7 @@ AddHtmlAttributeValue("", 5434, Url.Action("Search","Home"), 5434, 28, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef39216", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef39413", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -552,7 +559,7 @@ AddHtmlAttributeValue("", 5434, Url.Action("Search","Home"), 5434, 28, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n    ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef40317", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ee63aad048a5c24dd47ba9ed281b3e6b3b274ef40514", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

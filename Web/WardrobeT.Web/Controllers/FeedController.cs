@@ -7,6 +7,7 @@
 
     using Microsoft.AspNetCore.Mvc;
     using WardrobeT.Services.Data;
+    using WardrobeT.Web.ViewModels.Feed;
 
     public class FeedController : BaseController
     {
@@ -19,7 +20,14 @@
 
         public async Task<IActionResult> Index()
         {
-            return this.View();
+            var outfitposts = await this.FeedService.GetOutfitPostsAsync(this.User.Identity.Name);
+            var wearposts = await this.FeedService.GetWearPostsAsync(this.User.Identity.Name);
+            var view = new IndexFeedViewModel()
+            {
+                OutfitPosts = outfitposts,
+                WearPosts = wearposts,
+            };
+            return this.View(view);
         }
 
         public async Task<IActionResult> MakePublicWear(string id)

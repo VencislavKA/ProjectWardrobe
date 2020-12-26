@@ -12,6 +12,9 @@ namespace WardrobeT.Web.ViewModels.Users
         {
             this.Wears = new HashSet<Wear>();
         }
+
+        public string Id { get; set; }
+
         public string ProfilePicUrl { get; set; }
 
         public string Username { get; set; }
@@ -19,6 +22,8 @@ namespace WardrobeT.Web.ViewModels.Users
         public string Email { get; set; }
 
         public ICollection<Wear> Wears { get; set; }
+
+        public bool IsFollowed { get; set; }
 
         public int Followers { get; set; }
 

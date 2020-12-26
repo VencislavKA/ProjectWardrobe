@@ -75,8 +75,15 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web\Views\_ViewImports.cshtml"
+using WardrobeT.Web.ViewModels.Feed;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"17293301457541042367cc0b65a046adda02cefc", @"/Views/Outfits/AddOutfitManual.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0abb65d846b7fe1da830c176fb4437c02c5ff2f", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f75d3b452022324344dbe8605236ef2d4303c934", @"/Views/_ViewImports.cshtml")]
     public class Views_Outfits_AddOutfitManual : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<AddOutfitManualViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -134,7 +141,7 @@ using WardrobeT.Web.ViewModels.Wardrobe;
 #line hidden
 #nullable disable
             WriteLiteral("            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17293301457541042367cc0b65a046adda02cefc6271", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17293301457541042367cc0b65a046adda02cefc6468", async() => {
                 WriteLiteral(@"
                 <h4 class=""font-weight-light text-left mt-4 mb-0  text-light"">Select top wear:</h4>
                 <hr class=""mt-2 mb-5 bg-light"">

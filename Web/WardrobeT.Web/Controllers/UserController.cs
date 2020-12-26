@@ -70,9 +70,13 @@
             var wears = await this.WearsService.GetWearsAsync(user.UserName);
             var followers = await this.FollowersService.GetFollowersAsync(user.UserName);
             var following = await this.FollowersService.GetFollowingAsync(user.UserName);
+            var userfollowed = this.UsersService.SearchUsersAsync(this.User.Identity.Name, user.UserName).Result.FirstOrDefault();
+            var isFollowed = userfollowed.IsFollowed;
 
             var profileViewModel = new ProfileViewModel
             {
+                Id = user.Id,
+                IsFollowed = isFollowed,
                 Username = user.UserName,
                 Email = user.Email,
                 Wears = wears,

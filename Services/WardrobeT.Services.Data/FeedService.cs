@@ -1,14 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WardrobeT.Data.Common.Repositories;
-using WardrobeT.Data.Models;
-
-namespace WardrobeT.Services.Data
+﻿namespace WardrobeT.Services.Data
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using Microsoft.EntityFrameworkCore;
+    using WardrobeT.Data.Common.Repositories;
+    using WardrobeT.Data.Models;
+
     public class FeedService : IFeedService
     {
         public FeedService(
@@ -30,6 +31,20 @@ namespace WardrobeT.Services.Data
         public IRepository<WearPost> WearpostsRepository { get; }
 
         public IRepository<OutfitPost> OutfitpostsRepository { get; }
+
+        public async Task<List<OutfitPost>> GetOutfitPostsAsync(string username)
+        => await this.OutfitpostsRepository.All().Select(x => x).Where(x => x.Outfit.Top.Owner.UserName != username).OrderBy(x => x.Likes)
+            .Include(x => x.Outfit)
+            .Include(x => x.Outfit.Top)
+            .Include(x => x.Outfit.Middle)
+            .Include(x => x.Outfit.Bottom)
+            .ToListAsync();
+
+        public async Task<List<WearPost>> GetWearPostsAsync(string username)
+            => await this.WearpostsRepository.All().Select(x => x).Where(x => x.Wear.Owner.UserName != username).OrderBy(x => x.Likes)
+            .Include(x => x.Wear)
+            .Include(x => x.Wear.Owner)
+            .ToListAsync();
 
         public async Task<string> MakeOutfitPublicAsync(string id)
         {
