@@ -69,6 +69,18 @@
             return this.Redirect(string.Empty + url);
         }
 
+        [Authorize]
+        public async Task<IActionResult> Unfollow(string unfollowId, string url)
+        {
+            var result = await this.FollowersService.UnfollowAsync(this.User.Identity.Name, unfollowId);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Redirect(string.Empty + url);
+        }
+
         public async Task<IActionResult> Search(string search)
         {
             var searchResult = new SearchResultViewModel();

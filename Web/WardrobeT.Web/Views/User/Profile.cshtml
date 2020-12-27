@@ -37,11 +37,11 @@
                         }
                         @if (Model.IsFollowed == false)
                         {
-                            <a class="btn btn-danger btn-sm btn-block" href="/Home/Follow?FollowId=@Model.Id&&url=/Friends/Followers">Follow</a>
+                            <a class="btn btn-danger btn-sm btn-block" href="/Home/Follow?FollowId=@Model.Id&&url=/User/Profile?id=@Model.Id">Follow</a>
                         }
                         else
                         {
-                            <a class="btn btn-outline-dark btn-sm btn-block">Following</a>
+                            <a class="btn btn-info btn-sm btn-block" href="/Home/Unfollow?unfollowId=@Model.Id&&url=/User/Profile?id=@Model.Id">Unfollow</a>
                         }
                     </div>
                     <div class="media-body mb-5 text-white">

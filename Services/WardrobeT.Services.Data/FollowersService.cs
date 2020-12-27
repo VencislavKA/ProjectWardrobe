@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
     using System.Text;
     using System.Threading.Tasks;
 
@@ -113,6 +114,26 @@
                     Followed = follow,
                 };
                 await this.FollowersReporsitory.AddAsync(followers);
+                await this.FollowersReporsitory.SaveChangesAsync();
+                return string.Empty;
+            }
+
+            return null;
+        }
+
+        public async Task<string> UnfollowAsync(string username, string unfollowId)
+        {
+            var user = await this.UsersRepository.All().Where(x => x.UserName == username).FirstOrDefaultAsync();
+            if (this.UsersRepository.All().Where(x => x.Id == unfollowId) == null)
+            {
+                return null;
+            }
+
+            var unfollow = await this.UsersRepository.All().Where(x => x.Id == unfollowId).FirstOrDefaultAsync();
+            if (unfollowId != user.Id && this.FollowersReporsitory.All().Any(x => x.User.Id == user.Id && x.Followed.Id == unfollow.Id))
+            {
+                var followEntity = await this.FollowersReporsitory.All().FirstOrDefaultAsync(x => x.User == user && x.Followed == unfollow);
+                this.FollowersReporsitory.Delete(followEntity);
                 await this.FollowersReporsitory.SaveChangesAsync();
                 return string.Empty;
             }

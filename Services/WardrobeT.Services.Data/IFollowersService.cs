@@ -13,5 +13,7 @@
         public Task<ICollection<User>> GetFollowingAsync(string username);
 
         public Task<string> FollowAsync(string username, string followId);
+
+        public Task<string> UnfollowAsync(string username, string unfollowId);
     }
 }
