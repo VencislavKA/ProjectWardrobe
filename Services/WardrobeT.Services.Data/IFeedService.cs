@@ -15,6 +15,10 @@
 
         public Task<string> MakeOutfitPublicAsync(string id);
 
+        public Task<string> MakeOutfitPrivateAsync(string id);
+
+        public Task<string> MakeWearPrivateAsync(string id);
+
         public Task<List<OutfitPost>> GetOutfitPostsAsync(string username);
 
         public Task<List<WearPost>> GetWearPostsAsync(string username);

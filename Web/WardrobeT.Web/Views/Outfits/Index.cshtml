@@ -26,18 +26,25 @@
                         </div>
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Feed/MakePublicOutfit?id=@item.Id">Make public</a>
+                        @if (item.IsPublic == false)
+                        {
+                            <a class="dropdown-item" href="/Feed/MakePublicOutfit?id=@item.Id">Make public</a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" href="/Feed/MakePrivateOutfit?id=@item.Id">Make private</a>
+                        }
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
                     </div>
                 </div>
             </div>
         }
-        <div class="col-lg-3 col-md-4 col-6 mt-3">
-            <a class="btn btn-light d-block mb-4 h-100" href="/Outfits/AddOutfitManual">
+        <div class="col-lg-3 col-md-4 col-6">
+            <a class="btn btn-dark d-block mb-4 h-100 w-100" href="/Outfits/AddOutfitManual">
                 <div class="row h-100">
                     <div class="col-sm-12 my-auto">
-                        <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.15" />
+                        <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.2" />
                     </div>
                 </div>
             </a>

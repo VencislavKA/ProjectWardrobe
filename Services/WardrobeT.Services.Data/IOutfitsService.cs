@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Security.Policy;
     using System.Text;
     using System.Threading.Tasks;
 
@@ -17,5 +18,9 @@
         public Task<List<Outfit>> GetOutfitsAsync(string username);
 
         public Task DeleteOutfitAsync(string username, string id);
+
+        public Task<string> LikeAsync(string id);
+
+        public Task<string> UnlikeAsync(string id);
     }
 }

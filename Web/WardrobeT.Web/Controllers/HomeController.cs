@@ -23,11 +23,13 @@
         public HomeController(
             IFollowersService followersService,
             IOutfitsService outfitsService,
-            IUsersService usersService)
+            IUsersService usersService,
+            IWearsService wearsService)
         {
             this.FollowersService = followersService;
             this.OutfitsService = outfitsService;
             this.UsersService = usersService;
+            this.WearsService = wearsService;
         }
 
         public IFollowersService FollowersService { get; }
@@ -35,6 +37,8 @@
         public IOutfitsService OutfitsService { get; }
 
         public IUsersService UsersService { get; }
+
+        public IWearsService WearsService { get; }
 
         [Authorize]
         public async Task<IActionResult> Index()
@@ -73,6 +77,54 @@
         public async Task<IActionResult> Unfollow(string unfollowId, string url)
         {
             var result = await this.FollowersService.UnfollowAsync(this.User.Identity.Name, unfollowId);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Redirect(string.Empty + url);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> LikeOutfit(string id, string url)
+        {
+            var result = await this.OutfitsService.LikeAsync(id);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Redirect(string.Empty + url);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> UnlikeOutfit(string id, string url)
+        {
+            var result = await this.OutfitsService.UnlikeAsync(id);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Redirect(string.Empty + url);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> LikeWear(string id, string url)
+        {
+            var result = await this.WearsService.LikeAsync(id);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.Redirect(string.Empty + url);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> UnlikeWear(string id, string url)
+        {
+            var result = await this.WearsService.UnlikeAsync(id);
             if (result == null)
             {
                 return this.NotFound();

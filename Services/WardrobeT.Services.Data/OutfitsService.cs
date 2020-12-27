@@ -6,6 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using WardrobeT.Data.Common.Repositories;
     using WardrobeT.Data.Models;
@@ -13,11 +14,16 @@
 
     public class OutfitsService : IOutfitsService
     {
-        public OutfitsService(IRepository<Wear> repository, IRepository<Outfit> outfitsRepository, IRepository<ApplicationUser> usersRepository)
+        public OutfitsService(
+            IRepository<Wear> repository,
+            IRepository<Outfit> outfitsRepository,
+            IRepository<ApplicationUser> usersRepository,
+            IRepository<OutfitPost> outfitpostsRepository)
         {
             this.WearsRepository = repository;
             this.OutfitsRepository = outfitsRepository;
             this.UsersRepository = usersRepository;
+            this.OutfitpostsRepository = outfitpostsRepository;
         }
 
         public IRepository<Wear> WearsRepository { get; }
@@ -25,6 +31,8 @@
         public IRepository<Outfit> OutfitsRepository { get; }
 
         public IRepository<ApplicationUser> UsersRepository { get; }
+
+        public IRepository<OutfitPost> OutfitpostsRepository { get; }
 
         public async Task<ICollection<Outfit>> GetMyOutfitsAsync(string username)
         {
@@ -90,6 +98,32 @@
                 this.OutfitsRepository.Delete(await this.OutfitsRepository.All().FirstOrDefaultAsync(x => x.Id == id));
                 await this.OutfitsRepository.SaveChangesAsync();
             }
+        }
+
+        public async Task<string> LikeAsync(string id)
+        {
+            var outfitPost = await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (outfitPost == null)
+            {
+                return null;
+            }
+
+            outfitPost.Likes++;
+            await this.OutfitpostsRepository.SaveChangesAsync();
+            return string.Empty;
+        }
+
+        public async Task<string> UnlikeAsync(string id)
+        {
+            var outfitPost = await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (outfitPost == null)
+            {
+                return null;
+            }
+
+            outfitPost.Likes--;
+            await this.OutfitpostsRepository.SaveChangesAsync();
+            return string.Empty;
         }
     }
 }

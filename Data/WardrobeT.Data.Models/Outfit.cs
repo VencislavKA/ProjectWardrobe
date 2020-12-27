@@ -1,8 +1,10 @@
 ﻿namespace WardrobeT.Data.Models
 {
     using System;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-
+    using System.Reflection;
+    using System.Security.Authentication.ExtendedProtection;
     using WardrobeT.Data.Common.Models;
 
     public class Outfit : BaseModel<string>
@@ -21,5 +23,7 @@
         [Required]
         public Wear Bottom { get; set; }
 
+        [DefaultValue(false)]
+        public bool IsPublic { get; set; }
     }
 }

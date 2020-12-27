@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WardrobeT.Data.Migrations
 {
-    public partial class Initial_Create : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -234,7 +234,8 @@ namespace WardrobeT.Data.Migrations
                     TypeId = table.Column<string>(nullable: false),
                     Season = table.Column<int>(nullable: false),
                     Color = table.Column<int>(nullable: false),
-                    OwnerId = table.Column<string>(nullable: false)
+                    OwnerId = table.Column<string>(nullable: false),
+                    IsPublic = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -262,7 +263,8 @@ namespace WardrobeT.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     TopId = table.Column<string>(nullable: false),
                     MiddleId = table.Column<string>(nullable: false),
-                    BottomId = table.Column<string>(nullable: false)
+                    BottomId = table.Column<string>(nullable: false),
+                    IsPublic = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -334,40 +336,40 @@ namespace WardrobeT.Data.Migrations
                 columns: new[] { "Id", "CanBeUsedAlone", "Cover", "CreatedOn", "ModifiedOn", "Official", "Type" },
                 values: new object[,]
                 {
-                    { "2aa524c7-782b-45be-b8ea-a9169c333d20", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tracksuit top" },
-                    { "ff309a88-cc7c-4f4c-9899-040a616d96ea", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Turtleneck" },
-                    { "b911507e-d071-451d-876f-fd921a3728ea", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official turtleneck" },
-                    { "b71133d2-b2e2-4d2e-be73-131e73c1e9e1", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Leggins" },
-                    { "f006c4fd-568a-4027-8610-7275fa119094", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Slacks" },
-                    { "56b6c51e-f07e-4cb8-a420-54abf7c454ef", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official slacks" },
-                    { "7fcb73fa-cc54-40c9-804c-d0057774574f", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Coat" },
-                    { "7217fef8-7ff5-4b42-99fa-d48834e45dc3", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Short" },
-                    { "171f13d4-71f8-44dd-bdef-f8332feb35e7", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official short" },
-                    { "6f2424bd-01f0-4702-866f-76e479ec06b8", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Vest" },
-                    { "06a80586-586f-47b4-ba99-1badc289a72e", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official vest" },
-                    { "c018474b-568d-4fc7-8e90-ac3b4e32adcc", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tunic" },
-                    { "0786ca92-8280-4df8-8d4a-1b71724a1c93", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official tunic" },
-                    { "44e33f50-2f20-4fb4-b952-0e2b57bde732", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Jeans" },
-                    { "18b0ae6c-3db7-4827-a13a-d2f0812d40f9", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official jeans" },
-                    { "f69fd264-d10f-4f69-b467-4fa50efedeb1", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Blazer" },
-                    { "320fe846-abbc-4c72-8ba5-1fe90ca39e27", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official blazer" },
-                    { "c629865e-c8eb-4d15-ad54-2357f3cf388b", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Skirt" },
-                    { "1940ce19-ded8-4406-8036-165114bc4a48", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tracksuit bottoms" },
-                    { "f9c677cd-0d1d-4a17-a15c-060fd31b1733", true, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official dress" },
-                    { "3308e49c-3cd2-4c7b-b108-63234fe67671", true, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Dress" },
-                    { "519464ba-f9f1-4f93-8c5f-fe80e25d8c2f", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official jacket" },
-                    { "93fd55df-f153-48e5-b32c-cb4c9a90cd31", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Jacket" },
-                    { "1a41d1f9-95bd-4c36-825a-de72d40aac8e", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official knit Shirt" },
-                    { "3b28e153-ccfa-4165-9426-ee974e22c20a", false, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official T-Shirt" },
-                    { "faea699d-3464-4803-94e0-247eac7ac9c8", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Knit Shirt" },
-                    { "831a121c-6a40-48e3-bb76-5ea2e6dc6f0d", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Shirt" },
-                    { "5846370e-ab1e-4fd5-ab94-580097ddd83b", true, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Suit" },
-                    { "ec6a9f1d-c075-4814-bb1b-8455f57e6861", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official blouse" },
-                    { "0301b32a-3b2c-438c-806c-d81f5172d74f", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Blouse" },
-                    { "881a7f9e-6e40-4a82-87fa-99c8d9e68a84", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Sport Shirt" },
-                    { "98388473-2d1a-42d3-a7d4-9cf7652d4c27", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official skirt" },
-                    { "0cc13490-e096-444c-b479-c2429b0017dd", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official sirt" },
-                    { "c5034047-62b6-4a81-b517-da8df1fd4334", false, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "T-Shirt" }
+                    { "a61fd137-8a34-4f97-985b-305ec94ee2f0", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tracksuit top" },
+                    { "ee012081-055d-472c-a1b4-59468b5414cb", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Turtleneck" },
+                    { "ee48c6b1-e67f-4f4c-8bf8-20753178b5eb", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official turtleneck" },
+                    { "8cad900c-e426-4b95-8008-7661df24453f", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Leggins" },
+                    { "5eb52032-670a-4b47-889c-be22706ffd0a", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Slacks" },
+                    { "e8946421-0330-42d0-960d-446768cbb286", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official slacks" },
+                    { "3f1dcc2d-d116-452c-a906-ad7be75785aa", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Coat" },
+                    { "e2f0212a-121b-4de9-8a63-0d77b9325f63", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Short" },
+                    { "57e8b084-4e91-4f97-86dc-46b55f9e4d63", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official short" },
+                    { "5a7f20be-b483-40b0-a2b3-d6a7dae918f9", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Vest" },
+                    { "9a0720db-9cfe-466c-b990-ca00ccfbdd83", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official vest" },
+                    { "07ed4c16-2e49-467c-b03d-8e96d8723bfc", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tunic" },
+                    { "f843cd5b-caaa-4f04-ba20-d6c7cb1b3fe6", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official tunic" },
+                    { "571fe415-15cb-4eb6-b350-20e9250ff1d9", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Jeans" },
+                    { "3c09832c-0fb4-4f8a-9155-7835e9b8a839", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official jeans" },
+                    { "91f7deb8-8777-42f0-9ec6-f6bbd0e7c13e", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Blazer" },
+                    { "af86b7d6-3780-410c-9420-dd51ba766096", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official blazer" },
+                    { "0e2e53a2-551c-45fe-975e-3393fc513556", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Skirt" },
+                    { "5f351346-8282-42e3-af91-25a1cff038f5", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Tracksuit bottoms" },
+                    { "fce29752-b821-4ddf-bc57-026626a07ba0", true, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official dress" },
+                    { "df1f1397-cbd8-46f6-ac1e-9389bfefeb92", true, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Dress" },
+                    { "0620faba-ec3c-4954-b672-465c0ef51ebb", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official jacket" },
+                    { "f37f78d3-7be5-4831-8e8e-4945158dfec4", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Jacket" },
+                    { "4b537c1c-242c-42b1-a0b9-c5e642c77dc7", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official knit Shirt" },
+                    { "7bbc8c3f-4fad-4e8c-83fb-daabe61f385c", false, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official T-Shirt" },
+                    { "f387ad61-1188-4d2a-ac3e-36db7c52dc24", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Knit Shirt" },
+                    { "35ce9feb-a601-419b-bca2-6461ec69c02e", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Shirt" },
+                    { "893179c2-31b6-432d-90b2-895f20d6ea23", true, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Suit" },
+                    { "fd8f7d36-1146-4dcf-804f-2d2ec2dc4ac0", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official blouse" },
+                    { "fbe55ef6-d18a-4bb7-b0bc-7171ea37b468", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Blouse" },
+                    { "18a783b6-17ed-4db8-95de-302e25bf79c6", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "Sport Shirt" },
+                    { "c04d479d-8360-4694-abf5-31795c6028ad", false, 2, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official skirt" },
+                    { "4ed8713c-fa94-4a1d-8ccb-772f4ec9a0fa", false, 0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, true, "Official sirt" },
+                    { "2bad4172-f7a3-4b00-98ab-edf2c982e63d", false, 1, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, false, "T-Shirt" }
                 });
 
             migrationBuilder.CreateIndex(

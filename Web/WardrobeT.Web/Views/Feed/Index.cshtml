@@ -3,6 +3,12 @@
     ViewData["Title"] = "Feed";
 }
 
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
 <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0  text-light">@ViewData["Title"]</h1>
 
 <hr class="mt-2 mb-5 bg-light">
@@ -21,92 +27,124 @@
     }
     else if (Model.OutfitPosts.Count() == 0)
     {
-    <p class="text-center text-white">
-        No posted wears.
-    </p>
+        <p class="text-center text-white">
+            No posted wears.
+        </p>
     }
     @foreach (var item in Model.OutfitPosts)
     {
-    <div class="card mt-4">
-        <div class="card-header">
-            <div class="d-flex">
-                <div class="p-2">
-                    @if (item.Outfit.Top.Owner.ProfilePicture != null)
-                    {
-                        <a href="/User/Profile?id=@item.Outfit.Top.Owner.Id">
-                            <img src="@item.Outfit.Top.Owner.ProfilePicture" width="70px" class="img-fluid">
-                            <span class="text-dark">
-                                @item.Outfit.Top.Owner.UserName
-                            </span>
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="/User/Profile?id=@item.Id">
-                            <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
-                            <span class="text-dark">
-                                @item.Outfit.Top.Owner.UserName
-                            </span>
-                        </a>
-                    }
+        <section id="@item.Id">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="p-2">
+                            @if (item.Outfit.Top.Owner.ProfilePicture != null)
+                            {
+                                <a href="/User/Profile?id=@item.Outfit.Top.Owner.Id">
+                                    <img src="@item.Outfit.Top.Owner.ProfilePicture" width="70px" class="img-fluid">
+                                    <span class="text-dark">
+                                        @item.Outfit.Top.Owner.UserName
+                                    </span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="/User/Profile?id=@item.Outfit.Top.Owner.Id">
+                                    <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
+                                    <span class="text-dark">
+                                        @item.Outfit.Top.Owner.UserName
+                                    </span>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Top.ImageUrl" alt="There was a problem to load this image" />
+                        </div>
+                        <div class="row">
+                            <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Middle.ImageUrl" alt="There was a problem to load this image" />
+                        </div>
+                        <div class="row">
+                            <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Bottom.ImageUrl" alt="There was a problem to load this image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted w-100">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <a href="/Home/LikeOutfit?id=@item.Id&&url=/Feed#@item.Id">
+                                <button class="btn" type="submit">
+                                    <img src="/images/like.png" width="35px" />
+                                    <span class="text-dark ml-1">
+                                        @item.Likes
+                                    </span>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-auto">
+                            Created on: @item.CreatedOn.ToShortDateString()
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
-            <div class="container">
-                <div class="row">
-                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Top.ImageUrl" alt="There was a problem to load this image" />
-                </div>
-                <div class="row">
-                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Middle.ImageUrl" alt="There was a problem to load this image" />
-                </div>
-                <div class="row">
-                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Bottom.ImageUrl" alt="There was a problem to load this image" />
-                </div>
-            </div>
-        </div>
-        <div class="card-footer text-muted text-center">
-            Created on: @item.CreatedOn
-        </div>
-    </div>
+        </section>
     }
     @foreach (var item in Model.WearPosts)
     {
-        <div class="card mt-4">
-            <div class="card-header">
-                <div class="d-flex">
-                    <div class="p-2">
-                        @if (item.Wear.Owner.ProfilePicture != null)
-                        {
-                            <a href="/User/Profile?id=@item.Wear.Owner.Id">
-                                <img src="@item.Wear.Owner.ProfilePicture" width="70px" class="img-fluid">
-                                <span class="text-dark">
-                                    @item.Wear.Owner.UserName
-                                </span>
+        <section id="@item.Id">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <div class="p-2">
+                            @if (item.Wear.Owner.ProfilePicture != null)
+                            {
+                                <a href="/User/Profile?id=@item.Wear.Owner.Id">
+                                    <img src="@item.Wear.Owner.ProfilePicture" width="70px" class="img-fluid">
+                                    <span class="text-dark">
+                                        @item.Wear.Owner.UserName
+                                    </span>
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="/User/Profile?id=@item.Wear.Owner.Id">
+                                    <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
+                                    <span class="text-dark">
+                                        @item.Wear.Owner.UserName
+                                    </span>
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <img class="w-25 rounded mx-auto d-block" src="@item.Wear.ImageUrl" alt="There was a problem to load this image" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="row align-items-center">
+                        <div class="col-8">
+                            <a href="/Home/LikeWear?id=@item.Id&&url=/Feed#@item.Id">
+                                <button class="btn" type="submit">
+                                    <img src="/images/like.png" width="35px" />
+                                    <span class="text-dark ml-1">
+                                        @item.Likes
+                                    </span>
+                                </button>
                             </a>
-                        }
-                        else
-                        {
-                            <a href="/User/Profile?id=@item.Wear.Owner.Id">
-                                <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
-                                <span class="text-dark">
-                                    @item.Wear.Owner.UserName
-                                </span>
-                            </a>
-                        }
+                        </div>
+                        <div class="col-auto">
+                            Created on: @item.CreatedOn.ToShortDateString()
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <img class="w-25 rounded mx-auto d-block" src="@item.Wear.ImageUrl" alt="There was a problem to load this image" />
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer text-muted text-center">
-                Created on: @item.CreatedOn
-            </div>
-        </div>
-    }
-</div>
+         </section>
+      }
+    </div>

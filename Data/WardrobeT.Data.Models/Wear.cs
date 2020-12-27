@@ -1,6 +1,7 @@
 ﻿namespace WardrobeT.Data.Models
 {
     using System;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
     using Microsoft.AspNetCore.Identity;
@@ -29,5 +30,8 @@
 
         [Required]
         public ApplicationUser Owner { get; set; }
+
+        [DefaultValue(false)]
+        public bool IsPublic { get; set; }
     }
 }

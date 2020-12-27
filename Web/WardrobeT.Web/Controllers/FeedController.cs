@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using WardrobeT.Services.Data;
@@ -44,9 +45,33 @@
         }
 
         [Authorize]
+        public async Task<IActionResult> MakePrivateWear(string id)
+        {
+            var result = await this.FeedService.MakeWearPrivateAsync(id);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.RedirectToAction("Index", "Wardrobe");
+        }
+
+        [Authorize]
         public async Task<IActionResult> MakePublicOutfit(string id)
         {
             var result = await this.FeedService.MakeOutfitPublicAsync(id);
+            if (result == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.RedirectToAction("Index", "Outfits");
+        }
+
+        [Authorize]
+        public async Task<IActionResult> MakePrivateOutfit(string id)
+        {
+            var result = await this.FeedService.MakeOutfitPrivateAsync(id);
             if (result == null)
             {
                 return this.NotFound();

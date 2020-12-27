@@ -18,7 +18,14 @@
                         <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/Feed/MakePublicWear?id=@item.Id">Make public</a>
+                        @if (item.IsPublic == false)
+                        {
+                            <a class="dropdown-item" href="/Feed/MakePublicWear?id=@item.Id">Make public</a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" href="/Feed/MakePrivateWear?id=@item.Id">Make private</a>
+                        }
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="/Wardrobe/DeleteWear?id=@item.Id">Delete</a>
                     </div>

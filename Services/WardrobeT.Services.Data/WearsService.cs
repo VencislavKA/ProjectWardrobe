@@ -18,12 +18,14 @@
             IRepository<Wear> repository,
             IRepository<TypeOfWear> tofrepository,
             IUsersService usersService,
-            IRepository<Outfit> outfitsRepository)
+            IRepository<Outfit> outfitsRepository,
+            IRepository<WearPost> wearpostsRepository)
         {
             this.Repository = repository;
             this.TOFrepository = tofrepository;
             this.UsersService = usersService;
             this.OutfitsRepository = outfitsRepository;
+            this.WearpostsRepository = wearpostsRepository;
         }
 
         public IRepository<Wear> Repository { get; }
@@ -33,6 +35,8 @@
         public IUsersService UsersService { get; }
 
         public IRepository<Outfit> OutfitsRepository { get; }
+
+        public IRepository<WearPost> WearpostsRepository { get; }
 
         public async Task<ICollection<Wear>> GetTopsAsync(string username)
              => await this.Repository.All().Where(x => x.Owner.UserName == username
@@ -92,6 +96,32 @@
                 this.Repository.Delete(await this.Repository.All().FirstOrDefaultAsync(x => x.Id == id));
                 await this.Repository.SaveChangesAsync();
             }
+        }
+
+        public async Task<string> LikeAsync(string id)
+        {
+            var outfitPost = await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (outfitPost == null)
+            {
+                return null;
+            }
+
+            outfitPost.Likes++;
+            await this.WearpostsRepository.SaveChangesAsync();
+            return string.Empty;
+        }
+
+        public async Task<string> UnlikeAsync(string id)
+        {
+            var outfitPost = await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (outfitPost == null)
+            {
+                return null;
+            }
+
+            outfitPost.Likes--;
+            await this.WearpostsRepository.SaveChangesAsync();
+            return string.Empty;
         }
     }
 }

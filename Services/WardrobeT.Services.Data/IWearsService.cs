@@ -23,5 +23,9 @@
         public Task CreateWearAsync(string wearType, string season, string color, string imagePath, string username);
 
         public Task DeleteWearAsync(string id, string username);
+
+        public Task<string> LikeAsync(string id);
+
+        public Task<string> UnlikeAsync(string id);
     }
 }

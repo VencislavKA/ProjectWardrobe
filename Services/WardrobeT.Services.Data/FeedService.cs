@@ -36,6 +36,7 @@
         => await this.OutfitpostsRepository.All().Select(x => x).Where(x => x.Outfit.Top.Owner.UserName != username).OrderBy(x => x.Likes)
             .Include(x => x.Outfit)
             .Include(x => x.Outfit.Top)
+            .Include(x => x.Outfit.Top.Owner)
             .Include(x => x.Outfit.Middle)
             .Include(x => x.Outfit.Bottom)
             .ToListAsync();
@@ -59,11 +60,33 @@
                 return null;
             }
 
+            outfit.IsPublic = true;
+
             await this.OutfitpostsRepository.AddAsync(new OutfitPost
             {
                 Outfit = outfit,
                 Likes = 0,
             });
+            await this.OutfitpostsRepository.SaveChangesAsync();
+            return string.Empty;
+        }
+
+        public async Task<string> MakeOutfitPrivateAsync(string id)
+        {
+            if (id == null)
+            {
+                return null;
+            }
+
+            var outfit = await this.OutfitsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (outfit == null)
+            {
+                return null;
+            }
+
+            outfit.IsPublic = false;
+
+            this.OutfitpostsRepository.Delete(await this.OutfitpostsRepository.All().Where(x => x.Outfit == outfit).FirstOrDefaultAsync());
             await this.OutfitpostsRepository.SaveChangesAsync();
             return string.Empty;
         }
@@ -81,11 +104,33 @@
                 return null;
             }
 
+            wear.IsPublic = true;
+
             await this.WearpostsRepository.AddAsync(new WearPost
             {
                 Wear = wear,
                 Likes = 0,
             });
+            await this.WearpostsRepository.SaveChangesAsync();
+            return string.Empty;
+        }
+
+        public async Task<string> MakeWearPrivateAsync(string id)
+        {
+            if (id == null)
+            {
+                return null;
+            }
+
+            var wear = await this.WearsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            if (wear == null)
+            {
+                return null;
+            }
+
+            wear.IsPublic = false;
+
+            this.WearpostsRepository.Delete(await this.WearpostsRepository.All().Where(x => x.Wear == wear).FirstOrDefaultAsync());
             await this.WearpostsRepository.SaveChangesAsync();
             return string.Empty;
         }
