@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Security.Principal;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using WardrobeT.Data;
@@ -27,6 +27,7 @@
         public IWearsService WearsService { get; }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> AddOutfitManual()
         {
             var tops = await this.WearsService.GetTopsAsync(this.User.Identity.Name);
@@ -44,6 +45,7 @@
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> AddOutfitManual(AddManualInputModel model)
         {
             if (model.Top == null || model.Middle == null || model.Bottom == null)
@@ -56,6 +58,7 @@
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             List<Outfit> outfits = await this.OutfitsService.GetOutfitsAsync(this.User.Identity.Name);
@@ -66,12 +69,14 @@
             return this.View(modelView);
         }
 
+        [Authorize]
         public async Task<IActionResult> AddOutfit(AddOutfitInputModel model)
         {
             await this.OutfitsService.CreateOutfitAsync(model.topId, model.middleId, model.bottomId);
             return this.Redirect(model.url);
         }
 
+        [Authorize]
         public async Task<IActionResult> DeleteOutfit(string id)
         {
             await this.OutfitsService.DeleteOutfitAsync(this.User.Identity.Name, id);

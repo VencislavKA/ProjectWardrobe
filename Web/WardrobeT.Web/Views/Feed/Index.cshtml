@@ -7,67 +7,71 @@
 
 <hr class="mt-2 mb-5 bg-light">
 <div class="col-sm-8 mx-auto">
-    @if (Model.OutfitPosts.Count() == 0)
+    @if (Model.OutfitPosts.Count() == 0 && Model.WearPosts.Count() == 0)
     {
         <p class="text-center text-white">
-            No posted outfits
+            No posts.
         </p>
+    }
+    else if (Model.OutfitPosts.Count() == 0)
+    {
+        <p class="text-center text-white">
+            No posted outfits.
+        </p>
+    }
+    else if (Model.OutfitPosts.Count() == 0)
+    {
+    <p class="text-center text-white">
+        No posted wears.
+    </p>
     }
     @foreach (var item in Model.OutfitPosts)
     {
-
-        <div class="card mt-4">
-            <div class="card-header">
-                <div class="d-flex">
-                    <div class="p-2">
-                        @if (item.Outfit.Top.Owner.ProfilePicture != null)
-                        {
-                            <a href="/User/Profile?id=@item.Outfit.Top.Owner.Id">
-                                <img src="@item.Outfit.Top.Owner.ProfilePicture" width="70px" class="img-fluid">
-                                <span class="text-dark">
-                                    @item.Outfit.Top.Owner.UserName
-                                </span>
-                            </a>
-                        }
-                        else
-                        {
-                            <a href="/User/Profile?id=@item.Id">
-                                <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
-                                <span class="text-dark">
-                                    @item.Outfit.Top.Owner.UserName
-                                </span>
-                            </a>
-                        }
-                    </div>
+    <div class="card mt-4">
+        <div class="card-header">
+            <div class="d-flex">
+                <div class="p-2">
+                    @if (item.Outfit.Top.Owner.ProfilePicture != null)
+                    {
+                        <a href="/User/Profile?id=@item.Outfit.Top.Owner.Id">
+                            <img src="@item.Outfit.Top.Owner.ProfilePicture" width="70px" class="img-fluid">
+                            <span class="text-dark">
+                                @item.Outfit.Top.Owner.UserName
+                            </span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/User/Profile?id=@item.Id">
+                            <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="70px" class="img-fluid">
+                            <span class="text-dark">
+                                @item.Outfit.Top.Owner.UserName
+                            </span>
+                        </a>
+                    }
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Top.ImageUrl" alt="There was a problem to load this image" />
-                    </div>
-                    <div class="row">
-                        <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Middle.ImageUrl" alt="There was a problem to load this image" />
-                    </div>
-                    <div class="row">
-                        <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Bottom.ImageUrl" alt="There was a problem to load this image" />
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer text-muted text-center">
-                Created on: @item.CreatedOn
             </div>
         </div>
-    }
-    @if (Model.OutfitPosts.Count() == 0)
-    {
-        <p class="text-center text-white">
-            No posted wears
-        </p>
+        <div class="card-body">
+            <div class="container">
+                <div class="row">
+                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Top.ImageUrl" alt="There was a problem to load this image" />
+                </div>
+                <div class="row">
+                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Middle.ImageUrl" alt="There was a problem to load this image" />
+                </div>
+                <div class="row">
+                    <img class="w-25 rounded mx-auto d-block" src="@item.Outfit.Bottom.ImageUrl" alt="There was a problem to load this image" />
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-muted text-center">
+            Created on: @item.CreatedOn
+        </div>
+    </div>
     }
     @foreach (var item in Model.WearPosts)
     {
-
         <div class="card mt-4">
             <div class="card-header">
                 <div class="d-flex">

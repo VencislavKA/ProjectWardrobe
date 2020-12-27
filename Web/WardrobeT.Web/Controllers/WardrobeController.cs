@@ -7,7 +7,7 @@
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
@@ -38,6 +38,7 @@
 
         public IWearsService WearsService { get; }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var wears = await this.WearsService.GetWearsAsync(this.User.Identity.Name);
@@ -49,6 +50,7 @@
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> AddWear()
         {
             var addWear = new AddWearViewModel
@@ -68,6 +70,7 @@
 
         [HttpPost]
         [Obsolete]
+        [Authorize]
         public async Task<IActionResult> AddWear(AddWearInputModel model)
         {
             // proveri dali v snimkata nqma zlonameren kod
@@ -82,6 +85,7 @@
             return this.Redirect("Index");
         }
 
+        [Authorize]
         public async Task<IActionResult> DeleteWear(string id)
         {
             await this.WearsService.DeleteWearAsync(id, this.User.Identity.Name);
@@ -89,6 +93,7 @@
         }
 
         [Obsolete]
+        [Authorize]
         private async Task<string> StoreFileAsync(IFormFile file)
         {
             if (file != null && file.Length > 0)

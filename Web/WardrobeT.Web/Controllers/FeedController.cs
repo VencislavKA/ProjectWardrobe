@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using WardrobeT.Services.Data;
     using WardrobeT.Web.ViewModels.Feed;
@@ -18,6 +18,7 @@
 
         public IFeedService FeedService { get; }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var outfitposts = await this.FeedService.GetOutfitPostsAsync(this.User.Identity.Name);
@@ -30,6 +31,7 @@
             return this.View(view);
         }
 
+        [Authorize]
         public async Task<IActionResult> MakePublicWear(string id)
         {
             var result = await this.FeedService.MakeWearPublicAsync(id);
@@ -41,6 +43,7 @@
             return this.RedirectToAction("Index", "Wardrobe");
         }
 
+        [Authorize]
         public async Task<IActionResult> MakePublicOutfit(string id)
         {
             var result = await this.FeedService.MakeOutfitPublicAsync(id);

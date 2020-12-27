@@ -23,6 +23,7 @@
             this.followersService = service;
         }
 
+        [Authorize]
         public async Task<IActionResult> Followers()
         {
             var searchResult = new FollowViewModel();
@@ -30,6 +31,7 @@
             return this.View(searchResult);
         }
 
+        [Authorize]
         public async Task<IActionResult> Following()
         {
             var searchResult = new FollowViewModel();

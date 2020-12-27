@@ -36,6 +36,7 @@
 
         public IUsersService UsersService { get; }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var indexHomeViewModel = new IndexHomeViewModel();
