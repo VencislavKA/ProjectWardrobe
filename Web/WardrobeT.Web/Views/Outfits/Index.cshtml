@@ -12,34 +12,54 @@
     <div class="row text-center text-lg-left">
         @foreach (var item in Model.Outfits)
         {
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="dropdown mt-3">
-                    <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="row ml-1 mr-1">
-                            <img class="img-fluid" src="@item.Top.ImageUrl" alt="Can't load this image" />
-                        </div>
-                        <div class="row ml-1 mr-1">
-                            <img class="img-fluid " src="@item.Middle.ImageUrl" alt="Can't load this image" />
-                        </div>
-                        <div class="row ml-1 mr-1">
-                            <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
-                        </div>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @if (item.IsPublic == false)
-                        {
+            @if (item.IsPublic == false)
+            {
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid" src="@item.Top.ImageUrl" alt="Can't load this image" />
+                            </div>
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid " src="@item.Middle.ImageUrl" alt="Can't load this image" />
+                            </div>
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="/Feed/MakePublicOutfit?id=@item.Id">Make public</a>
-                        }
-                        else
-                        {
-                            <a class="dropdown-item" href="/Feed/MakePrivateOutfit?id=@item.Id">Make private</a>
-                        }
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+            else
+            {
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-outline-info" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid" src="@item.Top.ImageUrl" alt="Can't load this image" />
+                            </div>
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid " src="@item.Middle.ImageUrl" alt="Can't load this image" />
+                            </div>
+                            <div class="row ml-1 mr-1">
+                                <img class="img-fluid " src="@item.Bottom.ImageUrl" alt="Can't load this image" />
+                            </div>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Feed/MakePrivateOutfit?id=@item.Id">Make private</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/Outfits/DeleteOutfit?id=@item.Id">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
         }
+
         <div class="col-lg-3 col-md-4 col-6">
             <a class="btn btn-dark d-block mb-4 h-100 w-100" href="/Outfits/AddOutfitManual">
                 <div class="row h-100">

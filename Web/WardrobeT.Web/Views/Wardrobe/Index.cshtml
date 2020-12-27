@@ -12,26 +12,38 @@
 
         @foreach (var item in Model.Wears)
         {
-            <div class="col-lg-3 col-md-4 col-6">
-                <div class="dropdown">
-                    <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        @if (item.IsPublic == false)
-                        {
+            @if (item.IsPublic == false)
+            {
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="/Feed/MakePublicWear?id=@item.Id">Make public</a>
-                        }
-                        else
-                        {
-                            <a class="dropdown-item" href="/Feed/MakePrivateWear?id=@item.Id">Make private</a>
-                        }
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="/Wardrobe/DeleteWear?id=@item.Id">Delete</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/Wardrobe/DeleteWear?id=@item.Id">Delete</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+            else
+            {
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-info" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="/Feed/MakePrivateWear?id=@item.Id">Make private</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="/Wardrobe/DeleteWear?id=@item.Id">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            }
         }
+
         <div class="col-lg-3 col-md-4 col-6">
             <a class="d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddWear">
                 <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.2">
