@@ -40,7 +40,6 @@
 
         public IWearsService WearsService { get; }
 
-        [Authorize]
         public async Task<IActionResult> Index()
         {
             var indexHomeViewModel = new IndexHomeViewModel();

@@ -19,13 +19,15 @@
             IRepository<TypeOfWear> tofrepository,
             IUsersService usersService,
             IRepository<Outfit> outfitsRepository,
-            IRepository<WearPost> wearpostsRepository)
+            IRepository<WearPost> wearpostsRepository,
+            IRepository<OutfitPost> outfitpostRepository)
         {
             this.Repository = repository;
             this.TOFrepository = tofrepository;
             this.UsersService = usersService;
             this.OutfitsRepository = outfitsRepository;
             this.WearpostsRepository = wearpostsRepository;
+            this.OutfitpostRepository = outfitpostRepository;
         }
 
         public IRepository<Wear> Repository { get; }
@@ -37,6 +39,7 @@
         public IRepository<Outfit> OutfitsRepository { get; }
 
         public IRepository<WearPost> WearpostsRepository { get; }
+        public IRepository<OutfitPost> OutfitpostRepository { get; }
 
         public async Task<ICollection<Wear>> GetTopsAsync(string username)
              => await this.Repository.All().Where(x => x.Owner.UserName == username
@@ -85,6 +88,16 @@
             {
                 var wear = await this.Repository.All().FirstOrDefaultAsync(x => x.Id == id);
                 var toRemove = new List<Outfit>();
+                if (await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Wear == wear) != null)
+                {
+                    this.WearpostsRepository.Delete(await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Wear == wear));
+                }
+
+                if (await this.OutfitpostRepository.All().Where(x => x.Outfit.Top == wear || x.Outfit.Middle == wear || x.Outfit.Bottom == wear).FirstOrDefaultAsync() != null)
+                {
+                    this.OutfitpostRepository.Delete(await this.OutfitpostRepository.All().Where(x => x.Outfit.Top == wear || x.Outfit.Middle == wear || x.Outfit.Bottom == wear).FirstOrDefaultAsync());
+                }
+
                 toRemove.AddRange(this.OutfitsRepository.All().Where(x => x.Top == wear));
                 toRemove.AddRange(this.OutfitsRepository.All().Where(x => x.Middle == wear));
                 toRemove.AddRange(this.OutfitsRepository.All().Where(x => x.Bottom == wear));

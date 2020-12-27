@@ -95,7 +95,13 @@
             if (await this.OutfitsRepository.All().FirstOrDefaultAsync(x => x.Id == id) != null &&
                 await this.OutfitsRepository.All().Include(x => x.Top).Where(x => x.Top.Owner.UserName == username && x.Id == id).FirstOrDefaultAsync() != null)
             {
-                this.OutfitsRepository.Delete(await this.OutfitsRepository.All().FirstOrDefaultAsync(x => x.Id == id));
+                var outfit = await this.OutfitsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+                if (await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Outfit == outfit) != null)
+                {
+                    this.OutfitpostsRepository.Delete(await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Outfit == outfit));
+                }
+
+                this.OutfitsRepository.Delete(outfit);
                 await this.OutfitsRepository.SaveChangesAsync();
             }
         }
