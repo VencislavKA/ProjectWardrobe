@@ -19,8 +19,8 @@
 
         public Task DeleteOutfitAsync(string username, string id);
 
-        public Task<string> LikeAsync(string id);
+        public Task<string> LikeAsync(string id, string username);
 
-        public Task<string> UnlikeAsync(string id);
+        public Task<string> UnlikeAsync(string id, string username);
     }
 }

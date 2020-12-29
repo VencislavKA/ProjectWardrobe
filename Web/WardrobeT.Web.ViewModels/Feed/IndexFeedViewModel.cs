@@ -12,12 +12,12 @@
     {
         public IndexFeedViewModel()
         {
-            this.OutfitPosts = new List<OutfitPost>();
-            this.WearPosts = new List<WearPost>();
+            this.OutfitPosts = new List<IndexFeedOutfitPost>();
+            this.WearPosts = new List<IndexFeedWearPost>();
         }
 
-        public List<WearPost> WearPosts { get; set; }
+        public List<IndexFeedWearPost> WearPosts { get; set; }
 
-        public List<OutfitPost> OutfitPosts { get; set; }
+        public List<IndexFeedOutfitPost> OutfitPosts { get; set; }
     }
 }

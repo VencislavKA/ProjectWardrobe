@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading.Tasks;
 
     using Microsoft.AspNetCore.Authorization;
@@ -24,10 +25,52 @@
         {
             var outfitposts = await this.FeedService.GetOutfitPostsAsync(this.User.Identity.Name);
             var wearposts = await this.FeedService.GetWearPostsAsync(this.User.Identity.Name);
+
+            List<IndexFeedWearPost> wears = new List<IndexFeedWearPost>();
+            List<IndexFeedOutfitPost> outfits = new List<IndexFeedOutfitPost>();
+
+            foreach (var wear in wearposts)
+            {
+                if (wear.Likes.Where(x => x.UserName == this.User.Identity.Name).FirstOrDefault() == null)
+                {
+                    wears.Add(new IndexFeedWearPost()
+                    {
+                        Post = wear,
+                        Liked = false,
+                    });
+                    continue;
+                }
+
+                wears.Add(new IndexFeedWearPost()
+                {
+                    Post = wear,
+                    Liked = true,
+                });
+            }
+
+            foreach (var outfit in outfitposts)
+            {
+                if (outfit.Likes.Where(x => x.UserName == this.User.Identity.Name).FirstOrDefault() == null)
+                {
+                    outfits.Add(new IndexFeedOutfitPost()
+                    {
+                        Post = outfit,
+                        Liked = false,
+                    });
+                    continue;
+                }
+
+                outfits.Add(new IndexFeedOutfitPost()
+                {
+                    Post = outfit,
+                    Liked = true,
+                });
+            }
+
             var view = new IndexFeedViewModel()
             {
-                OutfitPosts = outfitposts,
-                WearPosts = wearposts,
+                OutfitPosts = outfits,
+                WearPosts = wears,
             };
             return this.View(view);
         }

@@ -87,7 +87,7 @@
         [Authorize]
         public async Task<IActionResult> LikeOutfit(string id, string url)
         {
-            var result = await this.OutfitsService.LikeAsync(id);
+            var result = await this.OutfitsService.LikeAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 return this.NotFound();
@@ -99,7 +99,7 @@
         [Authorize]
         public async Task<IActionResult> UnlikeOutfit(string id, string url)
         {
-            var result = await this.OutfitsService.UnlikeAsync(id);
+            var result = await this.OutfitsService.UnlikeAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 return this.NotFound();
@@ -111,7 +111,7 @@
         [Authorize]
         public async Task<IActionResult> LikeWear(string id, string url)
         {
-            var result = await this.WearsService.LikeAsync(id);
+            var result = await this.WearsService.LikeAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 return this.NotFound();
@@ -123,7 +123,7 @@
         [Authorize]
         public async Task<IActionResult> UnlikeWear(string id, string url)
         {
-            var result = await this.WearsService.UnlikeAsync(id);
+            var result = await this.WearsService.UnlikeAsync(id, this.User.Identity.Name);
             if (result == null)
             {
                 return this.NotFound();

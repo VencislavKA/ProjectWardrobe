@@ -20,7 +20,8 @@
             IUsersService usersService,
             IRepository<Outfit> outfitsRepository,
             IRepository<WearPost> wearpostsRepository,
-            IRepository<OutfitPost> outfitpostRepository)
+            IRepository<OutfitPost> outfitpostRepository,
+            IRepository<ApplicationUser> userRepository)
         {
             this.Repository = repository;
             this.TOFrepository = tofrepository;
@@ -28,6 +29,7 @@
             this.OutfitsRepository = outfitsRepository;
             this.WearpostsRepository = wearpostsRepository;
             this.OutfitpostRepository = outfitpostRepository;
+            this.UsersRepository = userRepository;
         }
 
         public IRepository<Wear> Repository { get; }
@@ -39,7 +41,10 @@
         public IRepository<Outfit> OutfitsRepository { get; }
 
         public IRepository<WearPost> WearpostsRepository { get; }
+
         public IRepository<OutfitPost> OutfitpostRepository { get; }
+
+        public IRepository<ApplicationUser> UsersRepository { get; }
 
         public async Task<ICollection<Wear>> GetTopsAsync(string username)
              => await this.Repository.All().Where(x => x.Owner.UserName == username
@@ -111,28 +116,40 @@
             }
         }
 
-        public async Task<string> LikeAsync(string id)
+        public async Task<string> LikeAsync(string id, string username)
         {
             var outfitPost = await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            var user = await this.UsersRepository.All().FirstOrDefaultAsync(x => x.UserName == username);
+            if (user == null)
+            {
+                return null;
+            }
+
             if (outfitPost == null)
             {
                 return null;
             }
 
-            outfitPost.Likes++;
+            outfitPost.Likes.Add(user);
             await this.WearpostsRepository.SaveChangesAsync();
             return string.Empty;
         }
 
-        public async Task<string> UnlikeAsync(string id)
+        public async Task<string> UnlikeAsync(string id, string username)
         {
             var outfitPost = await this.WearpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            var user = await this.UsersRepository.All().FirstOrDefaultAsync(x => x.UserName == username);
+            if (user == null)
+            {
+                return null;
+            }
+
             if (outfitPost == null)
             {
                 return null;
             }
 
-            outfitPost.Likes--;
+            outfitPost.Likes.Remove(user);
             await this.WearpostsRepository.SaveChangesAsync();
             return string.Empty;
         }

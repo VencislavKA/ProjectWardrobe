@@ -33,18 +33,20 @@
         public IRepository<OutfitPost> OutfitpostsRepository { get; }
 
         public async Task<List<OutfitPost>> GetOutfitPostsAsync(string username)
-        => await this.OutfitpostsRepository.All().Select(x => x).Where(x => x.Outfit.Top.Owner.UserName != username).OrderBy(x => x.Likes)
+        => await this.OutfitpostsRepository.All().Select(x => x).Where(x => x.Outfit.Top.Owner.UserName != username).OrderBy(x => x.Likes.Count())
             .Include(x => x.Outfit)
             .Include(x => x.Outfit.Top)
             .Include(x => x.Outfit.Top.Owner)
             .Include(x => x.Outfit.Middle)
             .Include(x => x.Outfit.Bottom)
+            .Include(x => x.Likes)
             .ToListAsync();
 
         public async Task<List<WearPost>> GetWearPostsAsync(string username)
-            => await this.WearpostsRepository.All().Select(x => x).Where(x => x.Wear.Owner.UserName != username).OrderBy(x => x.Likes)
+            => await this.WearpostsRepository.All().Select(x => x).Where(x => x.Wear.Owner.UserName != username).OrderBy(x => x.Likes.Count())
             .Include(x => x.Wear)
             .Include(x => x.Wear.Owner)
+            .Include(x => x.Likes)
             .ToListAsync();
 
         public async Task<string> MakeOutfitPublicAsync(string id)
@@ -65,7 +67,6 @@
             await this.OutfitpostsRepository.AddAsync(new OutfitPost
             {
                 Outfit = outfit,
-                Likes = 0,
             });
             await this.OutfitpostsRepository.SaveChangesAsync();
             return string.Empty;
@@ -109,7 +110,6 @@
             await this.WearpostsRepository.AddAsync(new WearPost
             {
                 Wear = wear,
-                Likes = 0,
             });
             await this.WearpostsRepository.SaveChangesAsync();
             return string.Empty;

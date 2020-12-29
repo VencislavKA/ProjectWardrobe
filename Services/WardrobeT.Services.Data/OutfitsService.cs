@@ -106,28 +106,40 @@
             }
         }
 
-        public async Task<string> LikeAsync(string id)
+        public async Task<string> LikeAsync(string id, string username)
         {
             var outfitPost = await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            var user = await this.UsersRepository.All().FirstOrDefaultAsync(x => x.UserName == username);
+            if (user == null)
+            {
+                return null;
+            }
+
             if (outfitPost == null)
             {
                 return null;
             }
 
-            outfitPost.Likes++;
+            outfitPost.Likes.Add(user);
             await this.OutfitpostsRepository.SaveChangesAsync();
             return string.Empty;
         }
 
-        public async Task<string> UnlikeAsync(string id)
+        public async Task<string> UnlikeAsync(string id, string username)
         {
             var outfitPost = await this.OutfitpostsRepository.All().FirstOrDefaultAsync(x => x.Id == id);
+            var user = await this.UsersRepository.All().FirstOrDefaultAsync(x => x.UserName == username);
+            if(user == null)
+            {
+                return null;
+            }
+
             if (outfitPost == null)
             {
                 return null;
             }
 
-            outfitPost.Likes--;
+            outfitPost.Likes.Remove(user);
             await this.OutfitpostsRepository.SaveChangesAsync();
             return string.Empty;
         }

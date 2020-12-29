@@ -10,7 +10,7 @@ using WardrobeT.Data;
 namespace WardrobeT.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201227102821_InitialCreate")]
+    [Migration("20201229101926_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -156,7 +156,7 @@ namespace WardrobeT.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a61fd137-8a34-4f97-985b-305ec94ee2f0",
+                            Id = "f3e07e83-05f0-4e82-815e-ff4e089876af",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -165,7 +165,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "5f351346-8282-42e3-af91-25a1cff038f5",
+                            Id = "6c83bb34-8b6a-46ef-8d5a-0a8e298af0d8",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -174,7 +174,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "fce29752-b821-4ddf-bc57-026626a07ba0",
+                            Id = "4e079513-1324-4bec-86da-617c779ae48e",
                             CanBeUsedAlone = true,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -183,7 +183,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "df1f1397-cbd8-46f6-ac1e-9389bfefeb92",
+                            Id = "37fd5adf-fc9b-44f4-9d96-44385280ea42",
                             CanBeUsedAlone = true,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -192,7 +192,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "0620faba-ec3c-4954-b672-465c0ef51ebb",
+                            Id = "05bd0646-2bb2-4d66-8544-acb2cff9bef0",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -201,7 +201,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "f37f78d3-7be5-4831-8e8e-4945158dfec4",
+                            Id = "9b8dfa4c-c25a-493d-89dc-ee51f0a68c71",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -210,7 +210,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "4b537c1c-242c-42b1-a0b9-c5e642c77dc7",
+                            Id = "cd8d18b4-2c27-4a79-9b49-d38f337103a8",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -219,7 +219,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "f387ad61-1188-4d2a-ac3e-36db7c52dc24",
+                            Id = "7ab7832a-664a-41c6-8706-51dd79709a34",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -228,7 +228,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "4ed8713c-fa94-4a1d-8ccb-772f4ec9a0fa",
+                            Id = "21eba6fa-5d82-4175-9fb7-b284323660f2",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -237,7 +237,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "35ce9feb-a601-419b-bca2-6461ec69c02e",
+                            Id = "9fd34e85-775d-4232-8042-2a083936a2ea",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -246,7 +246,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "893179c2-31b6-432d-90b2-895f20d6ea23",
+                            Id = "ae6936da-e121-45f5-acda-c6eef4e8288f",
                             CanBeUsedAlone = true,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -255,7 +255,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "fd8f7d36-1146-4dcf-804f-2d2ec2dc4ac0",
+                            Id = "92087926-037f-4811-8bd9-8ccd19afd6d3",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -264,7 +264,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "fbe55ef6-d18a-4bb7-b0bc-7171ea37b468",
+                            Id = "6af0b806-a365-4326-b9ea-85905de5747a",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -273,7 +273,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "18a783b6-17ed-4db8-95de-302e25bf79c6",
+                            Id = "979bc152-0d03-4322-bab6-885bc5dffe48",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -282,7 +282,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "c04d479d-8360-4694-abf5-31795c6028ad",
+                            Id = "07190b8f-8654-4272-8cf8-950c89094d07",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -291,7 +291,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "0e2e53a2-551c-45fe-975e-3393fc513556",
+                            Id = "f2270e20-a475-4065-aa9a-e7fd574e1fac",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -300,7 +300,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "af86b7d6-3780-410c-9420-dd51ba766096",
+                            Id = "3a70aa5e-cd67-4b79-a72e-1121af44077b",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -309,7 +309,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "91f7deb8-8777-42f0-9ec6-f6bbd0e7c13e",
+                            Id = "8a33c2d8-1ed2-4bba-a697-038fadd92353",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -318,7 +318,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "3c09832c-0fb4-4f8a-9155-7835e9b8a839",
+                            Id = "a2c56d19-15c7-4644-ae6d-764e48cae93f",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -327,7 +327,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "571fe415-15cb-4eb6-b350-20e9250ff1d9",
+                            Id = "3b954f2f-aed3-4991-b4e9-6d492761efde",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -336,7 +336,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "f843cd5b-caaa-4f04-ba20-d6c7cb1b3fe6",
+                            Id = "c48143e3-3336-435b-a11a-18c81d21d0d6",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -345,7 +345,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "07ed4c16-2e49-467c-b03d-8e96d8723bfc",
+                            Id = "bb10bfdf-fd7a-4353-8f13-6673839d8a93",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -354,7 +354,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "9a0720db-9cfe-466c-b990-ca00ccfbdd83",
+                            Id = "95383162-3330-4e60-b5c2-0a7eb89c0acb",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -363,7 +363,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "5a7f20be-b483-40b0-a2b3-d6a7dae918f9",
+                            Id = "5030226a-0016-4502-975c-3133767759d6",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -372,7 +372,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "57e8b084-4e91-4f97-86dc-46b55f9e4d63",
+                            Id = "b9ac62a4-5eb4-4d49-8c52-4a4083aefd23",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -381,7 +381,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "e2f0212a-121b-4de9-8a63-0d77b9325f63",
+                            Id = "6de38920-4f49-4adc-83eb-5d2960bc46cb",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -390,7 +390,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "3f1dcc2d-d116-452c-a906-ad7be75785aa",
+                            Id = "0c2ee185-49bc-46c8-8fea-72700af38540",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -399,7 +399,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "e8946421-0330-42d0-960d-446768cbb286",
+                            Id = "e5abd65b-9757-47c6-8b72-0de2c0fbf5b2",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -408,7 +408,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "5eb52032-670a-4b47-889c-be22706ffd0a",
+                            Id = "35f46c2b-ab61-45b4-8733-9003c7b325c6",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -417,7 +417,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "8cad900c-e426-4b95-8008-7661df24453f",
+                            Id = "47b76a9d-5717-44ea-873d-f977fc774b53",
                             CanBeUsedAlone = false,
                             Cover = 2,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -426,7 +426,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "ee48c6b1-e67f-4f4c-8bf8-20753178b5eb",
+                            Id = "ec42f491-c02b-49ce-8446-dcf985330ef9",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -435,7 +435,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "ee012081-055d-472c-a1b4-59468b5414cb",
+                            Id = "a9c10c7c-3919-4846-b6f4-400b137061c9",
                             CanBeUsedAlone = false,
                             Cover = 0,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -444,7 +444,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "7bbc8c3f-4fad-4e8c-83fb-daabe61f385c",
+                            Id = "9cb8c33f-d192-40e4-930d-2337a091a9cd",
                             CanBeUsedAlone = false,
                             Cover = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -453,7 +453,7 @@ namespace WardrobeT.Data.Migrations
                         },
                         new
                         {
-                            Id = "2bad4172-f7a3-4b00-98ab-edf2c982e63d",
+                            Id = "98a66a2b-9c2c-4f2d-a577-5401ffd97da5",
                             CanBeUsedAlone = false,
                             Cover = 1,
                             CreatedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -548,6 +548,9 @@ namespace WardrobeT.Data.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<string>("OutfitPostId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -570,6 +573,9 @@ namespace WardrobeT.Data.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<string>("WearPostId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IsDeleted");
@@ -581,6 +587,10 @@ namespace WardrobeT.Data.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("OutfitPostId");
+
+                    b.HasIndex("WearPostId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -657,9 +667,6 @@ namespace WardrobeT.Data.Migrations
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
@@ -756,13 +763,11 @@ namespace WardrobeT.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Likes")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("WearId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
@@ -821,6 +826,17 @@ namespace WardrobeT.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WardrobeT.Data.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("WardrobeT.Data.Models.OutfitPost", null)
+                        .WithMany("Likes")
+                        .HasForeignKey("OutfitPostId");
+
+                    b.HasOne("WardrobeT.Services.Data.WearPost", null)
+                        .WithMany("Likes")
+                        .HasForeignKey("WearPostId");
                 });
 
             modelBuilder.Entity("WardrobeT.Data.Models.Followers", b =>
@@ -887,7 +903,9 @@ namespace WardrobeT.Data.Migrations
                 {
                     b.HasOne("WardrobeT.Data.Models.Wear", "Wear")
                         .WithMany()
-                        .HasForeignKey("WearId");
+                        .HasForeignKey("WearId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
