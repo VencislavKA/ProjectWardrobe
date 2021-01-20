@@ -75,28 +75,7 @@
                 <div class="card-footer text-muted w-100">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            @if (item.Liked == false)
-                            {
-                                <a href="/Home/LikeOutfit?id=@item.Post.Id&&url=/Feed#@item.Post.Id">
-                                    <button class="btn" type="submit">
-                                        <img src="/images/like.png" width="35px" />
-                                        <span class="text-dark ml-1">
-                                            @item.Post.Likes.Count()
-                                        </span>
-                                    </button>
-                                </a>
-                            }
-                            else
-                            {
-                                <a href="/Home/UnlikeOutfit?id=@item.Post.Id&&url=/Feed#@item.Post.Id">
-                                    <button class="btn" type="submit">
-                                        <img src="/images/like.png" width="35px" style="transform:rotate(180deg)" />
-                                        <span class="text-dark ml-1">
-                                            @item.Post.Likes.Count()
-                                        </span>
-                                    </button>
-                                </a>
-                            }
+                            
                         </div>
                         <div class="col-auto">
                             Created on: @item.Post.CreatedOn.ToShortDateString()
@@ -145,28 +124,7 @@
                 <div class="card-footer text-muted">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            @if (item.Liked == false)
-                            {
-                                <a href="/Home/LikeWear?id=@item.Post.Id&&url=/Feed#@item.Post.Id">
-                                    <button class="btn" type="submit">
-                                        <img src="/images/like.png" width="35px" />
-                                        <span class="text-dark ml-1">
-                                            @item.Post.Likes.Count()
-                                        </span>
-                                    </button>
-                                </a>
-                            }
-                            else
-                            {
-                                <a href="/Home/UnlikeWear?id=@item.Post.Id&&url=/Feed#@item.Post.Id">
-                                    <button class="btn" type="submit">
-                                        <img src="/images/like.png" width="35px" style="transform:rotate(180deg)" />
-                                        <span class="text-dark ml-1">
-                                            @item.Post.Likes.Count()
-                                        </span>
-                                    </button>
-                                </a>
-                            }
+                            
                         </div>
                         <div class="col-auto">
                             Created on: @item.Post.CreatedOn.ToShortDateString()

@@ -25,16 +25,16 @@
 
         private IRepository<Followers> FollowersReporsitory { get; }
 
-        public async Task<ICollection<User>> GetFollowersAsync(string username)
+        public ICollection<User> GetFollowers(string username)
         {
-            List<ApplicationUser> profiles = await this.FollowersReporsitory.All().Where(x => x.Followed.UserName == username)
-                .Select(x => x.User).ToListAsync();
+            List<ApplicationUser> profiles = this.FollowersReporsitory.AllAsNoTracking().Where(x => x.Followed.UserName == username)
+                .Select(x => x.User).ToList();
             List<User> result = new List<User>();
 
             foreach (var user in profiles)
             {
-                if (await this.FollowersReporsitory.All().Where(x => x.User.UserName == username &&
-                        x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
+                if (this.FollowersReporsitory.All().FirstOrDefault(x => x.User.UserName == username &&
+                        x.Followed.UserName == user.UserName) == null)
                 {
                     result.Add(new User
                     {
@@ -61,16 +61,15 @@
             return result;
         }
 
-        public async Task<ICollection<User>> GetFollowingAsync(string username)
+        public ICollection<User> GetFollowing(string username)
         {
-            List<ApplicationUser> profiles = await this.FollowersReporsitory.All()
-                .Where(x => x.User.UserName == username).Select(x => x.Followed).ToListAsync();
+            List<ApplicationUser> profiles = this.FollowersReporsitory.AllAsNoTracking()
+                .Where(x => x.User.UserName == username).Select(x => x.Followed).ToList();
             List<User> result = new List<User>();
-
             foreach (var user in profiles)
             {
-                if (await this.FollowersReporsitory.All().Where(x => x.User.UserName == username &&
-                        x.Followed.UserName == user.UserName).FirstOrDefaultAsync() == null)
+                if (this.FollowersReporsitory.All().Where(x => x.User.UserName == username &&
+                        x.Followed.UserName == user.UserName).FirstOrDefault() == null)
                 {
                     result.Add(new User
                     {

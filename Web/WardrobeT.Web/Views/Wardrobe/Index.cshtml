@@ -14,7 +14,7 @@
         {
             @if (item.IsPublic == false)
             {
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-4 col-6 mt-2">
                     <div class="dropdown">
                         <button class="btn btn-outline-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
@@ -29,7 +29,7 @@
             }
             else
             {
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-3 col-md-4 col-6 mt-2">
                     <div class="dropdown">
                         <button class="btn btn-outline-info" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img class="img-fluid img-thumbnail" src="@item.ImageUrl" alt="">
@@ -44,7 +44,7 @@
             }
         }
 
-        <div class="col-lg-3 col-md-4 col-6">
+        <div class="col-lg-3 col-md-4 col-6 mt-2">
             <a class="d-block mb-4 h-100" asp-controller="Wardrobe" asp-action="AddWear">
                 <img class="img-fluid img-thumbnail" src="/images/plus.png" style="opacity:0.2">
             </a>

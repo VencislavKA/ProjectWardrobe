@@ -62,7 +62,7 @@
                                                 .Select(x => x).ToListAsync();
 
         public async Task<ICollection<Wear>> GetWearsAsync(string username)
-            => await this.Repository.All().Where(x => x.Owner.UserName == username).ToListAsync();
+            => await this.Repository.All().Where(x => x.Owner.UserName == username).OrderBy(x => x.Type.Cover).ToListAsync();
 
         public async Task<ICollection<TypeOfWear>> GetTypeOfWearsAsync() => await this.TOFrepository.All().ToListAsync();
 

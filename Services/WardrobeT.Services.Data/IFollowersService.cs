@@ -8,9 +8,9 @@
 
     public interface IFollowersService
     {
-        public Task<ICollection<User>> GetFollowersAsync(string username);
+        public ICollection<User> GetFollowers(string username);
 
-        public Task<ICollection<User>> GetFollowingAsync(string username);
+        public ICollection<User> GetFollowing(string username);
 
         public Task<string> FollowAsync(string username, string followId);
 

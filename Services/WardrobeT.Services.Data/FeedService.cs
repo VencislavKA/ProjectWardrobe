@@ -16,12 +16,14 @@
             IRepository<Wear> wearsRepository,
             IRepository<Outfit> outfitsRepository,
             IRepository<WearPost> wearpostsRepository,
-            IRepository<OutfitPost> outfitpostsRepository)
+            IRepository<OutfitPost> outfitpostsRepository,
+            IRepository<ApplicationUser> userRepository)
         {
             this.WearsRepository = wearsRepository;
             this.OutfitsRepository = outfitsRepository;
             this.WearpostsRepository = wearpostsRepository;
             this.OutfitpostsRepository = outfitpostsRepository;
+            this.UserRepository = userRepository;
         }
 
         public IRepository<Wear> WearsRepository { get; }
@@ -31,6 +33,8 @@
         public IRepository<WearPost> WearpostsRepository { get; }
 
         public IRepository<OutfitPost> OutfitpostsRepository { get; }
+
+        public IRepository<ApplicationUser> UserRepository { get; }
 
         public async Task<List<OutfitPost>> GetOutfitPostsAsync(string username)
         => await this.OutfitpostsRepository.All().Select(x => x).Where(x => x.Outfit.Top.Owner.UserName != username).OrderBy(x => x.Likes.Count())
@@ -85,9 +89,11 @@
                 return null;
             }
 
+            var outfitpost = await this.OutfitpostsRepository.All().Where(x => x.Outfit == outfit).FirstOrDefaultAsync();
+            outfitpost.Likes.Clear();
             outfit.IsPublic = false;
-
-            this.OutfitpostsRepository.Delete(await this.OutfitpostsRepository.All().Where(x => x.Outfit == outfit).FirstOrDefaultAsync());
+            await this.OutfitpostsRepository.SaveChangesAsync();
+            this.OutfitpostsRepository.Delete(outfitpost);
             await this.OutfitpostsRepository.SaveChangesAsync();
             return string.Empty;
         }
@@ -128,9 +134,10 @@
                 return null;
             }
 
+            var wearpost = await this.WearpostsRepository.All().Where(x => x.Wear == wear).FirstOrDefaultAsync();
             wear.IsPublic = false;
-
-            this.WearpostsRepository.Delete(await this.WearpostsRepository.All().Where(x => x.Wear == wear).FirstOrDefaultAsync());
+            wearpost.Likes.Clear();
+            this.WearpostsRepository.Delete(wearpost);
             await this.WearpostsRepository.SaveChangesAsync();
             return string.Empty;
         }

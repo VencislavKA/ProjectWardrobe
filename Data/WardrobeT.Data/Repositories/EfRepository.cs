@@ -38,7 +38,7 @@
             entry.State = EntityState.Modified;
         }
 
-        public virtual void Delete(TEntity entity) => this.DbSet.Remove(entity);
+        public virtual void Delete(TEntity entity) => this.DbSet.RemoveRange(entity);
 
         public Task<int> SaveChangesAsync() => this.Context.SaveChangesAsync();
 
