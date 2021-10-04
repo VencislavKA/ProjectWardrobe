@@ -41,7 +41,6 @@
         [Authorize]
         public async Task<IActionResult> MyProfile()
         {
-            // TODO: lead to edit profile pic when profile pic clicked 
             // TODO: let to edit cover photos
 
             ApplicationUser user = await this.UsersService.GetUserAsync(this.User.Identity.Name);

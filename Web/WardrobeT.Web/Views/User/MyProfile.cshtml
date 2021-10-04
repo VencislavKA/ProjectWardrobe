@@ -109,12 +109,12 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="btn btn-outline-dark" asp-controller="Friends" asp-action="Followers">
+                        <a class="btn btn-outline-dark" asp-controller="Friends" asp-action="Followers" asp-route-username="@Model.Username">
                             <h5 class="font-weight-bold mb-0 d-block">@Model.Followers</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a class="btn btn-outline-dark" asp-controller="Friends" asp-action="Following">
+                        <a class="btn btn-outline-dark" asp-controller="Friends" asp-action="Following" asp-route-username="@Model.Username">
                             <h5 class="font-weight-bold mb-0 d-block">@Model.Following</h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
                         </a>
                     </li>

@@ -24,17 +24,17 @@
             this.followersService = service;
         }
 
-        public IActionResult Followers()
+        public IActionResult Followers(string username)
         {
             var searchResult = new FollowViewModel();
-            searchResult.Profiles = this.followersService.GetFollowers(this.User.Identity.Name);
+            searchResult.Profiles = this.followersService.GetFollowers(username);
             return this.View(searchResult);
         }
 
-        public IActionResult Following()
+        public IActionResult Following(string username)
         {
             var searchResult = new FollowViewModel();
-            searchResult.Profiles = this.followersService.GetFollowing(this.User.Identity.Name);
+            searchResult.Profiles = this.followersService.GetFollowing(username);
             return this.View(searchResult);
         }
     }
