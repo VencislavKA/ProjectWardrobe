@@ -7,3 +7,12 @@ C:\Users\Ventcy\Documents\Project\WardrobeT.Common\obj\Debug\netstandard2.1\Ward
 C:\Users\Ventcy\Documents\Project\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.dll
 C:\Users\Ventcy\Documents\Project\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.pdb
 C:\Users\Ventcy\Documents\Project\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.csprojAssemblyReference.cache
+D:\github\ProjectWardrobe\WardrobeT.Common\bin\Debug\netstandard2.1\WardrobeT.Common.deps.json
+D:\github\ProjectWardrobe\WardrobeT.Common\bin\Debug\netstandard2.1\WardrobeT.Common.dll
+D:\github\ProjectWardrobe\WardrobeT.Common\bin\Debug\netstandard2.1\WardrobeT.Common.pdb
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.csproj.AssemblyReference.cache
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.AssemblyInfoInputs.cache
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.AssemblyInfo.cs
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.csproj.CoreCompileInputs.cache
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.dll
+D:\github\ProjectWardrobe\WardrobeT.Common\obj\Debug\netstandard2.1\WardrobeT.Common.pdb

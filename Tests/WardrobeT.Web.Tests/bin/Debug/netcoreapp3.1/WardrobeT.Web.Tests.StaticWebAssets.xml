@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/Identity" Path="C:\Users\Ventsy\.nuget\packages\microsoft.aspnetcore.identity.ui\3.1.10\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/WardrobeT.Web" Path="D:\github\ProjectWardrobe\Web\WardrobeT.Web\wwwroot\" />
+</StaticWebAssets>

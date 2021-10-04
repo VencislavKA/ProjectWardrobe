@@ -7,3 +7,12 @@ C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Mapping\obj\Debug\
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.dll
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\bin\Debug\netstandard2.1\WardrobeT.Services.Mapping.deps.json
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\bin\Debug\netstandard2.1\WardrobeT.Services.Mapping.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\bin\Debug\netstandard2.1\WardrobeT.Services.Mapping.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.csproj.AssemblyReference.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.AssemblyInfoInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.AssemblyInfo.cs
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.csproj.CoreCompileInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Mapping\obj\Debug\netstandard2.1\WardrobeT.Services.Mapping.pdb

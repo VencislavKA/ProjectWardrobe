@@ -6095,27 +6095,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ventcy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Ventsy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data\\WardrobeT.Data.csproj",
+      "projectUniqueName": "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data\\WardrobeT.Data.csproj",
       "projectName": "WardrobeT.Data",
-      "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data\\WardrobeT.Data.csproj",
-      "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data\\obj\\",
+      "projectPath": "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data\\WardrobeT.Data.csproj",
+      "packagesPath": "C:\\Users\\Ventsy\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Ventsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -6126,15 +6124,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Common\\WardrobeT.Data.Common.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Common\\WardrobeT.Data.Common.csproj"
+            "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data.Common\\WardrobeT.Data.Common.csproj": {
+              "projectPath": "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data.Common\\WardrobeT.Data.Common.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj"
+            "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj": {
+              "projectPath": "D:\\github\\ProjectWardrobe\\Data\\WardrobeT.Data.Models\\WardrobeT.Data.Models.csproj"
             },
-            "C:\\Users\\Ventcy\\Documents\\Project\\WardrobeT.Common\\WardrobeT.Common.csproj": {
-              "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\WardrobeT.Common\\WardrobeT.Common.csproj"
+            "D:\\github\\ProjectWardrobe\\WardrobeT.Common\\WardrobeT.Common.csproj": {
+              "projectPath": "D:\\github\\ProjectWardrobe\\WardrobeT.Common\\WardrobeT.Common.csproj"
             }
           }
         }
@@ -6147,6 +6146,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -6194,7 +6194,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

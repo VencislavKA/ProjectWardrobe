@@ -134,6 +134,7 @@
 
         public async Task<IActionResult> Search(string search)
         {
+            // TODO: make peak in profiles
             var searchResult = new SearchResultViewModel();
             searchResult.Search = "/Home/Search?search=" + search;
 

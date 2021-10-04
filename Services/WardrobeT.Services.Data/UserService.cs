@@ -15,8 +15,10 @@
     {
         public UserService(
             IRepository<ApplicationUser> repository,
-            IRepository<Followers> followersRepository)
+            IRepository<Followers> followersRepository,
+            IFollowersService followersService)
         {
+            this.FollowersService = followersService;
             this.UserRepository = repository;
             this.FollowersRepository = followersRepository;
         }
@@ -24,6 +26,8 @@
         public IRepository<ApplicationUser> UserRepository { get; }
 
         public IRepository<Followers> FollowersRepository { get; }
+
+        public IFollowersService FollowersService { get; set; }
 
         public async Task<ICollection<User>> SearchUsersAsync(string username, string search)
         {
@@ -42,6 +46,7 @@
                             ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
+                            Followers = this.FollowersService.GetFollowers(user.UserName).Count,
                             IsFollowed = false,
                         });
                     }
@@ -53,6 +58,7 @@
                             ProfilePictureUrl = user.ProfilePicture,
                             ProfileId = user.Id,
                             Profile = user.UserName,
+                            Followers = this.FollowersService.GetFollowers(user.UserName).Count,
                             IsFollowed = true,
                         });
                     }

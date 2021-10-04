@@ -7,3 +7,12 @@ C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Messaging\obj\Debu
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.dll
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\bin\Debug\netstandard2.1\WardrobeT.Services.Messaging.deps.json
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\bin\Debug\netstandard2.1\WardrobeT.Services.Messaging.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\bin\Debug\netstandard2.1\WardrobeT.Services.Messaging.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.csproj.AssemblyReference.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.AssemblyInfoInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.AssemblyInfo.cs
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.csproj.CoreCompileInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services.Messaging\obj\Debug\netstandard2.1\WardrobeT.Services.Messaging.pdb

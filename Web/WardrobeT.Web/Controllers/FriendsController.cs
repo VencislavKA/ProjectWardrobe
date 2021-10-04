@@ -14,6 +14,7 @@
     using WardrobeT.Web.ViewModels.Friends;
     using WardrobeT.Web.ViewModels.Search;
 
+    [Authorize]
     public class FriendsController : BaseController
     {
         private readonly IFollowersService followersService;
@@ -23,19 +24,17 @@
             this.followersService = service;
         }
 
-        [Authorize]
-        public async Task<IActionResult> Followers()
+        public IActionResult Followers()
         {
             var searchResult = new FollowViewModel();
-            searchResult.Profiles = await this.followersService.GetFollowersAsync(this.User.Identity.Name);
+            searchResult.Profiles = this.followersService.GetFollowers(this.User.Identity.Name);
             return this.View(searchResult);
         }
 
-        [Authorize]
-        public async Task<IActionResult> Following()
+        public IActionResult Following()
         {
             var searchResult = new FollowViewModel();
-            searchResult.Profiles = await this.followersService.GetFollowingAsync(this.User.Identity.Name);
+            searchResult.Profiles = this.followersService.GetFollowing(this.User.Identity.Name);
             return this.View(searchResult);
         }
     }

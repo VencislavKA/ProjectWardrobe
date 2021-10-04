@@ -25,6 +25,8 @@
 
         private IRepository<Followers> FollowersReporsitory { get; }
 
+
+        // TODO: make methood to return only the count if on more plases required
         public ICollection<User> GetFollowers(string username)
         {
             List<ApplicationUser> profiles = this.FollowersReporsitory.AllAsNoTracking().Where(x => x.Followed.UserName == username)

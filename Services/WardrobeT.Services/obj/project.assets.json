@@ -60,27 +60,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ventcy\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Ventsy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services\\WardrobeT.Services.csproj",
+      "projectUniqueName": "D:\\github\\ProjectWardrobe\\Services\\WardrobeT.Services\\WardrobeT.Services.csproj",
       "projectName": "WardrobeT.Services",
-      "projectPath": "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services\\WardrobeT.Services.csproj",
-      "packagesPath": "C:\\Users\\Ventcy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ventcy\\Documents\\Project\\Services\\WardrobeT.Services\\obj\\",
+      "projectPath": "D:\\github\\ProjectWardrobe\\Services\\WardrobeT.Services\\WardrobeT.Services.csproj",
+      "packagesPath": "C:\\Users\\Ventsy\\.nuget\\packages\\",
+      "outputPath": "D:\\github\\ProjectWardrobe\\Services\\WardrobeT.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Ventcy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Ventsy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.1"
@@ -91,6 +89,7 @@
       },
       "frameworks": {
         "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
           "projectReferences": {}
         }
       },
@@ -102,6 +101,7 @@
     },
     "frameworks": {
       "netstandard2.1": {
+        "targetAlias": "netstandard2.1",
         "dependencies": {
           "StyleCop.Analyzers": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers",
@@ -125,7 +125,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -7,3 +7,11 @@ C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\net
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.dll
 C:\Users\Ventcy\Documents\Project\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.pdb
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.deps.json
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.dll
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\bin\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.pdb
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.AssemblyInfoInputs.cache
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.AssemblyInfo.cs
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.csproj.CoreCompileInputs.cache
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.dll
+D:\github\ProjectWardrobe\Web\WardrobeT.Web.Infrastructure\obj\Debug\netstandard2.1\WardrobeT.Web.Infrastructure.pdb

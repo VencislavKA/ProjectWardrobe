@@ -12,6 +12,8 @@
 
         public string Profile { get; set; }
 
+        public int Followers { get; set; }
+
         public bool IsFollowed { get; set; }
     }
 }

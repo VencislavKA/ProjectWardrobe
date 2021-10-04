@@ -1,6 +1,7 @@
 ﻿@model SearchResultViewModel
 @{
     ViewData["Title"] = "Search";
+    // TODO: Hover effect on the cards
 }
 <div class="row">
 
@@ -26,15 +27,24 @@
                 }
                 <div class="card-body text-center">
                     <h5 class="text-dark">@item.Profile</h5>
-                    <div class="text-center">
-                        @if (item.IsFollowed == false)
-                        {
-                            <a class="btn btn-danger" href="/Home/Follow?FollowId=@item.ProfileId&&url=@Model.Search">Follow</a>
-                        }
-                        else
-                        {
-                            <a class="btn btn-dark">Following</a>
-                        }
+                    <div class="mt-4">
+                        <table class="w-100">
+                            <tr>
+                                <td class="w-50">
+                                    @if (item.IsFollowed == false)
+                                    {
+                                        <a class="btn btn-danger w-100" href="/Home/Follow?FollowId=@item.ProfileId&&url=@Model.Search">Follow</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-dark w-100">Following</a>
+                                    }
+                                </td>
+                                <td class="w-50">
+                                    <h6 class="text-dark text-right text-muted align-bottom">Followers <span class="badge badge-secondary">@item.Followers</span></h6>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>

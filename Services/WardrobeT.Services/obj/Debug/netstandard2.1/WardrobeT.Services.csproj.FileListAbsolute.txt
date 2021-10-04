@@ -7,3 +7,11 @@ C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services\obj\Debug\netstand
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.csproj.CoreCompileInputs.cache
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.dll
 C:\Users\Ventcy\Documents\Project\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\bin\Debug\netstandard2.1\WardrobeT.Services.deps.json
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\bin\Debug\netstandard2.1\WardrobeT.Services.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\bin\Debug\netstandard2.1\WardrobeT.Services.pdb
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.AssemblyInfoInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.AssemblyInfo.cs
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.csproj.CoreCompileInputs.cache
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.dll
+D:\github\ProjectWardrobe\Services\WardrobeT.Services\obj\Debug\netstandard2.1\WardrobeT.Services.pdb

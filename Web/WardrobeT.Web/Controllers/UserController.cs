@@ -41,10 +41,13 @@
         [Authorize]
         public async Task<IActionResult> MyProfile()
         {
+            // TODO: lead to edit profile pic when profile pic clicked 
+            // TODO: let to edit cover photos
+
             ApplicationUser user = await this.UsersService.GetUserAsync(this.User.Identity.Name);
             var wears = await this.WearsService.GetWearsAsync(this.User.Identity.Name);
-            var followers = await this.FollowersService.GetFollowersAsync(this.User.Identity.Name);
-            var following = await this.FollowersService.GetFollowingAsync(this.User.Identity.Name);
+            var followers = this.FollowersService.GetFollowers(this.User.Identity.Name);
+            var following = this.FollowersService.GetFollowing(this.User.Identity.Name);
 
             var profileViewModel = new ProfileViewModel
             {
@@ -61,6 +64,10 @@
         [HttpGet]
         public async Task<IActionResult> Profile(string id)
         {
+            // TODO: let people see others followers and following profiles
+
+            // TODO: change the possition of unfollow and follow btn
+
             ApplicationUser user = await this.UsersService.GetUserByIdAsync(id);
             if (user == null)
             {
@@ -68,8 +75,8 @@
             }
 
             var wears = await this.WearsService.GetWearsAsync(user.UserName);
-            var followers = await this.FollowersService.GetFollowersAsync(user.UserName);
-            var following = await this.FollowersService.GetFollowingAsync(user.UserName);
+            var followers = this.FollowersService.GetFollowers(user.UserName);
+            var following = this.FollowersService.GetFollowing(user.UserName);
             var userfollowed = this.UsersService.SearchUsersAsync(this.User.Identity.Name, user.UserName).Result.FirstOrDefault();
             var isFollowed = userfollowed.IsFollowed;
 

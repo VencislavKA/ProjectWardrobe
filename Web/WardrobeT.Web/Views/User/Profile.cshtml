@@ -26,14 +26,14 @@
                 <div class="d-flex align-items-center justify-content-between mb-3">
                 </div>
                 <div class="media align-items-end profile-head">
-                    <div class="profile mr-3">
+                    <div class="profile mr-3 w-25">
                         @if (Model.ProfilePicUrl != null)
                         {
-                            <img src="@Model.ProfilePicUrl" width="130" class="rounded mb-2 img-thumbnail">
+                            <img src="@Model.ProfilePicUrl" class="rounded mb-2 img-thumbnail">
                         }
                         else
                         {
-                            <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" width="130" class="rounded mb-2 img-thumbnail">
+                            <img src="https://st2.depositphotos.com/1032921/5237/v/600/depositphotos_52374307-stock-illustration-blue-profile-icon.jpg" class="rounded mb-2 img-thumbnail">
                         }
                         @if (Model.IsFollowed == false)
                         {
@@ -53,7 +53,7 @@
             <div class="bg-light p-4 d-flex justify-content-end text-center">
                 <ul class="list-inline mb-0">
                     <li class="list-inline-item">
-                        <a class="btn btn-outline-dark" href="#Wardrobe">
+                        <a class="btn btn-outline-dark" >
                             <h5 class="font-weight-bold mb-0 d-block">@Model.Wears.Count</h5><small class="text-muted">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-layers-half" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M3.188 8L.264 9.559a.5.5 0 0 0 0 .882l7.5 4a.5.5 0 0 0 .47 0l7.5-4a.5.5 0 0 0 0-.882L12.813 8l-4.578 2.441a.5.5 0 0 1-.47 0L3.188 8z" />
